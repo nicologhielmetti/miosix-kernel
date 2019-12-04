@@ -9,7 +9,8 @@ main.map
 *.o
 *.a
 *.d
-!NN/Middlewares/ST/AI/Lib
+!NN/Middlewares/ST/AI/Lib/libarm_cortexM4lf_math.a
+!NN/Middlewares/ST/AI/Lib/NetworkRuntime410_CM4_GCC.a
 # Exclude Mac OS X temporary
 ._*
 .DS_Store
