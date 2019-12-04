@@ -2,6 +2,7 @@
 #include <cstdio>
 #include "miosix.h"
 #include "lstm.h"
+#include "util/software_i2c.h"
 
 
 using namespace std;

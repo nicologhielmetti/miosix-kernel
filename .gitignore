@@ -9,7 +9,7 @@ main.map
 *.o
 *.a
 *.d
-
+!NN/Middlewares/ST/AI/Lib
 # Exclude Mac OS X temporary
 ._*
 .DS_Store

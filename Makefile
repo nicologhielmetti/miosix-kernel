@@ -26,8 +26,8 @@ NN/Src/aeabi_memcpy.c
 ##
 ## List here additional static libraries with relative path
 ##
-LIBS := NN/Middlewares/ST/AI/Lib/NetworkRuntime410_CM4_GCC.a	    \
-	NN/Middlewares/ST/AI/Lib/libarm_cortexM4lf_math.a
+ LIBS := NN/Middlewares/ST/AI/Lib/NetworkRuntime410_CM4_GCC.a	    \
+	 NN/Middlewares/ST/AI/Lib/libarm_cortexM4lf_math.a
 
 ##
 ## List here additional include directories (in the form -Iinclude_dir)
