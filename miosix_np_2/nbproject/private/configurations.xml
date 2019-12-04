@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="95">
+<configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root=".." name="0">
       <df name="miosix">
@@ -130,12 +130,49 @@
                       <in>stm32f429xx.h</in>
                       <in>stm32f437xx.h</in>
                       <in>stm32f439xx.h</in>
+                      <in>stm32f469xx.h</in>
                       <in>stm32f4xx.h</in>
                       <in>system_stm32f4xx.h</in>
                     </df>
                     <df name="Source">
                       <df name="Templates">
                         <in>system_stm32f4xx.c</in>
+                      </df>
+                    </df>
+                  </df>
+                  <df name="STM32F7xx">
+                    <df name="Include">
+                      <in>stm32f722xx.h</in>
+                      <in>stm32f723xx.h</in>
+                      <in>stm32f732xx.h</in>
+                      <in>stm32f733xx.h</in>
+                      <in>stm32f745xx.h</in>
+                      <in>stm32f746xx.h</in>
+                      <in>stm32f756xx.h</in>
+                      <in>stm32f765xx.h</in>
+                      <in>stm32f767xx.h</in>
+                      <in>stm32f769xx.h</in>
+                      <in>stm32f777xx.h</in>
+                      <in>stm32f779xx.h</in>
+                      <in>stm32f7xx.h</in>
+                      <in>system_stm32f7xx.h</in>
+                    </df>
+                    <df name="Source">
+                      <df name="Templates">
+                        <in>system_stm32f7xx.c</in>
+                      </df>
+                    </df>
+                  </df>
+                  <df name="STM32H7xx">
+                    <df name="Include">
+                      <in>stm32h743xx.h</in>
+                      <in>stm32h753xx.h</in>
+                      <in>stm32h7xx.h</in>
+                      <in>system_stm32h7xx.h</in>
+                    </df>
+                    <df name="Source">
+                      <df name="Templates">
+                        <in>system_stm32h7xx.c</in>
                       </df>
                     </df>
                   </df>
@@ -172,13 +209,15 @@
                 <in>arm_common_tables.h</in>
                 <in>arm_const_structs.h</in>
                 <in>arm_math.h</in>
+                <in>cmsis_gcc.h</in>
                 <in>core_cm0.h</in>
                 <in>core_cm0plus.h</in>
                 <in>core_cm3.h</in>
                 <in>core_cm4.h</in>
-                <in>core_cm4_simd.h</in>
+                <in>core_cm7.h</in>
                 <in>core_cmFunc.h</in>
                 <in>core_cmInstr.h</in>
+                <in>core_cmSimd.h</in>
                 <in>core_sc000.h</in>
                 <in>core_sc300.h</in>
               </df>
@@ -188,6 +227,8 @@
             <df name="core">
               <in>atomic_ops_impl_arm7.h</in>
               <in>atomic_ops_impl_cortexMx.h</in>
+              <in>cache_cortexMx.cpp</in>
+              <in>cache_cortexMx.h</in>
               <in>endianness_impl_arm7.h</in>
               <in>endianness_impl_cortexMx.h</in>
               <in>interrupts.h</in>
@@ -195,6 +236,9 @@
               <in>interrupts_arm7.h</in>
               <in>interrupts_cortexMx.cpp</in>
               <in>interrupts_cortexMx.h</in>
+              <in>memory_protection.h</in>
+              <in>mpu_cortexMx.cpp</in>
+              <in>mpu_cortexMx.h</in>
             </df>
             <df name="drivers">
               <in>dcc.cpp</in>
@@ -216,6 +260,10 @@
               <in>servo_stm32.h</in>
               <in>stm32_hardware_rng.cpp</in>
               <in>stm32_hardware_rng.h</in>
+              <in>stm32_sgm.cpp</in>
+              <in>stm32_sgm.h</in>
+              <in>stm32_wd.cpp</in>
+              <in>stm32_wd.h</in>
               <in>stm32f2_f4_i2c.cpp</in>
               <in>stm32f2_f4_i2c.h</in>
             </df>
@@ -239,7 +287,18 @@
               <df name="interfaces-impl">
                 <in>bsp.cpp</in>
                 <in>bsp_impl.h</in>
+                <in>cc2520_constants.h</in>
+                <in>gpioirq.cpp</in>
+                <in>gpioirq.h</in>
+                <in>hardware_timer.cpp</in>
+                <in>hardware_timer.h</in>
                 <in>hwmapping.h</in>
+                <in>power_manager.cpp</in>
+                <in>power_manager.h</in>
+                <in>spi.cpp</in>
+                <in>spi.h</in>
+                <in>transceiver.cpp</in>
+                <in>transceiver.h</in>
               </df>
             </df>
           </df>
@@ -257,6 +316,20 @@
               </df>
               <in>arch_settings.h</in>
             </df>
+            <df name="stm32f100c8_microboard">
+              <df name="core">
+                <in>stage_1_boot.cpp</in>
+              </df>
+              <df name="drivers">
+                <in>rtc.cpp</in>
+                <in>rtc.h</in>
+              </df>
+              <df name="interfaces-impl">
+                <in>bsp.cpp</in>
+                <in>bsp_impl.h</in>
+                <in>hwmapping.h</in>
+              </df>
+            </df>
             <df name="stm32f100cb_tempsensor">
               <df name="core">
                 <in>stage_1_boot.cpp</in>
@@ -267,6 +340,25 @@
               </df>
             </df>
             <df name="stm32f100rb_stm32vldiscovery">
+              <df name="core">
+                <in>stage_1_boot.cpp</in>
+              </df>
+              <df name="interfaces-impl">
+                <in>bsp.cpp</in>
+                <in>bsp_impl.h</in>
+              </df>
+            </df>
+            <df name="stm32f100rc_solertegiard">
+              <df name="core">
+                <in>stage_1_boot.cpp</in>
+              </df>
+              <df name="interfaces-impl">
+                <in>bsp.cpp</in>
+                <in>bsp_impl.h</in>
+                <in>hwmapping.h</in>
+              </df>
+            </df>
+            <df name="stm32f103c8_breakout">
               <df name="core">
                 <in>stage_1_boot.cpp</in>
               </df>
@@ -336,6 +428,29 @@
                 <in>portability_impl.h</in>
               </df>
               <in>arch_settings.h</in>
+            </df>
+            <df name="stm32f205_generic">
+              <df name="core">
+                <in>stage_1_boot.cpp</in>
+              </df>
+              <df name="interfaces-impl">
+                <in>arch_registers_impl.h</in>
+                <in>bsp.cpp</in>
+                <in>bsp_impl.h</in>
+                <in>delays.cpp</in>
+              </df>
+            </df>
+            <df name="stm32f205rc_skyward_stormtrooper">
+              <df name="core">
+                <in>stage_1_boot.cpp</in>
+              </df>
+              <df name="interfaces-impl">
+                <in>arch_registers_impl.h</in>
+                <in>bsp.cpp</in>
+                <in>bsp_impl.h</in>
+                <in>delays.cpp</in>
+                <in>hwmapping.h</in>
+              </df>
             </df>
             <df name="stm32f205rg_sony-newman">
               <df name="core">
@@ -421,6 +536,26 @@
               </df>
               <in>arch_settings.h</in>
             </df>
+            <df name="stm32f401re_nucleo">
+              <df name="core">
+                <in>stage_1_boot.cpp</in>
+              </df>
+              <df name="interfaces-impl">
+                <in>arch_registers_impl.h</in>
+                <in>bsp.cpp</in>
+                <in>bsp_impl.h</in>
+              </df>
+            </df>
+            <df name="stm32f401vc_stm32f4discovery">
+              <df name="core">
+                <in>stage_1_boot.cpp</in>
+              </df>
+              <df name="interfaces-impl">
+                <in>arch_registers_impl.h</in>
+                <in>bsp.cpp</in>
+                <in>bsp_impl.h</in>
+              </df>
+            </df>
             <df name="stm32f407vg_bitsboard">
               <df name="core">
                 <in>stage_1_boot.cpp</in>
@@ -432,6 +567,16 @@
               </df>
             </df>
             <df name="stm32f407vg_stm32f4discovery">
+              <df name="core">
+                <in>stage_1_boot.cpp</in>
+              </df>
+              <df name="interfaces-impl">
+                <in>arch_registers_impl.h</in>
+                <in>bsp.cpp</in>
+                <in>bsp_impl.h</in>
+              </df>
+            </df>
+            <df name="stm32f407vg_thermal_test_chip">
               <df name="core">
                 <in>stage_1_boot.cpp</in>
               </df>
@@ -473,7 +618,76 @@
                 <in>hwmapping.h</in>
               </df>
             </df>
+            <df name="stm32f429zi_skyward_homeone">
+              <df name="core">
+                <in>stage_1_boot.cpp</in>
+              </df>
+              <df name="interfaces-impl">
+                <in>arch_registers_impl.h</in>
+                <in>bsp.cpp</in>
+                <in>bsp_impl.h</in>
+                <in>hwmapping.h</in>
+              </df>
+            </df>
             <df name="stm32f429zi_stm32f4discovery">
+              <df name="core">
+                <in>stage_1_boot.cpp</in>
+              </df>
+              <df name="interfaces-impl">
+                <in>arch_registers_impl.h</in>
+                <in>bsp.cpp</in>
+                <in>bsp_impl.h</in>
+              </df>
+            </df>
+            <df name="stm32f469ni_stm32f469i-disco">
+              <df name="core">
+                <in>stage_1_boot.cpp</in>
+              </df>
+              <df name="interfaces-impl">
+                <in>arch_registers_impl.h</in>
+                <in>bsp.cpp</in>
+                <in>bsp_impl.h</in>
+              </df>
+            </df>
+          </df>
+          <df name="cortexM7_stm32f7">
+            <df name="common">
+              <df name="interfaces-impl">
+                <in>delays.cpp</in>
+                <in>gpio_impl.cpp</in>
+                <in>gpio_impl.h</in>
+                <in>portability.cpp</in>
+                <in>portability_impl.h</in>
+              </df>
+              <in>arch_settings.h</in>
+            </df>
+            <df name="stm32f746zg_nucleo">
+              <df name="core">
+                <in>stage_1_boot.cpp</in>
+              </df>
+              <df name="interfaces-impl">
+                <in>arch_registers_impl.h</in>
+                <in>bsp.cpp</in>
+                <in>bsp_impl.h</in>
+              </df>
+            </df>
+          </df>
+          <df name="cortexM7_stm32h7">
+            <df name="common">
+              <df name="drivers">
+                <in>pll.cpp</in>
+                <in>pll.h</in>
+              </df>
+              <df name="interfaces-impl">
+                <in>delays.cpp</in>
+                <in>gpio_impl.cpp</in>
+                <in>gpio_impl.h</in>
+                <in>portability.cpp</in>
+                <in>portability_impl.h</in>
+              </df>
+              <in>arch_settings.h</in>
+            </df>
+            <df name="stm32h753xi_eval">
               <df name="core">
                 <in>stage_1_boot.cpp</in>
               </df>
@@ -498,10 +712,19 @@
               </df>
             </df>
             <df name="cortexM3_stm32">
+              <df name="stm32f100c8_microboard">
+                <in>board_settings.h</in>
+              </df>
               <df name="stm32f100cb_tempsensor">
                 <in>board_settings.h</in>
               </df>
               <df name="stm32f100rb_stm32vldiscovery">
+                <in>board_settings.h</in>
+              </df>
+              <df name="stm32f100rc_solertegiard">
+                <in>board_settings.h</in>
+              </df>
+              <df name="stm32f103c8_breakout">
                 <in>board_settings.h</in>
               </df>
               <df name="stm32f103cb_als_mainboard_rev2">
@@ -521,6 +744,12 @@
               </df>
             </df>
             <df name="cortexM3_stm32f2">
+              <df name="stm32f205_generic">
+                <in>board_settings.h</in>
+              </df>
+              <df name="stm32f205rc_skyward_stormtrooper">
+                <in>board_settings.h</in>
+              </df>
               <df name="stm32f205rg_sony-newman">
                 <in>board_settings.h</in>
               </df>
@@ -540,10 +769,19 @@
               </df>
             </df>
             <df name="cortexM4_stm32f4">
+              <df name="stm32f401re_nucleo">
+                <in>board_settings.h</in>
+              </df>
+              <df name="stm32f401vc_stm32f4discovery">
+                <in>board_settings.h</in>
+              </df>
               <df name="stm32f407vg_bitsboard">
                 <in>board_settings.h</in>
               </df>
               <df name="stm32f407vg_stm32f4discovery">
+                <in>board_settings.h</in>
+              </df>
+              <df name="stm32f407vg_thermal_test_chip">
                 <in>board_settings.h</in>
               </df>
               <df name="stm32f411re_nucleo">
@@ -555,7 +793,23 @@
               <df name="stm32f429zi_skyward_anakin">
                 <in>board_settings.h</in>
               </df>
+              <df name="stm32f429zi_skyward_homeone">
+                <in>board_settings.h</in>
+              </df>
               <df name="stm32f429zi_stm32f4discovery">
+                <in>board_settings.h</in>
+              </df>
+              <df name="stm32f469ni_stm32f469i-disco">
+                <in>board_settings.h</in>
+              </df>
+            </df>
+            <df name="cortexM7_stm32f7">
+              <df name="stm32f746zg_nucleo">
+                <in>board_settings.h</in>
+              </df>
+            </df>
+            <df name="cortexM7_stm32h7">
+              <df name="stm32h753xi_eval">
                 <in>board_settings.h</in>
               </df>
             </df>
@@ -566,6 +820,8 @@
           <in>callback.h</in>
           <in>e20.cpp</in>
           <in>e20.h</in>
+          <in>unmember.cpp</in>
+          <in>unmember.h</in>
         </df>
         <df name="filesystem">
           <df name="console">
@@ -631,6 +887,8 @@
             <in>scheduler.h</in>
             <in>tick_interrupt.h</in>
           </df>
+          <in>IRQDisplayPrint.cpp</in>
+          <in>IRQDisplayPrint.h</in>
           <in>SystemMap.cpp</in>
           <in>SystemMap.h</in>
           <in>elf_program.cpp</in>
@@ -679,6 +937,90 @@
         <in>miosix.h</in>
       </df>
       <df name="miosix_np_2">
+      </df>
+      <df name="NN">
+        <df name="Inc">
+          <in>RTE_Components.h</in>
+          <in>app_x-cube-ai.h</in>
+          <in>constants_ai.h</in>
+          <in>lstm.h</in>
+          <in>lstm_data.h</in>
+          <in>main.h</in>
+          <in>stm32f4xx_hal_conf.h</in>
+          <in>stm32f4xx_it.h</in>
+        </df>
+        <df name="Middlewares">
+          <df name="ST">
+            <df name="AI">
+              <df name="Inc">
+                <in>ai_common_config.h</in>
+                <in>ai_datatypes_defines.h</in>
+                <in>ai_datatypes_format.h</in>
+                <in>ai_datatypes_internal.h</in>
+                <in>ai_log.h</in>
+                <in>ai_math_helpers.h</in>
+                <in>ai_network_inspector.h</in>
+                <in>ai_platform.h</in>
+                <in>ai_platform_interface.h</in>
+                <in>core_common.h</in>
+                <in>core_convert.h</in>
+                <in>core_datatypes.h</in>
+                <in>core_log.h</in>
+                <in>core_net_inspect.h</in>
+                <in>core_net_inspect_interface.h</in>
+                <in>datatypes_network.h</in>
+                <in>formats_list.h</in>
+                <in>layers.h</in>
+                <in>layers_common.h</in>
+                <in>layers_conv2d.h</in>
+                <in>layers_dense.h</in>
+                <in>layers_generic.h</in>
+                <in>layers_list.h</in>
+                <in>layers_nl.h</in>
+                <in>layers_norm.h</in>
+                <in>layers_pool.h</in>
+                <in>layers_rnn.h</in>
+                <in>layers_sm.h</in>
+              </df>
+              <df name="Lib">
+              </df>
+            </df>
+            <df name="Application">
+              <df name="Validation">
+                <df name="Inc">
+                  <in>aiPbMgr.h</in>
+                  <in>aiTestUtility.h</in>
+                  <in>aiValidation.h</in>
+                  <in>pb.h</in>
+                  <in>pb_common.h</in>
+                  <in>pb_decode.h</in>
+                  <in>pb_encode.h</in>
+                  <in>stm32msg.pb.h</in>
+                </df>
+                <df name="Src">
+                  <in>aiPbMgr.c</in>
+                  <in>aiTestUtility.c</in>
+                  <in>aiValidation.c</in>
+                  <in>pb_common.c</in>
+                  <in>pb_decode.c</in>
+                  <in>pb_encode.c</in>
+                  <in>stm32msg.pb.c</in>
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="Src">
+          <in>aeabi_memclr.c</in>
+          <in>aeabi_memcpy.c</in>
+          <in>app_x-cube-ai.c</in>
+          <in>lstm.c</in>
+          <in>lstm_data.c</in>
+          <in>main.c</in>
+          <in>stm32f4xx_hal_msp.c</in>
+          <in>stm32f4xx_it.c</in>
+          <in>system_stm32f4xx.c</in>
+        </df>
       </df>
       <in>main.cpp</in>
     </df>
@@ -1003,7 +1345,7 @@
     <conf name="stm32f407vg_stm32f4discovery" type="0">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
-        <platform>2</platform>
+        <platform>3</platform>
       </toolsSet>
       <compile>
         <compiledirpicklist>

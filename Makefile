@@ -17,17 +17,22 @@ SUBDIRS := $(KPATH)
 ## List here your source files (both .s, .c and .cpp)
 ##
 SRC :=                                  \
-main.cpp
+main.cpp				\
+NN/Src/lstm.c				\
+NN/Src/lstm_data.c			\
+NN/Src/aeabi_memclr.c			\
+NN/Src/aeabi_memcpy.c
 
 ##
 ## List here additional static libraries with relative path
 ##
-LIBS :=
+LIBS := NN/Middlewares/ST/AI/Lib/NetworkRuntime410_CM4_GCC.a	    \
+	NN/Middlewares/ST/AI/Lib/libarm_cortexM4lf_math.a
 
 ##
 ## List here additional include directories (in the form -Iinclude_dir)
 ##
-INCLUDE_DIRS :=
+INCLUDE_DIRS := -I./NN/Inc -I./NN/Middlewares/ST/AI/Inc -I./NN/Middlewares/ST/AI/Lib
 
 ##############################################################################
 ## You should not need to modify anything below                             ##
@@ -46,6 +51,7 @@ OBJ := $(addsuffix .o, $(basename $(SRC)))
 
 ## Includes the miosix base directory for C/C++
 ## Always include CONFPATH first, as it overrides the config file location
+
 CXXFLAGS := $(CXXFLAGS_BASE) -I$(CONFPATH) -I$(CONFPATH)/config/$(BOARD_INC)  \
             -I. -I$(KPATH) -I$(KPATH)/arch/common -I$(KPATH)/$(ARCH_INC)      \
             -I$(KPATH)/$(BOARD_INC) $(INCLUDE_DIRS)

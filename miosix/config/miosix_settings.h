@@ -24,7 +24,7 @@
  *                                                                         *
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program; if not, see <http://www.gnu.org/licenses/>   *
- ***************************************************************************/ 
+ ***************************************************************************/
 
 #ifndef MIOSIX_SETTINGS_H
 #define MIOSIX_SETTINGS_H
@@ -34,7 +34,7 @@
 // The PARSING_FROM_IDE is because Netbeans gets confused by this, it is never
 // defined when compiling the code.
 #ifndef PARSING_FROM_IDE
-#error This error is a reminder that you have not edited miosix_settings.h yet.
+//#error This error is a reminder that you have not edited miosix_settings.h yet.
 #endif //PARSING_FROM_IDE
 
 /**
@@ -91,7 +91,7 @@ namespace miosix {
 /// Allows to enable/disable DevFs support to save code size
 /// By default it is defined (DevFs is enabled)
 #define WITH_DEVFS
-    
+
 /// \def SYNC_AFTER_WRITE
 /// Increases filesystem write robustness. After each write operation the
 /// filesystem is synced so that a power failure happens data is not lost
@@ -149,7 +149,7 @@ const unsigned char MAX_OPEN_FILES=8;
  * mode, so to use debugging it is necessary to disable sleep in the idle thread.
  * By default it is not defined (idle thread calls sleep).
  */
-//#define JTAG_DISABLE_SLEEP
+#define JTAG_DISABLE_SLEEP
 
 /// Minimum stack size (MUST be divisible by 4)
 const unsigned int STACK_MIN=256;
