@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="95">
+<configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root=".." name="0">
       <df name="miosix">
@@ -1347,7 +1347,7 @@
     <conf name="stm32f407vg_stm32f4discovery" type="0">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
-        <platform>2</platform>
+        <platform>3</platform>
       </toolsSet>
       <compile>
         <compiledirpicklist>
