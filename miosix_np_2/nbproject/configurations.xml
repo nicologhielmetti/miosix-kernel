@@ -2,6 +2,9 @@
 <configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root=".." name="0">
+      <df name="IKS01A2_classes">
+        <in>lps22hb.h</in>
+      </df>
       <df name="miosix">
         <df name="arch">
           <df name="arm7_lpc2000">
@@ -543,6 +546,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
@@ -1275,6 +1280,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -1821,6 +1828,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -2442,6 +2451,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -3065,6 +3076,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -3538,6 +3551,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -4162,6 +4177,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -4774,6 +4791,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../NN/Src/aeabi_memclr.c" ex="false" tool="0" flavor2="2">
         <cTool flags="1">
           <incDir>
@@ -6066,6 +6085,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -6700,6 +6721,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -7334,6 +7357,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -7807,6 +7832,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -8295,6 +8322,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -8930,6 +8959,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -9424,6 +9455,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -10094,6 +10127,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="9">
         <ccTool>
           <incDir>
@@ -10587,6 +10622,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="9">
         <ccTool>
           <incDir>
@@ -11085,6 +11122,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="9">
         <ccTool>
           <incDir>
@@ -11794,6 +11833,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -12425,6 +12466,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -13242,6 +13285,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
           <incDir>

@@ -11,6 +11,7 @@ main.map
 *.d
 !NN/Middlewares/ST/AI/Lib/libarm_cortexM4lf_math.a
 !NN/Middlewares/ST/AI/Lib/NetworkRuntime410_CM4_GCC.a
+!miosix_np_2/nbproject/private/private.xml
 # Exclude Mac OS X temporary
 ._*
 .DS_Store
