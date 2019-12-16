@@ -483,7 +483,7 @@
       <item path="../miosix/arch/common/core/interrupts_cortexMx.cpp"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
         <ccTool>
           <incDir>
             <pElem>../miosix/kernel</pElem>
@@ -517,7 +517,7 @@
       <item path="../miosix/arch/common/core/mpu_cortexMx.cpp"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
         <ccTool>
           <incDir>
             <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
@@ -560,7 +560,7 @@
       <item path="../miosix/arch/common/drivers/sd_stm32f2_f4.cpp"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
         <ccTool>
           <incDir>
             <pElem>../miosix/kernel</pElem>
@@ -588,7 +588,7 @@
       <item path="../miosix/arch/common/drivers/serial_stm32.cpp"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
         <ccTool>
           <incDir>
             <pElem>../miosix/kernel</pElem>
@@ -816,12 +816,12 @@
       <item path="../miosix/arch/cortexM4_stm32f4/stm32f401re_nucleo/core/stage_1_boot.cpp"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="../miosix/arch/cortexM4_stm32f4/stm32f401re_nucleo/interfaces-impl/bsp.cpp"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="../miosix/arch/cortexM4_stm32f4/stm32f407vg_bitsboard/core/stage_1_boot.cpp"
             ex="false"
@@ -864,7 +864,7 @@
           </preprocessorList>
         </ccTool>
       </item>
-      <item path="../miosix/e20/unmember.cpp" ex="false" tool="1" flavor2="0">
+      <item path="../miosix/e20/unmember.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
             <pElem>../miosix/e20</pElem>
@@ -886,7 +886,7 @@
       <item path="../miosix/filesystem/fat32/ccsbcs.cpp"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
         <ccTool>
           <incDir>
             <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
@@ -896,6 +896,7 @@
             <pElem>../miosix/config</pElem>
             <pElem>../miosix/arch/common/CMSIS/Include</pElem>
             <pElem>../miosix</pElem>
+            <pElem>../miosix/filesystem/fat32</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -947,7 +948,7 @@
           </preprocessorList>
         </ccTool>
       </item>
-      <item path="../miosix/filesystem/fat32/ff.cpp" ex="false" tool="1" flavor2="0">
+      <item path="../miosix/filesystem/fat32/ff.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
             <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
@@ -962,13 +963,14 @@
             <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
             <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config</pElem>
             <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix/filesystem/fat32</pElem>
           </incDir>
         </ccTool>
       </item>
       <item path="../miosix/filesystem/fat32/wtoupper.cpp"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
         <ccTool>
           <incDir>
             <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
@@ -978,6 +980,7 @@
             <pElem>../miosix/config</pElem>
             <pElem>../miosix/arch/common/CMSIS/Include</pElem>
             <pElem>../miosix</pElem>
+            <pElem>../miosix/filesystem/fat32</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -1055,7 +1058,7 @@
           </preprocessorList>
         </ccTool>
       </item>
-      <item path="../miosix/kernel/SystemMap.cpp" ex="false" tool="1" flavor2="0">
+      <item path="../miosix/kernel/SystemMap.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
             <pElem>../miosix/kernel/scheduler/priority</pElem>
@@ -1081,7 +1084,7 @@
           </incDir>
         </ccTool>
       </item>
-      <item path="../miosix/kernel/elf_program.cpp" ex="false" tool="1" flavor2="0">
+      <item path="../miosix/kernel/elf_program.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
             <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
@@ -1149,7 +1152,7 @@
           </preprocessorList>
         </ccTool>
       </item>
-      <item path="../miosix/kernel/process.cpp" ex="false" tool="1" flavor2="0">
+      <item path="../miosix/kernel/process.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
             <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
@@ -1175,7 +1178,7 @@
           </incDir>
         </ccTool>
       </item>
-      <item path="../miosix/kernel/process_pool.cpp" ex="false" tool="1" flavor2="0">
+      <item path="../miosix/kernel/process_pool.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
             <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
@@ -1274,7 +1277,7 @@
       <item path="../miosix/kernel/timeconversion.cpp"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
         <ccTool>
           <incDir>
             <pElem>../miosix/kernel</pElem>
@@ -1335,7 +1338,7 @@
           </preprocessorList>
         </ccTool>
       </item>
-      <item path="../miosix/util/unicode.cpp" ex="false" tool="1" flavor2="0">
+      <item path="../miosix/util/unicode.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
             <pElem>../miosix/util</pElem>

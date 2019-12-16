@@ -24,6 +24,14 @@ void initRCC()
     CRC->CR = CRC_CR_RESET;
 }
 
+
+static ai_handle lstm = AI_HANDLE_NULL;
+static ai_u8 activations[AI_LSTM_DATA_ACTIVATIONS_SIZE];
+static ai_buffer nn_input[AI_LSTM_IN_NUM] =  AI_LSTM_IN;
+static ai_buffer nn_output[AI_LSTM_OUT_NUM] =  AI_LSTM_OUT;
+static ai_float nn_outdata[AI_LSTM_OUT_1_SIZE];
+
+
 int main()
 {
 
@@ -35,15 +43,14 @@ int main()
     typedef Gpio<GPIOA_BASE,5> led;
     typedef lps22hb<sda,scl> pressure_sensor;
 
-    pressure_sensor::init();
+    //pressure_sensor::init();
 
-    ai_handle lstm = AI_HANDLE_NULL;
     ai_error err = ai_lstm_create(&lstm, (ai_buffer*)AI_LSTM_DATA_CONFIG);
     if (err.type != AI_ERROR_NONE) {
         printf("E: AI error - type=%lu code=%lu\r\n", err.type, err.code);
     }
 
-    ai_u8 activations[AI_LSTM_DATA_ACTIVATIONS_SIZE];
+    //ai_u8 activations[AI_LSTM_DATA_ACTIVATIONS_SIZE];
 
     // network initialization
     const ai_network_params params = {
@@ -57,10 +64,11 @@ int main()
 
     float input[3] = {3,4,5};
     float output[1] = {0};
+    printf("%f\n", output[0]);
     runLSTM(lstm, input, output);
-    ai_lstm_destroy(lstm);
+    printf("%f\n", output[0]);
 
-    iprintf("%f\n", output[0]);
+    ai_lstm_destroy(lstm);
  }
 
 
