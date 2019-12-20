@@ -119,9 +119,7 @@
                   <df name="STM32F4xx">
                     <df name="Include">
                       <in>stm32f401xc.h</in>
-                      <in>stm32f401xe.h</in>
                       <in>stm32f405xx.h</in>
-                      <in>stm32f407xx.h</in>
                       <in>stm32f411xe.h</in>
                       <in>stm32f415xx.h</in>
                       <in>stm32f417xx.h</in>
@@ -130,8 +128,6 @@
                       <in>stm32f437xx.h</in>
                       <in>stm32f439xx.h</in>
                       <in>stm32f469xx.h</in>
-                      <in>stm32f4xx.h</in>
-                      <in>system_stm32f4xx.h</in>
                     </df>
                     <df name="Source">
                       <df name="Templates">
@@ -208,11 +204,9 @@
                 <in>arm_common_tables.h</in>
                 <in>arm_const_structs.h</in>
                 <in>arm_math.h</in>
-                <in>cmsis_gcc.h</in>
                 <in>core_cm0.h</in>
                 <in>core_cm0plus.h</in>
                 <in>core_cm3.h</in>
-                <in>core_cm4.h</in>
                 <in>core_cm7.h</in>
                 <in>core_cmFunc.h</in>
                 <in>core_cmInstr.h</in>
@@ -225,46 +219,35 @@
             </df>
             <df name="core">
               <in>atomic_ops_impl_arm7.h</in>
-              <in>atomic_ops_impl_cortexMx.h</in>
               <in>cache_cortexMx.cpp</in>
-              <in>cache_cortexMx.h</in>
               <in>endianness_impl_arm7.h</in>
               <in>endianness_impl_cortexMx.h</in>
-              <in>interrupts.h</in>
               <in>interrupts_arm7.cpp</in>
               <in>interrupts_arm7.h</in>
               <in>interrupts_cortexMx.cpp</in>
               <in>interrupts_cortexMx.h</in>
               <in>memory_protection.h</in>
               <in>mpu_cortexMx.cpp</in>
-              <in>mpu_cortexMx.h</in>
             </df>
             <df name="drivers">
               <in>dcc.cpp</in>
-              <in>dcc.h</in>
               <in>sd_lpc2000.cpp</in>
               <in>sd_lpc2000.h</in>
               <in>sd_stm32f1.cpp</in>
               <in>sd_stm32f1.h</in>
               <in>sd_stm32f2_f4.cpp</in>
-              <in>sd_stm32f2_f4.h</in>
-              <in>serial.h</in>
               <in>serial_efm32.cpp</in>
               <in>serial_efm32.h</in>
               <in>serial_lpc2000.cpp</in>
               <in>serial_lpc2000.h</in>
               <in>serial_stm32.cpp</in>
-              <in>serial_stm32.h</in>
               <in>servo_stm32.cpp</in>
-              <in>servo_stm32.h</in>
               <in>stm32_hardware_rng.cpp</in>
-              <in>stm32_hardware_rng.h</in>
               <in>stm32_sgm.cpp</in>
               <in>stm32_sgm.h</in>
               <in>stm32_wd.cpp</in>
               <in>stm32_wd.h</in>
               <in>stm32f2_f4_i2c.cpp</in>
-              <in>stm32f2_f4_i2c.h</in>
             </df>
           </df>
           <df name="cortexM3_efm32gg">
@@ -523,11 +506,8 @@
               <df name="interfaces-impl">
                 <in>delays.cpp</in>
                 <in>gpio_impl.cpp</in>
-                <in>gpio_impl.h</in>
                 <in>portability.cpp</in>
-                <in>portability_impl.h</in>
               </df>
-              <in>arch_settings.h</in>
             </df>
             <df name="stm32f401re_nucleo">
               <df name="core">
@@ -536,7 +516,6 @@
               <df name="interfaces-impl">
                 <in>arch_registers_impl.h</in>
                 <in>bsp.cpp</in>
-                <in>bsp_impl.h</in>
               </df>
             </df>
             <df name="stm32f401vc_stm32f4discovery">
@@ -566,7 +545,6 @@
               <df name="interfaces-impl">
                 <in>arch_registers_impl.h</in>
                 <in>bsp.cpp</in>
-                <in>bsp_impl.h</in>
               </df>
             </df>
             <df name="stm32f407vg_thermal_test_chip">
@@ -763,7 +741,6 @@
             </df>
             <df name="cortexM4_stm32f4">
               <df name="stm32f401re_nucleo">
-                <in>board_settings.h</in>
               </df>
               <df name="stm32f401vc_stm32f4discovery">
                 <in>board_settings.h</in>
@@ -772,7 +749,6 @@
                 <in>board_settings.h</in>
               </df>
               <df name="stm32f407vg_stm32f4discovery">
-                <in>board_settings.h</in>
               </df>
               <df name="stm32f407vg_thermal_test_chip">
                 <in>board_settings.h</in>
@@ -807,138 +783,97 @@
               </df>
             </df>
           </df>
-          <in>miosix_settings.h</in>
         </df>
         <df name="e20">
-          <in>callback.h</in>
           <in>e20.cpp</in>
-          <in>e20.h</in>
           <in>unmember.cpp</in>
-          <in>unmember.h</in>
         </df>
         <df name="filesystem">
           <df name="console">
             <in>console_device.cpp</in>
-            <in>console_device.h</in>
           </df>
           <df name="devfs">
             <in>devfs.cpp</in>
-            <in>devfs.h</in>
           </df>
           <df name="fat32">
             <in>ccsbcs.cpp</in>
             <in>diskio.cpp</in>
-            <in>diskio.h</in>
             <in>fat32.cpp</in>
-            <in>fat32.h</in>
             <in>ff.cpp</in>
-            <in>ff.h</in>
-            <in>ffconf.h</in>
-            <in>integer.h</in>
             <in>wtoupper.cpp</in>
           </df>
           <df name="mountpointfs">
             <in>mountpointfs.cpp</in>
-            <in>mountpointfs.h</in>
           </df>
           <in>file.cpp</in>
-          <in>file.h</in>
           <in>file_access.cpp</in>
-          <in>file_access.h</in>
-          <in>ioctl.h</in>
           <in>stringpart.cpp</in>
-          <in>stringpart.h</in>
         </df>
         <df name="interfaces">
           <in>arch_registers.h</in>
-          <in>atomic_ops.h</in>
-          <in>bsp.h</in>
-          <in>delays.h</in>
           <in>endianness.h</in>
           <in>gpio.h</in>
-          <in>portability.h</in>
         </df>
         <df name="kernel">
           <df name="scheduler">
             <df name="control">
               <in>control_scheduler.cpp</in>
-              <in>control_scheduler.h</in>
-              <in>control_scheduler_types.h</in>
-              <in>parameters.h</in>
             </df>
             <df name="edf">
               <in>edf_scheduler.cpp</in>
-              <in>edf_scheduler.h</in>
-              <in>edf_scheduler_types.h</in>
             </df>
             <df name="priority">
               <in>priority_scheduler.cpp</in>
-              <in>priority_scheduler.h</in>
-              <in>priority_scheduler_types.h</in>
             </df>
-            <in>sched_types.h</in>
-            <in>scheduler.h</in>
-            <in>tick_interrupt.h</in>
           </df>
           <in>IRQDisplayPrint.cpp</in>
           <in>IRQDisplayPrint.h</in>
           <in>SystemMap.cpp</in>
-          <in>SystemMap.h</in>
           <in>elf_program.cpp</in>
-          <in>elf_program.h</in>
-          <in>elf_types.h</in>
           <in>error.cpp</in>
-          <in>error.h</in>
-          <in>intrusive.h</in>
           <in>kernel.cpp</in>
-          <in>kernel.h</in>
-          <in>logging.h</in>
           <in>process.cpp</in>
-          <in>process.h</in>
           <in>process_pool.cpp</in>
-          <in>process_pool.h</in>
           <in>pthread.cpp</in>
-          <in>pthread_private.h</in>
-          <in>queue.h</in>
           <in>stage_2_boot.cpp</in>
-          <in>stage_2_boot.h</in>
           <in>sync.cpp</in>
-          <in>sync.h</in>
           <in>timeconversion.cpp</in>
-          <in>timeconversion.h</in>
         </df>
         <df name="stdlib_integration">
           <in>libc_integration.cpp</in>
-          <in>libc_integration.h</in>
           <in>libstdcpp_integration.cpp</in>
-          <in>libstdcpp_integration.h</in>
         </df>
         <df name="util">
           <in>crc16.cpp</in>
-          <in>crc16.h</in>
           <in>lcd44780.cpp</in>
-          <in>lcd44780.h</in>
           <in>software_i2c.h</in>
           <in>software_spi.h</in>
           <in>unicode.cpp</in>
-          <in>unicode.h</in>
           <in>util.cpp</in>
-          <in>util.h</in>
           <in>version.cpp</in>
-          <in>version.h</in>
         </df>
         <in>miosix.h</in>
       </df>
       <df name="miosix_np_2">
       </df>
       <df name="NN">
+        <df name="Drivers">
+          <df name="STM32F4xx_HAL_Driver">
+            <df name="Src">
+              <in>stm32f4xx_hal.c</in>
+              <in>stm32f4xx_hal_cortex.c</in>
+              <in>stm32f4xx_hal_crc.c</in>
+              <in>stm32f4xx_hal_rcc.c</in>
+            </df>
+          </df>
+        </df>
         <df name="Inc">
           <in>RTE_Components.h</in>
           <in>app_x-cube-ai.h</in>
           <in>constants_ai.h</in>
-          <in>lstm.h</in>
-          <in>lstm_data.h</in>
           <in>main.h</in>
+          <in>network.h</in>
+          <in>network_data.h</in>
           <in>stm32f4xx_hal_conf.h</in>
           <in>stm32f4xx_it.h</in>
         </df>
@@ -948,57 +883,25 @@
               <df name="Inc">
                 <in>ai_common_config.h</in>
                 <in>ai_datatypes_defines.h</in>
-                <in>ai_datatypes_format.h</in>
                 <in>ai_datatypes_internal.h</in>
                 <in>ai_log.h</in>
                 <in>ai_math_helpers.h</in>
                 <in>ai_network_inspector.h</in>
-                <in>ai_platform.h</in>
-                <in>ai_platform_interface.h</in>
-                <in>core_common.h</in>
                 <in>core_convert.h</in>
-                <in>core_datatypes.h</in>
                 <in>core_log.h</in>
                 <in>core_net_inspect.h</in>
                 <in>core_net_inspect_interface.h</in>
-                <in>datatypes_network.h</in>
                 <in>formats_list.h</in>
                 <in>layers.h</in>
-                <in>layers_common.h</in>
-                <in>layers_conv2d.h</in>
                 <in>layers_dense.h</in>
                 <in>layers_generic.h</in>
                 <in>layers_list.h</in>
-                <in>layers_nl.h</in>
                 <in>layers_norm.h</in>
                 <in>layers_pool.h</in>
                 <in>layers_rnn.h</in>
                 <in>layers_sm.h</in>
               </df>
               <df name="Lib">
-              </df>
-            </df>
-            <df name="Application">
-              <df name="Validation">
-                <df name="Inc">
-                  <in>aiPbMgr.h</in>
-                  <in>aiTestUtility.h</in>
-                  <in>aiValidation.h</in>
-                  <in>pb.h</in>
-                  <in>pb_common.h</in>
-                  <in>pb_decode.h</in>
-                  <in>pb_encode.h</in>
-                  <in>stm32msg.pb.h</in>
-                </df>
-                <df name="Src">
-                  <in>aiPbMgr.c</in>
-                  <in>aiTestUtility.c</in>
-                  <in>aiValidation.c</in>
-                  <in>pb_common.c</in>
-                  <in>pb_decode.c</in>
-                  <in>pb_encode.c</in>
-                  <in>stm32msg.pb.c</in>
-                </df>
               </df>
             </df>
           </df>
@@ -1010,6 +913,8 @@
           <in>lstm.c</in>
           <in>lstm_data.c</in>
           <in>main.c</in>
+          <in>network.c</in>
+          <in>network_data.c</in>
           <in>stm32f4xx_hal_msp.c</in>
           <in>stm32f4xx_it.c</in>
           <in>system_stm32f4xx.c</in>

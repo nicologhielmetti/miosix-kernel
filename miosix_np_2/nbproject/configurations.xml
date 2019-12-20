@@ -71,6 +71,7 @@
               <in>serial_efm32.cpp</in>
               <in>serial_lpc2000.cpp</in>
               <in>serial_stm32.cpp</in>
+              <in>servo_stm32.cpp</in>
               <in>stm32_hardware_rng.cpp</in>
               <in>stm32f2_f4_i2c.cpp</in>
             </df>
@@ -360,15 +361,238 @@
         </df>
       </df>
       <df name="NN">
+        <df name="Drivers">
+          <df name="STM32F4xx_HAL_Driver">
+            <df name="Src">
+              <in>stm32f4xx_hal.c</in>
+              <in>stm32f4xx_hal_cortex.c</in>
+              <in>stm32f4xx_hal_crc.c</in>
+              <in>stm32f4xx_hal_rcc.c</in>
+            </df>
+          </df>
+        </df>
         <df name="Src">
           <in>aeabi_memclr.c</in>
           <in>aeabi_memcpy.c</in>
+          <in>app_x-cube-ai.c</in>
           <in>lstm.c</in>
           <in>lstm_data.c</in>
+          <in>main.c</in>
+          <in>network.c</in>
+          <in>network_data.c</in>
         </df>
       </df>
       <in>main.cpp</in>
     </df>
+    <logicalFolder name="miosix-kernel"
+                   displayName="miosix-kernel"
+                   projectFiles="true"
+                   root="D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel">
+      <logicalFolder name="IKS01A2_classes"
+                     displayName="IKS01A2_classes"
+                     projectFiles="true">
+      </logicalFolder>
+      <logicalFolder name="miosix" displayName="miosix" projectFiles="true">
+        <logicalFolder name="arch" displayName="arch" projectFiles="true">
+          <logicalFolder name="common" displayName="common" projectFiles="true">
+            <logicalFolder name="CMSIS" displayName="CMSIS" projectFiles="true">
+              <logicalFolder name="Device" displayName="Device" projectFiles="true">
+                <logicalFolder name="ST" displayName="ST" projectFiles="true">
+                  <logicalFolder name="STM32F4xx" displayName="STM32F4xx" projectFiles="true">
+                    <logicalFolder name="Include" displayName="Include" projectFiles="true">
+                      <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h</itemPath>
+                      <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h</itemPath>
+                      <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h</itemPath>
+                      <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h</itemPath>
+                    </logicalFolder>
+                    <logicalFolder name="Source" displayName="Source" projectFiles="true">
+                      <logicalFolder name="Templates" displayName="Templates" projectFiles="true">
+                      </logicalFolder>
+                    </logicalFolder>
+                  </logicalFolder>
+                </logicalFolder>
+              </logicalFolder>
+              <logicalFolder name="Include" displayName="Include" projectFiles="true">
+                <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include/cmsis_gcc.h</itemPath>
+                <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include/core_cm4.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="core" displayName="core" projectFiles="true">
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/core/atomic_ops_impl_cortexMx.h</itemPath>
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/core/cache_cortexMx.h</itemPath>
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/core/interrupts.h</itemPath>
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/core/mpu_cortexMx.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/drivers/dcc.h</itemPath>
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/drivers/sd_stm32f2_f4.h</itemPath>
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/drivers/serial.h</itemPath>
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/drivers/serial_stm32.h</itemPath>
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/drivers/servo_stm32.h</itemPath>
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/drivers/stm32_hardware_rng.h</itemPath>
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/drivers/stm32f2_f4_i2c.h</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="cortexM4_stm32f4"
+                         displayName="cortexM4_stm32f4"
+                         projectFiles="true">
+            <logicalFolder name="common" displayName="common" projectFiles="true">
+              <logicalFolder name="interfaces-impl"
+                             displayName="interfaces-impl"
+                             projectFiles="true">
+                <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common/interfaces-impl/gpio_impl.h</itemPath>
+                <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common/interfaces-impl/portability_impl.h</itemPath>
+              </logicalFolder>
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common/arch_settings.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="stm32f401re_nucleo"
+                           displayName="stm32f401re_nucleo"
+                           projectFiles="true">
+              <logicalFolder name="core" displayName="core" projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="interfaces-impl"
+                             displayName="interfaces-impl"
+                             projectFiles="true">
+                <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/stm32f401re_nucleo/interfaces-impl/bsp_impl.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="stm32f407vg_stm32f4discovery"
+                           displayName="stm32f407vg_stm32f4discovery"
+                           projectFiles="true">
+              <logicalFolder name="core" displayName="core" projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="interfaces-impl"
+                             displayName="interfaces-impl"
+                             projectFiles="true">
+                <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/stm32f407vg_stm32f4discovery/interfaces-impl/bsp_impl.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="config" displayName="config" projectFiles="true">
+          <logicalFolder name="arch" displayName="arch" projectFiles="true">
+            <logicalFolder name="cortexM4_stm32f4"
+                           displayName="cortexM4_stm32f4"
+                           projectFiles="true">
+              <logicalFolder name="stm32f401re_nucleo"
+                             displayName="stm32f401re_nucleo"
+                             projectFiles="true">
+                <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo/board_settings.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="stm32f407vg_stm32f4discovery"
+                             displayName="stm32f407vg_stm32f4discovery"
+                             projectFiles="true">
+                <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f407vg_stm32f4discovery/board_settings.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/miosix_settings.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="e20" displayName="e20" projectFiles="true">
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/e20/callback.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/e20/e20.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/e20/unmember.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="filesystem" displayName="filesystem" projectFiles="true">
+          <logicalFolder name="console" displayName="console" projectFiles="true">
+            <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/console/console_device.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="devfs" displayName="devfs" projectFiles="true">
+            <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/devfs/devfs.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="fat32" displayName="fat32" projectFiles="true">
+            <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/fat32/diskio.h</itemPath>
+            <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/fat32/fat32.h</itemPath>
+            <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/fat32/ff.h</itemPath>
+            <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/fat32/ffconf.h</itemPath>
+            <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/fat32/integer.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="mountpointfs"
+                         displayName="mountpointfs"
+                         projectFiles="true">
+            <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/mountpointfs/mountpointfs.h</itemPath>
+          </logicalFolder>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/file.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/file_access.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/ioctl.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/stringpart.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="interfaces" displayName="interfaces" projectFiles="true">
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/interfaces/atomic_ops.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/interfaces/bsp.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/interfaces/delays.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/interfaces/portability.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="kernel" displayName="kernel" projectFiles="true">
+          <logicalFolder name="scheduler" displayName="scheduler" projectFiles="true">
+            <logicalFolder name="control" displayName="control" projectFiles="true">
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/control/control_scheduler.h</itemPath>
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/control/control_scheduler_types.h</itemPath>
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/control/parameters.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="edf" displayName="edf" projectFiles="true">
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/edf/edf_scheduler.h</itemPath>
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/edf/edf_scheduler_types.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="priority" displayName="priority" projectFiles="true">
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/priority/priority_scheduler.h</itemPath>
+              <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/priority/priority_scheduler_types.h</itemPath>
+            </logicalFolder>
+            <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/sched_types.h</itemPath>
+            <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/scheduler.h</itemPath>
+            <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/tick_interrupt.h</itemPath>
+          </logicalFolder>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/SystemMap.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/elf_program.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/elf_types.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/error.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/intrusive.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/kernel.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/logging.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/process.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/process_pool.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/pthread_private.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/queue.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/stage_2_boot.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/sync.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/timeconversion.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="stdlib_integration"
+                       displayName="stdlib_integration"
+                       projectFiles="true">
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/stdlib_integration/libc_integration.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/stdlib_integration/libstdcpp_integration.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="util" displayName="util" projectFiles="true">
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/util/crc16.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/util/lcd44780.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/util/unicode.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/util/util.h</itemPath>
+          <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/util/version.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="NN" displayName="NN" projectFiles="true">
+        <logicalFolder name="Middlewares" displayName="Middlewares" projectFiles="true">
+          <logicalFolder name="ST" displayName="ST" projectFiles="true">
+            <logicalFolder name="AI" displayName="AI" projectFiles="true">
+              <logicalFolder name="Inc" displayName="Inc" projectFiles="true">
+                <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/NN/Middlewares/ST/AI/Inc/ai_datatypes_format.h</itemPath>
+                <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/NN/Middlewares/ST/AI/Inc/ai_platform.h</itemPath>
+                <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/NN/Middlewares/ST/AI/Inc/ai_platform_interface.h</itemPath>
+                <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/NN/Middlewares/ST/AI/Inc/core_common.h</itemPath>
+                <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/NN/Middlewares/ST/AI/Inc/core_datatypes.h</itemPath>
+                <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/NN/Middlewares/ST/AI/Inc/datatypes_network.h</itemPath>
+                <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/NN/Middlewares/ST/AI/Inc/layers_common.h</itemPath>
+                <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/NN/Middlewares/ST/AI/Inc/layers_conv2d.h</itemPath>
+                <itemPath>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/NN/Middlewares/ST/AI/Inc/layers_nl.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="Src" displayName="Src" projectFiles="true">
+        </logicalFolder>
+      </logicalFolder>
+    </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false"
@@ -406,6 +630,34 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../NN/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="../NN/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="../NN/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="../NN/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="0">
+        </cTool>
+      </item>
       <item path="../NN/Src/aeabi_memclr.c" ex="false" tool="0" flavor2="2">
         <cTool flags="0">
           <incDir>
@@ -416,6 +668,16 @@
       <item path="../NN/Src/aeabi_memcpy.c" ex="false" tool="0" flavor2="2">
         <cTool flags="0">
           <incDir>
+            <pElem>..</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../NN/Src/app_x-cube-ai.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="0">
+          <incDir>
+            <pElem>../NN/Middlewares/ST/AI/Inc</pElem>
+            <pElem>../NN/Inc</pElem>
+            <pElem>../NN/Drivers/CMSIS/Include</pElem>
             <pElem>..</pElem>
           </incDir>
         </cTool>
@@ -438,24 +700,56 @@
           </incDir>
         </cTool>
       </item>
+      <item path="../NN/Src/main.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="0">
+          <incDir>
+            <pElem>../NN/Drivers/CMSIS/Device/ST/STM32F4xx/Include</pElem>
+            <pElem>../NN/Drivers/STM32F4xx_HAL_Driver/Inc</pElem>
+            <pElem>../NN/Middlewares/ST/AI/Inc</pElem>
+            <pElem>../NN/Drivers/CMSIS/Include</pElem>
+            <pElem>../NN/Inc</pElem>
+            <pElem>..</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../NN/Src/network.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="0">
+          <incDir>
+            <pElem>../NN/Middlewares/ST/AI/Inc</pElem>
+            <pElem>..</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../NN/Src/network_data.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="0">
+          <incDir>
+            <pElem>../NN/Middlewares/ST/AI/Inc</pElem>
+            <pElem>..</pElem>
+          </incDir>
+        </cTool>
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../NN/Middlewares/ST/AI/Inc</pElem>
+            <pElem>../IKS01A2_classes</pElem>
+            <pElem>../miosix/interfaces</pElem>
             <pElem>..</pElem>
             <pElem>../miosix</pElem>
             <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="../miosix/arch/arm7_lpc2000/lpc2138_miosix_board/interfaces-impl/bsp.cpp"
@@ -486,31 +780,18 @@
             flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>../miosix/kernel</pElem>
             <pElem>../miosix/arch/common/CMSIS/Include</pElem>
-            <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/filesystem/console</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
             <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
             <pElem>../miosix/kernel/scheduler/priority</pElem>
             <pElem>../miosix/stdlib_integration</pElem>
             <pElem>../miosix/kernel/scheduler</pElem>
-            <pElem>../miosix/filesystem/console</pElem>
             <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
             <pElem>../miosix/config</pElem>
             <pElem>../miosix/kernel/scheduler/control</pElem>
-            <pElem>../miosix/interfaces</pElem>
             <pElem>../miosix</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/core</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/priority</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/stdlib_integration</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/console</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/control</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/interfaces</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -524,11 +805,6 @@
             <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
             <pElem>../miosix/config</pElem>
             <pElem>../miosix/arch/common/CMSIS/Include</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/core</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
             <pElem>../miosix</pElem>
           </incDir>
         </ccTool>
@@ -539,22 +815,20 @@
             flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
+            <pElem>../miosix/kernel</pElem>
             <pElem>../miosix/arch/common/drivers</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/filesystem</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="../miosix/arch/common/drivers/sd_stm32f2_f4.cpp"
@@ -563,24 +837,23 @@
             flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>../miosix/kernel</pElem>
             <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/kernel</pElem>
             <pElem>../miosix/arch/common/core</pElem>
+            <pElem>../miosix/filesystem/devfs</pElem>
             <pElem>../miosix/arch/common/drivers</pElem>
             <pElem>../miosix/kernel/scheduler</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
-            <pElem>../miosix/filesystem/devfs</pElem>
             <pElem>../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include</pElem>
-            <pElem>../miosix/kernel/scheduler/priority</pElem>
             <pElem>../miosix/stdlib_integration</pElem>
             <pElem>../miosix/filesystem</pElem>
             <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
             <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
             <pElem>../miosix/config</pElem>
             <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
             <pElem>../miosix/interfaces</pElem>
-            <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
-            <pElem>../miosix/arch/common</pElem>
             <pElem>../miosix</pElem>
           </incDir>
         </ccTool>
@@ -591,41 +864,49 @@
             flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>../miosix/kernel</pElem>
-            <pElem>../miosix/arch/common/drivers</pElem>
             <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix/kernel</pElem>
             <pElem>../miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
-            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
             <pElem>../miosix/filesystem/devfs</pElem>
-            <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/arch/common/drivers</pElem>
+            <pElem>../miosix/arch/common/core</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
             <pElem>../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include</pElem>
             <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
-            <pElem>../miosix/kernel/scheduler/priority</pElem>
             <pElem>../miosix/stdlib_integration</pElem>
             <pElem>../miosix/filesystem</pElem>
-            <pElem>../miosix/arch/common/core</pElem>
             <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
             <pElem>../miosix/config</pElem>
             <pElem>../miosix/kernel/scheduler/control</pElem>
             <pElem>../miosix/interfaces</pElem>
             <pElem>../miosix</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="../miosix/arch/common/drivers/servo_stm32.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../miosix/arch/common/drivers</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f407vg_stm32f4discovery</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/interfaces</pElem>
+            <pElem>../miosix</pElem>
             <pElem>../miosix/arch/common</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/drivers</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/devfs</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/priority</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/stdlib_integration</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/core</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/control</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/interfaces</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -635,22 +916,49 @@
             flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../miosix/arch/common/drivers</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include</pElem>
+            <pElem>../miosix/interfaces</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f407vg_stm32f4discovery</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
             <pElem>../miosix</pElem>
             <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
-            <pElem>../miosix/arch/common/drivers</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="../miosix/arch/common/drivers/stm32f2_f4_i2c.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix/arch/common/drivers</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f407vg_stm32f4discovery</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../miosix/util</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/interfaces</pElem>
+            <pElem>../miosix</pElem>
+            <pElem>../miosix/arch/common</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="../miosix/arch/cortexM3_stm32/common/interfaces-impl/delays.cpp"
@@ -802,16 +1110,43 @@
             ex="false"
             tool="1"
             flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>../miosix/interfaces</pElem>
+          </incDir>
+        </ccTool>
       </item>
       <item path="../miosix/arch/cortexM4_stm32f4/common/interfaces-impl/gpio_impl.cpp"
             ex="false"
             tool="1"
             flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+          </incDir>
+        </ccTool>
       </item>
       <item path="../miosix/arch/cortexM4_stm32f4/common/interfaces-impl/portability.cpp"
             ex="false"
             tool="1"
             flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/interfaces</pElem>
+          </incDir>
+        </ccTool>
       </item>
       <item path="../miosix/arch/cortexM4_stm32f4/stm32f401re_nucleo/core/stage_1_boot.cpp"
             ex="false"
@@ -846,29 +1181,26 @@
       <item path="../miosix/e20/e20.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
+            <pElem>../miosix/kernel</pElem>
             <pElem>../miosix/e20</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="../miosix/e20/unmember.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
             <pElem>../miosix/e20</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/e20</pElem>
             <pElem>../miosix</pElem>
           </incDir>
         </ccTool>
@@ -889,8 +1221,6 @@
             flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
-            <pElem>../miosix/interfaces</pElem>
             <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
             <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
             <pElem>../miosix/config</pElem>
@@ -906,22 +1236,13 @@
             flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
             <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
             <pElem>../miosix/filesystem/fat32</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="../miosix/filesystem/fat32/fat32.cpp"
@@ -930,39 +1251,28 @@
             flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
             <pElem>../miosix/filesystem/fat32</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="../miosix/filesystem/fat32/ff.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
-            <pElem>../miosix/interfaces</pElem>
             <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
             <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
             <pElem>../miosix/config</pElem>
             <pElem>../miosix/arch/common/CMSIS/Include</pElem>
             <pElem>../miosix</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/interfaces</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
             <pElem>../miosix/filesystem/fat32</pElem>
           </incDir>
         </ccTool>
@@ -973,8 +1283,6 @@
             flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
-            <pElem>../miosix/interfaces</pElem>
             <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
             <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
             <pElem>../miosix/config</pElem>
@@ -987,22 +1295,21 @@
       <item path="../miosix/filesystem/file.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
+            <pElem>../miosix/arch/common/core</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix/kernel</pElem>
             <pElem>../miosix/filesystem</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/interfaces</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../miosix</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="../miosix/filesystem/file_access.cpp"
@@ -1011,22 +1318,20 @@
             flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/interfaces</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
             <pElem>../miosix/filesystem</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="../miosix/filesystem/mountpointfs/mountpointfs.cpp"
@@ -1040,22 +1345,10 @@
             flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
             <pElem>../miosix/filesystem</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="../miosix/kernel/SystemMap.cpp" ex="false" tool="1" flavor2="4">
@@ -1069,25 +1362,16 @@
             <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
             <pElem>../miosix/config</pElem>
             <pElem>../miosix/kernel/scheduler/control</pElem>
-            <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
             <pElem>../miosix/arch/common/CMSIS/Include</pElem>
             <pElem>../miosix</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/priority</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/stdlib_integration</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/control</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
           </incDir>
         </ccTool>
       </item>
       <item path="../miosix/kernel/elf_program.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
             <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
             <pElem>../miosix/kernel/scheduler/priority</pElem>
             <pElem>../miosix/kernel</pElem>
@@ -1097,65 +1381,53 @@
             <pElem>../miosix/config</pElem>
             <pElem>../miosix/kernel/scheduler/control</pElem>
             <pElem>../miosix/arch/common/CMSIS/Include</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common</pElem>
             <pElem>../miosix</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/priority</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/stdlib_integration</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/control</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
           </incDir>
         </ccTool>
       </item>
       <item path="../miosix/kernel/error.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
+            <pElem>../miosix/arch/common/core</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix/filesystem/console</pElem>
             <pElem>../miosix/kernel</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="../miosix/kernel/kernel.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
             <pElem>../miosix/kernel</pElem>
+            <pElem>../miosix/arch/common/core</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/interfaces</pElem>
+            <pElem>../miosix</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="../miosix/kernel/process.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
             <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
             <pElem>../miosix/kernel/scheduler/priority</pElem>
             <pElem>../miosix/kernel</pElem>
@@ -1165,23 +1437,14 @@
             <pElem>../miosix/config</pElem>
             <pElem>../miosix/kernel/scheduler/control</pElem>
             <pElem>../miosix/arch/common/CMSIS/Include</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common</pElem>
             <pElem>../miosix</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/priority</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/stdlib_integration</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/control</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
           </incDir>
         </ccTool>
       </item>
       <item path="../miosix/kernel/process_pool.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
             <pElem>../miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
             <pElem>../miosix/kernel/scheduler/priority</pElem>
             <pElem>../miosix/kernel</pElem>
@@ -1199,22 +1462,20 @@
       <item path="../miosix/kernel/pthread.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
             <pElem>../miosix/kernel</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../miosix/interfaces</pElem>
+            <pElem>../miosix</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="../miosix/kernel/scheduler/control/control_scheduler.cpp"
@@ -1235,43 +1496,40 @@
       <item path="../miosix/kernel/stage_2_boot.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
+            <pElem>../miosix/arch/common/core</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix/filesystem/console</pElem>
             <pElem>../miosix/kernel</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/interfaces</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../miosix</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="../miosix/kernel/sync.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
             <pElem>../miosix/kernel</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/interfaces</pElem>
+            <pElem>../miosix</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="../miosix/kernel/timeconversion.cpp"
@@ -1281,7 +1539,6 @@
         <ccTool>
           <incDir>
             <pElem>../miosix/kernel</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel</pElem>
             <pElem>../miosix</pElem>
           </incDir>
         </ccTool>
@@ -1290,52 +1547,72 @@
             ex="false"
             tool="1"
             flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/arch/common/core</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix/filesystem/console</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../miosix</pElem>
+          </incDir>
+        </ccTool>
       </item>
       <item path="../miosix/stdlib_integration/libstdcpp_integration.cpp"
             ex="false"
             tool="1"
             flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>../miosix/arch/common/core</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../miosix/filesystem/console</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix</pElem>
+          </incDir>
+        </ccTool>
       </item>
       <item path="../miosix/util/crc16.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
             <pElem>../miosix/util</pElem>
+            <pElem>../miosix</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="../miosix/util/lcd44780.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
             <pElem>../miosix/util</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="../miosix/util/unicode.cpp" ex="false" tool="1" flavor2="4">
@@ -1349,49 +1626,48 @@
       <item path="../miosix/util/util.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
             <pElem>../miosix/util</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="../miosix/util/version.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
             <pElem>../miosix/util</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <folder path="0/NN">
         <cTool>
           <incDir>
             <pElem>../NN/Src</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>../NN</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/NN/Drivers">
+        <cTool>
+          <incDir>
+            <pElem>../NN/Drivers/STM32F4xx_HAL_Driver/Src</pElem>
+            <pElem>../NN/Drivers/CMSIS/Device/ST/STM32F4xx/Include</pElem>
+            <pElem>../NN/Drivers/CMSIS/Include</pElem>
+            <pElem>../NN/Drivers/STM32F4xx_HAL_Driver/Inc</pElem>
+            <pElem>..</pElem>
           </incDir>
         </cTool>
       </folder>
@@ -1401,7 +1677,6 @@
             <pElem>../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Source/Templates</pElem>
             <pElem>../miosix/arch/common/CMSIS/Include</pElem>
             <pElem>../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include</pElem>
-            <pElem>../miosix/arch/common</pElem>
             <pElem>../miosix</pElem>
           </incDir>
         </cTool>
@@ -1665,17 +1940,9 @@
       <folder path="0/miosix/arch/cortexM4_stm32f4/stm32f401re_nucleo/core">
         <ccTool>
           <incDir>
-            <pElem>../miosix/arch/cortexM4_stm32f4/stm32f401re_nucleo/core</pElem>
             <pElem>../miosix/arch/common/CMSIS/Include</pElem>
-            <pElem>../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include</pElem>
-            <pElem>../miosix/kernel</pElem>
-            <pElem>../miosix/arch/common/core</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/stm32f401re_nucleo/core</pElem>
             <pElem>../miosix</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/stm32f401re_nucleo/core</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/core</pElem>
           </incDir>
         </ccTool>
       </folder>
@@ -1683,17 +1950,16 @@
         <ccTool>
           <incDir>
             <pElem>../miosix/arch/cortexM4_stm32f4/stm32f401re_nucleo/interfaces-impl</pElem>
-            <pElem>../miosix/kernel</pElem>
-            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
             <pElem>../miosix/arch/common/core</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
             <pElem>../miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
-            <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
             <pElem>../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include</pElem>
             <pElem>../miosix/interfaces</pElem>
             <pElem>../miosix/kernel/scheduler/priority</pElem>
             <pElem>../miosix/stdlib_integration</pElem>
             <pElem>../miosix/kernel/scheduler</pElem>
-            <pElem>../miosix/filesystem/console</pElem>
             <pElem>../miosix/arch/common/drivers</pElem>
             <pElem>../miosix/filesystem</pElem>
             <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
@@ -1701,25 +1967,6 @@
             <pElem>../miosix/config</pElem>
             <pElem>../miosix/kernel/scheduler/control</pElem>
             <pElem>../miosix</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/stm32f401re_nucleo/interfaces-impl</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/core</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/interfaces</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/priority</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/stdlib_integration</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/console</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/drivers</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config</pElem>
-            <pElem>../../OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/control</pElem>
           </incDir>
         </ccTool>
       </folder>
@@ -1794,64 +2041,69 @@
       <folder path="0/miosix/filesystem/console">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
+            <pElem>../miosix/arch/common/core</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../miosix/filesystem/devfs</pElem>
             <pElem>../miosix/filesystem/console</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/filesystem</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../miosix</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/miosix/filesystem/devfs">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
+            <pElem>../miosix/arch/common/core</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
             <pElem>../miosix/filesystem/devfs</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/interfaces</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../miosix</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/miosix/filesystem/fat32">
+        <ccTool>
+          <incDir>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/interfaces</pElem>
+          </incDir>
         </ccTool>
       </folder>
       <folder path="0/miosix/filesystem/mountpointfs">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/interfaces</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
             <pElem>../miosix/filesystem/mountpointfs</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/miosix/kernel/scheduler">
@@ -1877,14 +2129,33 @@
       <folder path="0/miosix/kernel/scheduler/control">
         <ccTool>
           <incDir>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
             <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
           </incDir>
         </ccTool>
       </folder>
       <folder path="0/miosix/kernel/scheduler/edf">
         <ccTool>
           <incDir>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
             <pElem>../miosix/kernel/scheduler/edf</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
           </incDir>
         </ccTool>
       </folder>
@@ -1892,28 +2163,234 @@
         <ccTool>
           <incDir>
             <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
           </incDir>
         </ccTool>
       </folder>
-      <folder path="0/miosix/stdlib_integration">
+      <folder path="miosix-kernel/NN">
+        <cTool>
+          <incDir>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/NN/Src</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="miosix-kernel/miosix">
+        <cTool>
+          <incDir>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Source/Templates</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="miosix-kernel/miosix/arch/common/core">
         <ccTool>
           <incDir>
-            <pElem>..</pElem>
-            <pElem>../miosix</pElem>
-            <pElem>../miosix/arch/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM3_stm32/stm32f103ze_stm3210e-eval</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/common</pElem>
-            <pElem>../miosix/arch/cortexM4_stm32/stm32f407vg_stm32f4discovery</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/common</pElem>
-            <pElem>../miosix/arch/arm7_lpc2000/lpc2138_miosix_board</pElem>
-            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/core</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>COMPILING_MIOSIX</Elem>
-            <Elem>_MIOSIX</Elem>
-            <Elem>_POSIX_THREADS</Elem>
-          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="miosix-kernel/miosix/arch/cortexM4_stm32f4/stm32f401re_nucleo/core">
+        <ccTool>
+          <incDir>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/stm32f401re_nucleo/core</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="miosix-kernel/miosix/arch/cortexM4_stm32f4/stm32f401re_nucleo/interfaces-impl">
+        <ccTool>
+          <incDir>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/stm32f401re_nucleo/interfaces-impl</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/core</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/interfaces</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/priority</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/stdlib_integration</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/drivers</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/control</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="miosix-kernel/miosix/arch/cortexM4_stm32f4/stm32f407vg_stm32f4discovery/core">
+        <ccTool>
+          <incDir>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/stm32f407vg_stm32f4discovery/core</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="miosix-kernel/miosix/arch/cortexM4_stm32f4/stm32f407vg_stm32f4discovery/interfaces-impl">
+        <ccTool>
+          <incDir>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/stm32f407vg_stm32f4discovery/interfaces-impl</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/core</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/interfaces</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/priority</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/stdlib_integration</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/drivers</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f407vg_stm32f4discovery</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/control</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/stm32f407vg_stm32f4discovery</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="miosix-kernel/miosix/filesystem/console">
+        <ccTool>
+          <incDir>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/core</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/devfs</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/console</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/priority</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/stdlib_integration</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/control</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="miosix-kernel/miosix/filesystem/devfs">
+        <ccTool>
+          <incDir>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/core</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/devfs</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/interfaces</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/priority</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/stdlib_integration</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/control</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="miosix-kernel/miosix/filesystem/fat32">
+        <ccTool>
+          <incDir>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/interfaces</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="miosix-kernel/miosix/filesystem/mountpointfs">
+        <ccTool>
+          <incDir>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/interfaces</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/priority</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/stdlib_integration</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/control</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/filesystem/mountpointfs</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="miosix-kernel/miosix/kernel/scheduler/control">
+        <ccTool>
+          <incDir>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/priority</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/stdlib_integration</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/control</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="miosix-kernel/miosix/kernel/scheduler/edf">
+        <ccTool>
+          <incDir>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/priority</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/stdlib_integration</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/control</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/edf</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="miosix-kernel/miosix/kernel/scheduler/priority">
+        <ccTool>
+          <incDir>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/priority</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/stdlib_integration</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/config</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/kernel/scheduler/control</pElem>
+            <pElem>../../arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
+            <pElem>D:/OneDrive - Politecnico Di Milano/MSc/1st year/1st semester/Meteo_forecast_project/miosix-kernel/miosix</pElem>
+          </incDir>
         </ccTool>
       </folder>
     </conf>

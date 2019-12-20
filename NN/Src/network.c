@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * @file    lstm.c
+  * @file    network.c
   * @author  AST Embedded Analytics Research Platform
-  * @date    Wed Nov 20 12:44:17 2019
+  * @date    Thu Dec 19 18:54:18 2019
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention
@@ -20,7 +20,7 @@
 
 
 
-#include "lstm.h"
+#include "network.h"
 
 #include "ai_platform_interface.h"
 #include "ai_math_helpers.h"
@@ -44,23 +44,23 @@
 #define AI_TOOLS_API_VERSION_MICRO 0
 
 #undef AI_NET_OBJ_INSTANCE
-#define AI_NET_OBJ_INSTANCE g_lstm
+#define AI_NET_OBJ_INSTANCE g_network
  
-#undef AI_LSTM_MODEL_SIGNATURE
-#define AI_LSTM_MODEL_SIGNATURE     "4cef848bca268db507ee6ad4c330c5d6"
+#undef AI_NETWORK_MODEL_SIGNATURE
+#define AI_NETWORK_MODEL_SIGNATURE     "64e26b83ab8ac5b7ec879f6e6ec4f3b5"
 
 #ifndef AI_TOOLS_REVISION_ID
 #define AI_TOOLS_REVISION_ID     "(rev-4.1.0)"
 #endif
 
 #undef AI_TOOLS_DATE_TIME
-#define AI_TOOLS_DATE_TIME   "Wed Nov 20 12:44:17 2019"
+#define AI_TOOLS_DATE_TIME   "Thu Dec 19 18:54:18 2019"
 
 #undef AI_TOOLS_COMPILE_TIME
 #define AI_TOOLS_COMPILE_TIME    __DATE__ " " __TIME__
 
-#undef AI_LSTM_N_BATCHES
-#define AI_LSTM_N_BATCHES         (1)
+#undef AI_NETWORK_N_BATCHES
+#define AI_NETWORK_N_BATCHES         (1)
 
 /**  Forward network declaration section  *************************************/
 AI_STATIC ai_network AI_NET_OBJ_INSTANCE;
@@ -311,14 +311,14 @@ AI_NETWORK_OBJ_DECLARE(
   AI_BUFFER_OBJ_INIT(AI_BUFFER_FORMAT_U8,
                      1, 1, 480, 1,
                      NULL),
-  AI_TENSOR_LIST_IO_ENTRY(AI_FLAG_NONE, AI_LSTM_IN_NUM, &input_0_output),
-  AI_TENSOR_LIST_IO_ENTRY(AI_FLAG_NONE, AI_LSTM_OUT_NUM, &dense_output),
+  AI_TENSOR_LIST_IO_ENTRY(AI_FLAG_NONE, AI_NETWORK_IN_NUM, &input_0_output),
+  AI_TENSOR_LIST_IO_ENTRY(AI_FLAG_NONE, AI_NETWORK_OUT_NUM, &dense_output),
   &lstm_layer, 0, NULL)
 
 
 
 AI_DECLARE_STATIC
-ai_bool lstm_configure_activations(
+ai_bool network_configure_activations(
   ai_network* net_ctx, const ai_buffer* activation_buffer)
 {
   AI_ASSERT(net_ctx &&  activation_buffer && activation_buffer->data)
@@ -345,7 +345,7 @@ ai_bool lstm_configure_activations(
 
 
 AI_DECLARE_STATIC
-ai_bool lstm_configure_weights(
+ai_bool network_configure_weights(
   ai_network* net_ctx, const ai_buffer* weights_buffer)
 {
   AI_ASSERT(net_ctx &&  weights_buffer && weights_buffer->data)
@@ -396,7 +396,7 @@ ai_bool lstm_configure_weights(
 /**  PUBLIC APIs SECTION  *****************************************************/
 
 AI_API_ENTRY
-ai_bool ai_lstm_get_info(
+ai_bool ai_network_get_info(
   ai_handle network, ai_network_report* report)
 {
   ai_network* net_ctx = AI_NETWORK_ACQUIRE_CTX(network);
@@ -404,8 +404,8 @@ ai_bool ai_lstm_get_info(
   if ( report && net_ctx )
   {
     ai_network_report r = {
-      .model_name        = AI_LSTM_MODEL_NAME,
-      .model_signature   = AI_LSTM_MODEL_SIGNATURE,
+      .model_name        = AI_NETWORK_MODEL_NAME,
+      .model_signature   = AI_NETWORK_MODEL_SIGNATURE,
       .model_datetime    = AI_TOOLS_DATE_TIME,
       
       .compile_datetime  = AI_TOOLS_COMPILE_TIME,
@@ -443,13 +443,13 @@ ai_bool ai_lstm_get_info(
 }
 
 AI_API_ENTRY
-ai_error ai_lstm_get_error(ai_handle network)
+ai_error ai_network_get_error(ai_handle network)
 {
   return ai_platform_network_get_error(network);
 }
 
 AI_API_ENTRY
-ai_error ai_lstm_create(
+ai_error ai_network_create(
   ai_handle* network, const ai_buffer* network_config)
 {
   return ai_platform_network_create(
@@ -459,40 +459,40 @@ ai_error ai_lstm_create(
 }
 
 AI_API_ENTRY
-ai_handle ai_lstm_destroy(ai_handle network)
+ai_handle ai_network_destroy(ai_handle network)
 {
   return ai_platform_network_destroy(network);
 }
 
 AI_API_ENTRY
-ai_bool ai_lstm_init(
+ai_bool ai_network_init(
   ai_handle network, const ai_network_params* params)
 {
   ai_network* net_ctx = ai_platform_network_init(network, params);
   if ( !net_ctx ) return false;
 
   ai_bool ok = true;
-  ok &= lstm_configure_weights(net_ctx, &params->params);
-  ok &= lstm_configure_activations(net_ctx, &params->activations);
+  ok &= network_configure_weights(net_ctx, &params->params);
+  ok &= network_configure_activations(net_ctx, &params->activations);
 
   return ok;
 }
 
 
 AI_API_ENTRY
-ai_i32 ai_lstm_run(
+ai_i32 ai_network_run(
   ai_handle network, const ai_buffer* input, ai_buffer* output)
 {
   return ai_platform_network_process(network, input, output);
 }
 
 AI_API_ENTRY
-ai_i32 ai_lstm_forward(ai_handle network, const ai_buffer* input)
+ai_i32 ai_network_forward(ai_handle network, const ai_buffer* input)
 {
   return ai_platform_network_process(network, input, NULL);
 }
 
-#undef AI_LSTM_MODEL_SIGNATURE
+#undef AI_NETWORK_MODEL_SIGNATURE
 #undef AI_NET_OBJ_INSTANCE
 #undef AI_TOOLS_VERSION_MAJOR
 #undef AI_TOOLS_VERSION_MINOR

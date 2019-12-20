@@ -8,6 +8,9 @@ KPATH := miosix
 CONFPATH := $(KPATH)
 include $(CONFPATH)/config/Makefile.inc
 
+
+
+
 ##
 ## List here subdirectories which contains makefiles
 ##
@@ -18,10 +21,15 @@ SUBDIRS := $(KPATH)
 ##
 SRC :=                                  \
 main.cpp				\
-NN/Src/lstm.c				\
-NN/Src/lstm_data.c			\
+NN/Src/network.c			\
+NN/Src/network_data.c			\
 NN/Src/aeabi_memclr.c			\
-NN/Src/aeabi_memcpy.c
+NN/Src/aeabi_memcpy.c			
+#NN/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c \
+#NN/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c \
+#NN/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c \
+#NN/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c 
+
 
 ##
 ## List here additional static libraries with relative path
@@ -32,7 +40,11 @@ NN/Src/aeabi_memcpy.c
 ##
 ## List here additional include directories (in the form -Iinclude_dir)
 ##
-INCLUDE_DIRS := -I./NN/Inc -I./NN/Middlewares/ST/AI/Inc -I./NN/Middlewares/ST/AI/Lib
+INCLUDE_DIRS :=  -I./NN/Inc -I./NN/Middlewares/ST/AI/Inc -I./NN/Middlewares/ST/AI/Lib
+	##-I./miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include -I./NN/Drivers/STM32F4xx_HAL_Driver/Inc
+	##-I./miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include
+	##-I./NN/Drivers/CMSIS/Device/ST/STM32F4xx/Include  
+	##-I./NN/Drivers/CMSIS/Include
 
 ##############################################################################
 ## You should not need to modify anything below                             ##
@@ -62,8 +74,10 @@ AFLAGS   := $(AFLAGS_BASE)
 LFLAGS   := $(LFLAGS_BASE)
 DFLAGS   := -MMD -MP
 
-LINK_LIBS := $(LIBS) -L$(KPATH) -Wl,--start-group -lmiosix -lstdc++ -lc \
+#LINK_LIBS := $(LIBS) -L$(KPATH) -Wl,--start-group -lmiosix -lstdc++ -lc \
              -lm -lgcc -Wl,--end-group
+#LINK_LIBS := $(LIBS) -Wl,--start-group -lmiosix $(ARCH_LIBS) -Wl,--end-group
+LINK_LIBS := $(LIBS) -L$(KPATH) -Wl,--start-group -lmiosix $(ARCH_LIBS) -Wl,--end-group
 
 all: all-recursive main
 
@@ -96,7 +110,8 @@ main: main.elf
 
 main.elf: $(OBJ) all-recursive
 	$(ECHO) "[LD  ] main.elf"
-	$(Q)$(CXX) $(LFLAGS) -o main.elf $(OBJ) $(KPATH)/$(BOOT_FILE) $(LINK_LIBS)
+	$(Q)$(ARM_NONE_EABI)/bin/arm-none-eabi-gcc $(LFLAGS) -o main.elf $(OBJ) $(KPATH)/$(BOOT_FILE) $(LINK_LIBS)
+	##$(Q)$(CXX) $(LFLAGS) -o main.elf $(OBJ) $(KPATH)/$(BOOT_FILE) 
 
 %.o: %.s
 	$(ECHO) "[AS  ] $<"
