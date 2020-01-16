@@ -25,10 +25,9 @@
 #include "miosix.h"
 #include "network.h"
 #include "network_data.h"
-#include "util/software_i2c.h"
 #include "IKS01A2_classes/lps22hb.h"
 
-
+const unsigned char lps22hb_addr_w = 0xBA;
 
 using namespace std;
 using namespace miosix;
@@ -51,52 +50,18 @@ struct NormPar {
     float max;
 } nnNormPar = {978.52708333, 1040.8893617};
 
-void initRCC();
+typedef Gpio<GPIOB_BASE,9>  sda;
+typedef Gpio<GPIOB_BASE,8>  scl;
+typedef Gpio<GPIOA_BASE,5>  led;
+lps22hb<sda,scl> pressure_sensor(lps22hb_addr_w);
 
-int main()
-{
-    initRCC();
-    
-    typedef Gpio<GPIOB_BASE,8> scl;
-    typedef Gpio<GPIOB_BASE,9> sda;
-    typedef Gpio<GPIOA_BASE,5> led;
-    typedef lps22hb<sda,scl> pressure_sensor;
-
-    pressure_sensor::init();
-
-    // network creation
-    ai_error err = ai_network_create(&network, (const ai_buffer*)AI_NETWORK_DATA_CONFIG);
-    if (err.type != AI_ERROR_NONE) {
-        printf("E: AI error in NN creation - type=%lu code=%lu\r\n", err.type, err.code);
-        // TODO: error handling
-    } else {
-        printf("NN successfully created.\n");
-    }
-    
-    // network initialization
-    const ai_network_params params = {
-       AI_NETWORK_DATA_WEIGHTS(ai_network_data_weights_get()),
-       AI_NETWORK_DATA_ACTIVATIONS(activations) };
-
-    if (!ai_network_init(network, &params)) {
-        err = ai_network_get_error(network);
-        printf("E: AI error in NN initialization - type=%lu code=%lu\r\n", err.type, err.code);
-        // TODO: error handling
-    } else {
-       printf("NN successfully initialized.\n");
-    }
-
-    // input examples
-    static ai_float in_data[AI_NETWORK_IN_1_SIZE] = {1005.5957446808509, 1006.9659574468085, 1009.7425531914895};
-    
-    // network prediction
-    runNN(network, normalizeInput(in_data));
-    printf("Prediction result: %f\n", denormalizeOutput(nn_outdata[0]));
-    
-    // network deallocation
-    ai_network_destroy(network);
- }
-
+void initRCC(){
+    //enable CRC pheripherals
+    FastInterruptDisableLock a;
+    RCC->AHB1ENR |= RCC_AHB1ENR_CRCEN;
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
+    CRC->CR = CRC_CR_RESET;
+}
 
 int runNN(ai_handle network, void* input) {
     ai_i32 nbatch;
@@ -130,6 +95,55 @@ float denormalizeOutput(float output) {
     return output*(nnNormPar.max - nnNormPar.min) + nnNormPar.min;
 }
 
+int main()
+{    
+    initRCC();
+    
+    printf("unsigned int size %d \n", sizeof(unsigned int));
+    printf("float size %d \n", sizeof(float));
+    
+    pressure_sensor.init();
+    printf("After init \n");
+    for(;;)
+    {
+        //pressure_sensor.waitForFullFifo();
+        //printf("after interrupt");
+        Thread::sleep(1000);
+        printf("Pressure reading: %f \n",pressure_sensor.getLast32AvgPressure());
+    }
+    
+    // network creation
+    /*ai_error err = ai_network_create(&network, (const ai_buffer*)AI_NETWORK_DATA_CONFIG);
+    if (err.type != AI_ERROR_NONE) {
+        printf("E: AI error in NN creation - type=%lu code=%lu\r\n", err.type, err.code);
+        // TODO: error handling
+    } else {
+        printf("NN successfully created.\n");
+    }
+    
+    // network initialization
+    const ai_network_params params = {
+       AI_NETWORK_DATA_WEIGHTS(ai_network_data_weights_get()),
+       AI_NETWORK_DATA_ACTIVATIONS(activations) };
+
+    if (!ai_network_init(network, &params)) {
+        err = ai_network_get_error(network);
+        printf("E: AI error in NN initialization - type=%lu code=%lu\r\n", err.type, err.code);
+        // TODO: error handling
+    } else {
+       printf("NN successfully initialized.\n");
+    }
+
+    // input examples
+    static ai_float in_data[AI_NETWORK_IN_1_SIZE] = {1005.5957446808509, 1006.9659574468085, 1009.7425531914895};
+    
+    // network prediction
+    runNN(network, normalizeInput(in_data));
+    printf("Prediction result: %f\n", denormalizeOutput(nn_outdata[0]));
+    
+    // network deallocation
+    ai_network_destroy(network);*/
+ }
 
 /*
     typedef Gpio<GPIOA_BASE,5> led;
@@ -142,10 +156,3 @@ float denormalizeOutput(float output) {
         Thread::sleep(1000);
     }
  */
-
-void initRCC(){
-    //enable CRC pheripherals
-    FastInterruptDisableLock a;
-    RCC->AHB1ENR |= RCC_AHB1ENR_CRCEN;
-    CRC->CR = CRC_CR_RESET;
-}

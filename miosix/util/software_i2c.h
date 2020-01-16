@@ -28,6 +28,8 @@
 #ifndef SOFTWARE_I2C_H
 #define	SOFTWARE_I2C_H
 
+#define DEBUG_I2C 1
+
 #include "interfaces/gpio.h"
 #include "interfaces/delays.h"
 
@@ -157,6 +159,7 @@ bool SoftwareI2C<SDA, SCL, stretchTimeout, fast>::send(unsigned char data)
     delayUs(fast ? 1 : 3);
     SCL::low();
     delayUs(fast ? 1 : 3);
+    if(DEBUG_I2C) printf("i2c::ACK -> %d \n", result && timeout);
     return result && timeout;
 }
 
