@@ -28,7 +28,7 @@
 #ifndef SOFTWARE_I2C_H
 #define	SOFTWARE_I2C_H
 
-#define DEBUG_I2C 1
+#define DEBUG_I2C 0
 
 #include "interfaces/gpio.h"
 #include "interfaces/delays.h"

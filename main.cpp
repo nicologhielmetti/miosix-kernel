@@ -53,7 +53,7 @@ struct NormPar {
 typedef Gpio<GPIOB_BASE,9>  sda;
 typedef Gpio<GPIOB_BASE,8>  scl;
 typedef Gpio<GPIOA_BASE,5>  led;
-lps22hb<sda,scl> pressure_sensor(lps22hb_addr_w);
+lps22hb<sda,scl> pressure_sensor;
 
 void initRCC(){
     //enable CRC pheripherals
@@ -106,10 +106,9 @@ int main()
     printf("After init \n");
     for(;;)
     {
-        //pressure_sensor.waitForFullFifo();
+        pressure_sensor.waitForFullFifo();
         //printf("after interrupt");
-        Thread::sleep(1000);
-        printf("Pressure reading: %f \n",pressure_sensor.getLast32AvgPressure());
+        //printf("Pressure reading: %f \n",pressure_sensor.getLast32AvgPressure());
     }
     
     // network creation

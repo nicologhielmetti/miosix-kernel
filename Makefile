@@ -24,7 +24,7 @@ main.cpp				\
 NN/Src/network.c			\
 NN/Src/network_data.c			\
 NN/Src/aeabi_memclr.c			\
-NN/Src/aeabi_memcpy.c			
+NN/Src/aeabi_memcpy.c		        
 #NN/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c \
 #NN/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c \
 #NN/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c \
