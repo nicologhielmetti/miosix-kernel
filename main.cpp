@@ -50,16 +50,11 @@ struct NormPar {
     float max;
 } nnNormPar = {978.52708333, 1040.8893617};
 
-typedef Gpio<GPIOB_BASE,9>  sda;
-typedef Gpio<GPIOB_BASE,8>  scl;
-typedef Gpio<GPIOA_BASE,5>  led;
-lps22hb<sda,scl> pressure_sensor;
-
 void initRCC(){
     //enable CRC pheripherals
     FastInterruptDisableLock a;
     RCC->AHB1ENR |= RCC_AHB1ENR_CRCEN;
-    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
+    RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN;
     CRC->CR = CRC_CR_RESET;
 }
 
@@ -95,20 +90,21 @@ float denormalizeOutput(float output) {
     return output*(nnNormPar.max - nnNormPar.min) + nnNormPar.min;
 }
 
+typedef Gpio<GPIOB_BASE,9>  sda;
+typedef Gpio<GPIOB_BASE,8>  scl;
+typedef Gpio<GPIOA_BASE,5>  led;
+lps22hb<sda,scl> pressure_sensor;
+
 int main()
 {    
     initRCC();
     
-    printf("unsigned int size %d \n", sizeof(unsigned int));
-    printf("float size %d \n", sizeof(float));
-    
     pressure_sensor.init();
-    printf("After init \n");
+    if(pressure_sensor.hasDataToRead()) pressure_sensor.getLast32AvgPressure();
     for(;;)
     {
         pressure_sensor.waitForFullFifo();
-        //printf("after interrupt");
-        //printf("Pressure reading: %f \n",pressure_sensor.getLast32AvgPressure());
+        printf("Pressure reading: %f \n",pressure_sensor.getLast32AvgPressure());
     }
     
     // network creation
@@ -143,15 +139,3 @@ int main()
     // network deallocation
     ai_network_destroy(network);*/
  }
-
-/*
-    typedef Gpio<GPIOA_BASE,5> led;
-
-    for(;;)
-    {
-        led::high();
-        Thread::sleep(1000);
-        led::low();
-        Thread::sleep(1000);
-    }
- */

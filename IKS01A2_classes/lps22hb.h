@@ -49,28 +49,32 @@ typedef enum {
 } OdrMode;
 
 
-/*void __attribute__((naked))EXTI15_10_IRQHandler()
-{
-    saveContext();
-    asm volatile("bl _Z17EXTI10HandlerImplv");
-    restoreContext();
-}
-
-void __attribute__((used))EXTI10HandlerImpl()
-{
-    EXTI->PR=EXTI_PR_PR10;
-    if(waiting==nullptr) return;
-    waiting->IRQwakeup();
-    if(waiting->IRQgetPriority() > Thread::IRQgetCurrentThread()->IRQgetPriority())
+    void __attribute__((naked))EXTI15_10_IRQHandler()
     {
-        Scheduler::IRQfindNextThread();
+        saveContext();
+        asm volatile("bl _Z17EXTI10HandlerImplv");
+        restoreContext();
     }
-    waiting=nullptr;
-}*/
+
+    void __attribute__((used))EXTI10HandlerImpl()
+    {
+        EXTI->PR=EXTI_PR_PR10;
+        if(waiting==nullptr) return;
+        waiting->IRQwakeup();
+        if(waiting->IRQgetPriority() > Thread::IRQgetCurrentThread()->IRQgetPriority())
+        {
+            Scheduler::IRQfindNextThread();
+        }
+        waiting=nullptr;
+    }
 
 template <typename SDA, typename SCL, unsigned stretchTimeout=50, bool fast=false>
 class lps22hb {
 public:
+    int hasDataToRead()
+    {
+        return int_fifo::value();
+    }
     
     float getLast32AvgPressure()
     {
@@ -95,20 +99,16 @@ public:
                         i2c::recvWithNack();
                     else
                         i2c::recvWithAck();
-
             }
             for(int k=0; k<3; k++)
                 single_val |= (((uint32_t)tmp[k]) << (8*k));
             if(single_val & 0x00800000)
                 single_val |= 0xFF000000;
             single_val_float = single_val/4096.0f;
-            printf("val %f \n", single_val_float);
             running_mean = running_mean + (single_val_float - running_mean)/(i+1);
-            printf("mean %f \n", running_mean);
-            //Thread::sleep(100);
+            printf("%f \n", single_val_float);
         }
         
-        printf("out of the cycle");
         i2c::sendStop();
         
         return running_mean;
@@ -116,26 +116,13 @@ public:
     
     void waitForFullFifo()
     {
-        /*FastInterruptDisableLock dLock;
+        FastInterruptDisableLock dLock;
         waiting=Thread::IRQgetCurrentThread();
         while(waiting)
         {
             Thread::IRQwait();
             FastInterruptEnableLock eLock(dLock);
             Thread::yield();
-        }*/
-        int i = 0;
-        for(;;)
-        {
-            if(i == 200) 
-            {
-                printf("\n");
-                i = 0;
-            }
-            //if(i % 1000 == 0) iprintf("avg 32 values of pressure -> %f \n",getLast32AvgPressure());
-            printf("%d",int_fifo::value());
-            if(int_fifo::value() == 1) printf("avg 32 values of pressure -> %f \n",getLast32AvgPressure());
-            i++;
         }
     }
     
@@ -144,53 +131,32 @@ public:
         //set interrupt gpio pin to input mode
         int_fifo::mode(Mode::INPUT);
         
-        /*const int ppre1=(RCC->CFGR & RCC_CFGR_PPRE1)>>10;
-        const int divFactor= (ppre1 & 1<<2) ? (2<<(ppre1 & 0x3)) : 1;
-        const int fpclk1=SystemCoreClock/divFactor;
-        iprintf("fpclk1=%d\n",fpclk1);
+        SYSCFG->EXTICR[2] |= SYSCFG_EXTICR3_EXTI10_PB;
         
-        RCC->APB1ENR |= RCC_APB1ENR_I2C1EN; //Enable clock gating
-        RCC_SYNC();
-        
-        I2C1->CR1=I2C_CR1_SWRST;
-        I2C1->CR1=0;
-        I2C1->CR2=fpclk1/1000000; //Set pclk frequency in MHz
-        //This sets the duration of both Thigh and Tlow (master mode))
-        const int i2cSpeed=100000; //100KHz
-        I2C1->CCR=std::max(4,fpclk1/(2*i2cSpeed)); //Duty=2, standard mode (100KHz)
-        //Datasheet says with I2C @ 100KHz, maximum SCL rise time is 1000ns
-        //Need to change formula if I2C needs to run @ 400kHz
-        I2C1->TRISE=fpclk1/1000000+1;
-        I2C1->CR1=I2C_CR1_PE; //Enable peripheral*/
-        
-        //EXTI->IMR |= EXTI_IMR_MR10;
-        //EXTI->FTSR |= EXTI_FTSR_TR10;
+        EXTI->IMR |= EXTI_IMR_MR10;
+        EXTI->RTSR |= EXTI_RTSR_TR10;
         
         //init I2C
         i2c::init();   
         //rebootSensors();
-        //enable FIFO
-        
+        //set automatic increment true for reading multiple bytes
         setAutoIncRegAddr(1);
-        enableOrDisableFifo(1);
+        //enable FIFO
+        enableFifo(1);
         //set FIFO mode
         setFifoMode(FifoMode::STREAM_MODE);
         //set BDU to continuous mode
         setBduMode(BduMode::BDU_CONTINUOUS_UPDATE); 
         //set ODR to 1Hz
         setOdrFreq(OdrMode::ODR_1HZ);
-        //set automatic increment true for reading multiple bytes
-        //setAutoIncRegAddr(0);
         //enable interrupt and set priority
-        //NVIC_SetPriority(EXTI15_10_IRQn, 15);
-        //NVIC_ClearPendingIRQ(EXTI15_10_IRQn);
-        //NVIC_EnableIRQ(EXTI15_10_IRQn);
+        NVIC_SetPriority(EXTI15_10_IRQn, 15);
+        NVIC_ClearPendingIRQ(EXTI15_10_IRQn);
+        NVIC_EnableIRQ(EXTI15_10_IRQn);
         //enable interrupt on overrun of the fifo
-        //enableInterruptOnOvrFifo(1);
         enableInterruptOnFullFifo(1);
     }
     
-    //lps22hb(const unsigned char& addr_w): addr_w(addr_w){/*init();*/};
     lps22hb(){};
     
 private:    
@@ -244,11 +210,11 @@ private:
     void rebootSensors()
     {
         unsigned char ctrl_reg2 = readByteOfReg(CTRL_REG2);
-        //if(DEBUG_TEST)  printf("FIFO enable before -> 0x%x \n", ctrl_reg2);
-        //ctrl_reg2 &= ~FIFO_EN_MASK;
+        if(DEBUG_TEST)  printf("Reboot before -> 0x%x \n", ctrl_reg2);
+        ctrl_reg2 &= ~FIFO_EN_MASK;
         ctrl_reg2 |= 0x01 << BOOT_BIT;
         writeByteToReg(CTRL_REG2, ctrl_reg2);
-        //if(DEBUG_TEST)  printf("FIFO enable after -> 0x%x \n", readByteOfReg(CTRL_REG2));
+        if(DEBUG_TEST)  printf("Reboot after -> 0x%x \n", readByteOfReg(CTRL_REG2));
     }
     
     void setAutoIncRegAddr(const unsigned char& mode)
@@ -262,7 +228,7 @@ private:
     }
     
     //mode = 1 -> enable, mode = 0 -> disable
-    void enableOrDisableFifo(const unsigned char& mode)
+    void enableFifo(const unsigned char& mode)
     {
         unsigned char ctrl_reg2 = readByteOfReg(CTRL_REG2);
         if(DEBUG_TEST)  printf("FIFO enable before -> 0x%X \n", ctrl_reg2);

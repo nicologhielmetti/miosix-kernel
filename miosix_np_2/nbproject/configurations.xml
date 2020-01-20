@@ -13491,6 +13491,10 @@
           </cTool>
           <ccTool>
             <standard>8</standard>
+            <incDir>
+              <pElem>../IKS01A2_classes</pElem>
+              <pElem>../NN</pElem>
+            </incDir>
             <preprocessorList>
               <Elem>COMPILING_MIOSIX</Elem>
               <Elem>PARSING_FROM_IDE</Elem>
