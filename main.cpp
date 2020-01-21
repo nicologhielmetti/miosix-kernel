@@ -26,6 +26,7 @@
 #include "network.h"
 #include "network_data.h"
 #include "IKS01A2_classes/lps22hb.h"
+#include "SyncQueue/SyncQueue.h"
 
 const unsigned char lps22hb_addr_w = 0xBA;
 
@@ -51,7 +52,7 @@ struct NormPar {
 } nnNormPar = {978.52708333, 1040.8893617};
 
 void initRCC(){
-    //enable CRC pheripherals
+    //enable RRC pheripherals
     FastInterruptDisableLock a;
     RCC->AHB1ENR |= RCC_AHB1ENR_CRCEN;
     RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN;
@@ -92,19 +93,21 @@ float denormalizeOutput(float output) {
 
 typedef Gpio<GPIOB_BASE,9>  sda;
 typedef Gpio<GPIOB_BASE,8>  scl;
-typedef Gpio<GPIOA_BASE,5>  led;
-lps22hb<sda,scl> pressure_sensor;
+lps22hb<sda,scl> pressure_sensor(0xBA); 
+SyncQueue<float> in_queue;
 
 int main()
 {    
     initRCC();
-    
+    //start NN thread passing in_queue
     pressure_sensor.init();
     if(pressure_sensor.hasDataToRead()) pressure_sensor.getLast32AvgPressure();
     for(;;)
     {
         pressure_sensor.waitForFullFifo();
-        printf("Pressure reading: %f \n",pressure_sensor.getLast32AvgPressure());
+        float pressure_val = pressure_sensor.getLast32AvgPressure();
+        printf("Pressure reading: %f \n", pressure_val);
+        in_queue.put(pressure_val);
     }
     
     // network creation

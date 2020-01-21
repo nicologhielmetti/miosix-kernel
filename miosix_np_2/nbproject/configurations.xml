@@ -382,6 +382,9 @@
           <in>network_data.c</in>
         </df>
       </df>
+      <df name="SyncQueue">
+        <in>SyncQueue.h</in>
+      </df>
       <in>main.cpp</in>
     </df>
     <logicalFolder name="miosix-kernel"
@@ -715,6 +718,8 @@
             <pElem>..</pElem>
           </incDir>
         </cTool>
+      </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
@@ -2413,6 +2418,8 @@
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -2956,6 +2963,8 @@
         </makeTool>
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -3575,6 +3584,8 @@
         </makeTool>
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -4197,6 +4208,8 @@
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -4667,6 +4680,8 @@
         </makeTool>
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -5289,6 +5304,8 @@
         </makeTool>
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -5929,6 +5946,8 @@
             <pElem>..</pElem>
           </incDir>
         </cTool>
+      </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
@@ -7170,6 +7189,8 @@
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -7801,6 +7822,8 @@
         </makeTool>
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -8434,6 +8457,8 @@
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -8904,6 +8929,8 @@
         </makeTool>
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -9390,6 +9417,8 @@
         </makeTool>
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -10024,6 +10053,8 @@
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -10515,6 +10546,8 @@
         </makeTool>
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -11184,6 +11217,8 @@
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="9">
         <ccTool>
           <incDir>
@@ -11674,6 +11709,8 @@
         </makeTool>
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="9">
         <ccTool>
@@ -12170,6 +12207,8 @@
         </makeTool>
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="9">
         <ccTool>
@@ -12878,6 +12917,8 @@
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -13510,6 +13551,8 @@
         </makeTool>
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -14325,6 +14368,8 @@
         </makeTool>
       </makefileType>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">

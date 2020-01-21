@@ -1007,6 +1007,9 @@
       </df>
       <df name="pdf_references">
       </df>
+      <df name="SyncQueue">
+        <in>SyncQueue.h</in>
+      </df>
       <in>main.cpp</in>
     </df>
   </logicalFolder>
