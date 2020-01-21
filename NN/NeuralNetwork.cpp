@@ -6,8 +6,8 @@
  */
 
 #include "NeuralNetwork.h"
-#include "../NN/Inc/network.h"
-#include "../NN/Inc/network_data.h"
+#include <iostream>
+#include <cstdio>
 
 NeuralNetwork::NeuralNetwork(SyncQueue<float> &queue, float &normMin, float &normMax) 
             : queue(queue), normMin(normMin), normMax(normMax)  
@@ -25,9 +25,12 @@ NeuralNetwork::~NeuralNetwork()
 
 void NeuralNetwork::run() 
 {
+    printf("dentro il run\n");
     while(!quit.load()) 
     {
+        printf("dentro il while\n");
         float value = queue.get();
+        printf("pressione");
         if (acquiredValues == 0) 
         {
             incrementalMean = value;
@@ -39,10 +42,11 @@ void NeuralNetwork::run()
             acquiredValues++;
             incrementalMean = incrementalMean + (value - incrementalMean)/acquiredValues;
         }
-        if (acquiredValues == 900) 
+        if (acquiredValues == 1) 
         {
             //8h has passed, time to predict
             enqueue(in_data, incrementalMean);
+            printf("Mean: %f\n", incrementalMean);
             runNN(network, normalizeInput(in_data));
             printf("Prediction result: %f\n", denormalizeOutput(nn_outdata[0]));
             acquiredValues = 0;

@@ -26,7 +26,7 @@
 #include "miosix.h"
 #include "IKS01A2_classes/lps22hb.h"
 #include "SyncQueue/SyncQueue.h"
-#include "NN/NeuralNetwork.h"
+#include "NeuralNetwork.h"
 
 const unsigned char lps22hb_addr_w = 0xBA;
 

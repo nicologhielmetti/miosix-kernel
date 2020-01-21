@@ -10,6 +10,8 @@
 
 #include "../SyncQueue/SyncQueue.h"
 #include "../ActiveObject/ActiveObject.h"
+#include "../NN/Inc/network.h"
+#include "../NN/Inc/network_data.h"
 
 class NeuralNetwork : public ActiveObject {
 public:
