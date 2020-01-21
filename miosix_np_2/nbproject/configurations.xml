@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="95">
+<configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root=".." name="0">
+      <df name="ActiveObject">
+        <in>ActiveObject.cpp</in>
+        <in>ActiveObject.h</in>
+      </df>
       <df name="IKS01A2_classes">
         <in>lps22hb.h</in>
       </df>
@@ -381,6 +385,7 @@
           <in>network.c</in>
           <in>network_data.c</in>
         </df>
+        <in>NeuralNetwork.h</in>
       </df>
       <df name="SyncQueue">
         <in>SyncQueue.h</in>
@@ -628,7 +633,13 @@
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
           <executablePath>../main.elf</executablePath>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="4">
+      </item>
       <item path="../NN/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c"
             ex="false"
             tool="0"
@@ -718,8 +729,6 @@
             <pElem>..</pElem>
           </incDir>
         </cTool>
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
@@ -1639,6 +1648,13 @@
           </incDir>
         </ccTool>
       </item>
+      <folder path="0/ActiveObject">
+        <ccTool>
+          <incDir>
+            <pElem>../ActiveObject</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
       <folder path="0/NN">
         <cTool>
           <incDir>
@@ -2415,8 +2431,18 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -2961,8 +2987,18 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -3582,8 +3618,18 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -4205,8 +4251,18 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -4678,8 +4734,18 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -5302,8 +5368,18 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -5914,8 +5990,18 @@
             <standard>8</standard>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../NN/Src/aeabi_memclr.c" ex="false" tool="0" flavor2="2">
         <cTool flags="1">
@@ -7186,8 +7272,18 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -7820,8 +7916,18 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -8454,8 +8560,18 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -8927,8 +9043,18 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -9415,8 +9541,18 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -10050,8 +10186,18 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -10544,8 +10690,18 @@
             </undefinedList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -11214,8 +11370,18 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -11707,8 +11873,18 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -12205,8 +12381,18 @@
             </undefinedList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -12914,8 +13100,18 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -13549,8 +13745,18 @@
             </undefinedList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -14366,8 +14572,18 @@
             </undefinedList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../IKS01A2_classes/lps22hb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../NN/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>

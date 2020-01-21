@@ -22,11 +22,13 @@
 
 #include <cstdio>
 #include <iostream>
+#include <kernel/kernel.h>
 #include "miosix.h"
 #include "network.h"
 #include "network_data.h"
 #include "IKS01A2_classes/lps22hb.h"
 #include "SyncQueue/SyncQueue.h"
+#include "NN/NeuralNetwork.h"
 
 const unsigned char lps22hb_addr_w = 0xBA;
 
@@ -34,22 +36,20 @@ using namespace std;
 using namespace miosix;
 
 // AI-related functions
-int runNN(ai_handle network, void* input);
+/*int runNN(ai_handle network, void* input);
 ai_float* normalizeInput(ai_float* input);
-float denormalizeOutput(float output);
+float denormalizeOutput(float output);*/
 
 // AI-related variables
-ai_handle network = AI_HANDLE_NULL;
-static ai_u8 activations[AI_NETWORK_DATA_ACTIVATIONS_SIZE];
-static ai_buffer nn_input[AI_NETWORK_IN_NUM] =  AI_NETWORK_IN;
+/*ai_handle network = AI_HANDLE_NULL;
+static ai_u8 activations[AI_NETWORK_DATA_ACTIVATIONS_SIZE];*/
+/*static ai_buffer nn_input[AI_NETWORK_IN_NUM] =  AI_NETWORK_IN;
 static ai_buffer nn_output[AI_NETWORK_OUT_NUM] =  AI_NETWORK_OUT;
-static ai_float nn_outdata[AI_NETWORK_OUT_1_SIZE];
+static ai_float nn_outdata[AI_NETWORK_OUT_1_SIZE];*/
 
 // hard-coded normalization parameters obtained at training time
-struct NormPar {
-    float min;
-    float max;
-} nnNormPar = {978.52708333, 1040.8893617};
+const float normMin = 978.52708333;
+const float normMax = 1040.8893617;
 
 void initRCC(){
     //enable RRC pheripherals
@@ -59,7 +59,7 @@ void initRCC(){
     CRC->CR = CRC_CR_RESET;
 }
 
-int runNN(ai_handle network, void* input) {
+/*int runNN(ai_handle network, void* input) {
     ai_i32 nbatch;
     ai_error err;
 
@@ -89,7 +89,7 @@ ai_float* normalizeInput(ai_float* input) {
 
 float denormalizeOutput(float output) {
     return output*(nnNormPar.max - nnNormPar.min) + nnNormPar.min;
-}
+}*/
 
 typedef Gpio<GPIOB_BASE,9>  sda;
 typedef Gpio<GPIOB_BASE,8>  scl;
@@ -99,16 +99,6 @@ SyncQueue<float> in_queue;
 int main()
 {    
     initRCC();
-    //start NN thread passing in_queue
-    pressure_sensor.init();
-    if(pressure_sensor.hasDataToRead()) pressure_sensor.getLast32AvgPressure();
-    for(;;)
-    {
-        pressure_sensor.waitForFullFifo();
-        float pressure_val = pressure_sensor.getLast32AvgPressure();
-        printf("Pressure reading: %f \n", pressure_val);
-        in_queue.put(pressure_val);
-    }
     
     // network creation
     /*ai_error err = ai_network_create(&network, (const ai_buffer*)AI_NETWORK_DATA_CONFIG);
@@ -130,15 +120,31 @@ int main()
         // TODO: error handling
     } else {
        printf("NN successfully initialized.\n");
+    }*/
+    
+    NeuralNetwork nn(in_queue, normMin, normMax);
+    nn.run();
+    
+    pressure_sensor.init();
+    if(pressure_sensor.hasDataToRead()) pressure_sensor.getLast32AvgPressure();
+    for(;;)
+    {
+        pressure_sensor.waitForFullFifo();
+        float pressure_val = pressure_sensor.getLast32AvgPressure();
+        printf("Pressure reading: %f \n", pressure_val);
+        in_queue.put(pressure_val);
     }
+        
+    // network deallocation
+    //ai_network_destroy(network);
 
-    // input examples
+
+    /*// input examples
     static ai_float in_data[AI_NETWORK_IN_1_SIZE] = {1005.5957446808509, 1006.9659574468085, 1009.7425531914895};
     
     // network prediction
     runNN(network, normalizeInput(in_data));
     printf("Prediction result: %f\n", denormalizeOutput(nn_outdata[0]));
     
-    // network deallocation
-    ai_network_destroy(network);*/
+*/
  }

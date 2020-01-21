@@ -42,7 +42,8 @@ util/util.cpp                                                              \
 util/unicode.cpp                                                           \
 util/version.cpp                                                           \
 util/crc16.cpp                                                             \
-util/lcd44780.cpp							   
+util/lcd44780.cpp							   \
+../ActiveObject/ActiveObject.cpp
 ## Add the architecture dependand sources to the list of files to build.
 ## ARCH_SRC will contain different source files depending on which
 ## architecture/board is selected in config/Makefile.inc
