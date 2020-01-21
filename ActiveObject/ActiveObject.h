@@ -21,12 +21,13 @@ class ActiveObject {
 public:
     ActiveObject();
     virtual ~ActiveObject();
-private:
     virtual void run();
+private:
+    static void threadLauncher(void* argv);
     ActiveObject& operator=(const ActiveObject& ao) = delete;
     ActiveObject(const ActiveObject& orig) = delete;
 protected:
-    miosix::Thread t;
+    miosix::Thread *t;
     std::atomic<bool> quit;
 };
 

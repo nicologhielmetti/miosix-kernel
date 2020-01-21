@@ -8,12 +8,18 @@
 
 #include<functional>
 
-using namespace std;
 
-ActiveObject::ActiveObject(): quit(false), t(miosix::Thread.create(&ActiveObject::run,this)) {}
+using namespace miosix;
+
+ActiveObject::ActiveObject(): t(Thread::create(threadLauncher, 2048, Priority(), this, Thread::JOINABLE)), quit(false) {}
+
+void ActiveObject::threadLauncher(void* argv)
+{
+    reinterpret_cast<ActiveObject*>(argv)->run();
+}
 
 void ActiveObject::run(){
-    while(quit.load())
+    while(!quit.load())
     {
         
     }
@@ -22,5 +28,5 @@ void ActiveObject::run(){
 ActiveObject::~ActiveObject() {
     if(quit.load()) return;
     quit.store(true);
-    t.join();
+    t->join();
 }

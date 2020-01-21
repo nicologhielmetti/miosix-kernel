@@ -24,8 +24,6 @@
 #include <iostream>
 #include <kernel/kernel.h>
 #include "miosix.h"
-#include "network.h"
-#include "network_data.h"
 #include "IKS01A2_classes/lps22hb.h"
 #include "SyncQueue/SyncQueue.h"
 #include "NN/NeuralNetwork.h"
@@ -48,8 +46,8 @@ static ai_buffer nn_output[AI_NETWORK_OUT_NUM] =  AI_NETWORK_OUT;
 static ai_float nn_outdata[AI_NETWORK_OUT_1_SIZE];*/
 
 // hard-coded normalization parameters obtained at training time
-const float normMin = 978.52708333;
-const float normMax = 1040.8893617;
+float normMin = 978.52708333;
+float normMax = 1040.8893617;
 
 void initRCC(){
     //enable RRC pheripherals
