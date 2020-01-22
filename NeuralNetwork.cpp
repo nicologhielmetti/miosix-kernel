@@ -8,6 +8,8 @@
 #include "NeuralNetwork.h"
 #include <iostream>
 #include <cstdio>
+#include <algorithm>
+#include <array>
 
 NeuralNetwork::NeuralNetwork(SyncQueue<float> &queue, const float &normMin, const float &normMax) 
             : queue(queue), normMin(normMin), normMax(normMax)  
@@ -25,26 +27,42 @@ NeuralNetwork::~NeuralNetwork()
 
 void NeuralNetwork::run() 
 {
-    printf("dentro il run\n");
     while(!quit.load()) 
     {
-        printf("dentro il while\n");
+        // queue is the shared object between the producer (lps22hb) and the 
+        // consumer (this class). The queue.get() method is a blocking method, 
+        // if the queue is empty the thread keep waiting for a value to
+        // to be inserted into the queue. As soon as the value is inserted, that 
+        // value is returned by this method.
         float value = queue.get();
-        printf("pressione");
         
-        if (acquiredValues+1 == 900) 
-        {
-            //8h has passed, time to predict
-            enqueue(in_data, incrementalMean);
-            printf("Mean: %f\n", incrementalMean);
-            runNN(network, normalizeInput(in_data));
-            printf("Prediction result: %f\n", denormalizeOutput(nn_outdata[0]));
-            acquiredValues = 0;
-            continue;
-        }
         // incremental mean formula: avg(n) = avg(n-1) + (newValue - avg(n-1))/n
         incrementalMean = incrementalMean + (value - incrementalMean)/(acquiredValues+1);
         acquiredValues++;
+        
+        // acquiredValues == 1 is used for testing purposes. 
+        // During delivery this condition should be acquiredValues == 900.
+        // This is because every 32 seconds the FIFO in the sensor is full 
+        // and so measurements must be collected. Since the predictions must be 
+        // provided every 8h, it is necessary to average all the measurements 
+        // acquired by the sensor (also for robustness w.r.t. noise). 
+        // in 8h hours, there are 8x60x60=28800 seconds, 28800/32 = 900.
+        // So, every time the FIFO has been emptied 900 times, 8 hours are passed.
+        if (acquiredValues == 1) 
+        {
+            //8h has passed, time to predict
+            enqueue(in_data, incrementalMean);
+            for (int i=0; i < AI_NETWORK_IN_1_SIZE; i++) {
+                printf("element number %d of the queue: %f\n",i+1,in_data[i]);
+            }
+            printf("Mean: %f\n", incrementalMean);
+            ai_float in_data_normalized[AI_NETWORK_IN_1_SIZE] = {0};
+            normalizeInput(in_data, in_data_normalized);
+            runNN(network, in_data_normalized);
+            printf("Prediction result: %f\n", denormalizeOutput(nn_outdata[0]));
+            acquiredValues = 0;
+            incrementalMean = 0;
+        }
     }
 }
 
@@ -90,20 +108,19 @@ int  NeuralNetwork::runNN(ai_handle network, void* input)
     return 1;    
 }
 
-void  NeuralNetwork::enqueue (ai_float* input, ai_float newValue)
+void NeuralNetwork::enqueue (ai_float* input, ai_float newValue)
 {
-    for (int i=1; i < AI_NETWORK_IN_1_SIZE; i++) {
-        input[i-1] = input[i];
+    for (int i=0; i < AI_NETWORK_IN_1_SIZE-1; i++) {
+        input[i] = input[i+1];
     }
-    input[AI_NETWORK_IN_1_SIZE - 1] = newValue;
+    input[AI_NETWORK_IN_1_SIZE - 1] = newValue; 
 }
 
-ai_float*  NeuralNetwork::normalizeInput(ai_float* input)
+void  NeuralNetwork::normalizeInput(ai_float* input, ai_float* input_normalized)
 {
     for (int i=0; i < AI_NETWORK_IN_1_SIZE; i++) {
-        input[i] = (input[i] - normMin) / (normMax - normMin);
+        input_normalized[i] = (input[i] - normMin) / (normMax - normMin);
     }
-    return input;
 }
 
 float  NeuralNetwork::denormalizeOutput(float output)

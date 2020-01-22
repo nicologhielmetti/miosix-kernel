@@ -21,9 +21,9 @@ class ActiveObject {
 public:
     ActiveObject();
     virtual ~ActiveObject();
-    virtual void run();
 private:
     static void threadLauncher(void* argv);
+    virtual void run();
     ActiveObject& operator=(const ActiveObject& ao) = delete;
     ActiveObject(const ActiveObject& orig) = delete;
 protected:

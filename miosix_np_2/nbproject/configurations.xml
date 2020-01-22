@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="95">
+<configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root=".." name="0">
       <df name="ActiveObject">
@@ -389,6 +389,8 @@
       <df name="SyncQueue">
         <in>SyncQueue.h</in>
       </df>
+      <in>ActiveObject.cpp</in>
+      <in>NeuralNetwork.cpp</in>
       <in>lps22hb.h</in>
       <in>main.cpp</in>
     </df>
@@ -424,7 +426,30 @@
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
           <executablePath>../main.elf</executablePath>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
+      <item path="../ActiveObject.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common/interfaces-impl</pElem>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix</pElem>
+            <pElem>..</pElem>
+          </incDir>
+        </ccTool>
+      </item>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="4">
       </item>
       <item path="../NN/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c"
@@ -517,7 +542,24 @@
           </incDir>
         </cTool>
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../NeuralNetwork.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>../miosix/kernel</pElem>
+            <pElem>../miosix/kernel/scheduler/priority</pElem>
+            <pElem>../miosix/stdlib_integration</pElem>
+            <pElem>../miosix/kernel/scheduler</pElem>
+            <pElem>../miosix/arch/cortexM4_stm32f4/common</pElem>
+            <pElem>../miosix/config/arch/cortexM4_stm32f4/stm32f401re_nucleo</pElem>
+            <pElem>../miosix/config</pElem>
+            <pElem>../miosix/kernel/scheduler/control</pElem>
+            <pElem>C:/arm-miosix-eabi/arm-miosix-eabi/include/c++/4.7.3/arm-miosix-eabi/thumb/cm4/hardfp/fpv4/bits</pElem>
+            <pElem>../NN/Middlewares/ST/AI/Inc</pElem>
+            <pElem>../miosix/arch/common/CMSIS/Include</pElem>
+            <pElem>../miosix</pElem>
+            <pElem>..</pElem>
+          </incDir>
+        </ccTool>
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
@@ -544,6 +586,11 @@
         </ccTool>
       </item>
       <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>../miosix</pElem>
+          </incDir>
+        </ccTool>
       </item>
       <item path="../miosix/arch/arm7_lpc2000/lpc2138_miosix_board/interfaces-impl/bsp.cpp"
             ex="false"
@@ -1335,6 +1382,11 @@
         </ccTool>
       </item>
       <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>../miosix</pElem>
+          </incDir>
+        </ccTool>
       </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
@@ -2008,6 +2060,10 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -2564,6 +2620,10 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -3195,6 +3255,10 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -3828,6 +3892,10 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -4311,6 +4379,10 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -4945,6 +5017,10 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -5567,6 +5643,10 @@
             <standard>8</standard>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -6849,6 +6929,10 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -7493,6 +7577,10 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -8137,6 +8225,10 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -8620,6 +8712,10 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -9118,6 +9214,10 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -9763,6 +9863,10 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -10267,6 +10371,10 @@
             </undefinedList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -10947,6 +11055,10 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -11450,6 +11562,10 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -11958,6 +12074,10 @@
             </undefinedList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -12677,6 +12797,10 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -13322,6 +13446,10 @@
             </undefinedList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -14149,6 +14277,10 @@
             </undefinedList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>

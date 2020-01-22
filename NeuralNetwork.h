@@ -17,7 +17,6 @@ class NeuralNetwork : public ActiveObject {
 public:
     NeuralNetwork(SyncQueue<float> &queue,const float &normMin,const float &normMax);
     ~NeuralNetwork();
-    void run();
     
 private:
     SyncQueue<float>& queue;
@@ -33,9 +32,10 @@ private:
     ai_float nn_outdata[AI_NETWORK_OUT_1_SIZE];
     
     void initNN();
+    void run();
     int runNN(ai_handle network, void* input);
     void enqueue (ai_float* input, ai_float newValue);
-    ai_float* normalizeInput(ai_float* input);
+    void normalizeInput(ai_float* input, ai_float* input_normalized);
     float denormalizeOutput(float output);
     NeuralNetwork(const NeuralNetwork& orig) = delete;
     NeuralNetwork& operator=(const NeuralNetwork& orig) = delete;

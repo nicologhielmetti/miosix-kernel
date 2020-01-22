@@ -57,9 +57,9 @@ int main()
     initRCC();
     
     NeuralNetwork nn(in_queue, normMin, normMax);
-    nn.run();
     pressure_sensor.init();
     if(pressure_sensor.hasDataToRead()) pressure_sensor.getLast32AvgPressure();
+    
     for(;;)
     {
         pressure_sensor.waitForFullFifo();
