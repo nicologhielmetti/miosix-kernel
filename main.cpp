@@ -55,14 +55,20 @@ SyncQueue<float> in_queue;
 int main()
 {    
     initRCC();
-    
+    //it starts the neural network which is an active object
     NeuralNetwork nn(in_queue, normMin, normMax);
+    //initialize the sensor via I2C
     pressure_sensor.init();
+    //if PB10.value() == 1 => fifo is full, so before starting to read pressure 
+    //data the fifo is flushed
     if(pressure_sensor.hasDataToRead()) pressure_sensor.getLast32AvgPressure();
-    
     for(;;)
     {
+        //This call block the main thread until PB10 pass from 0 to 1.
+        //When it happens it means that the fifo is full and it can be read 
         pressure_sensor.waitForFullFifo();
+        //This function read the 32 slots of the fifo, calculate the avg and 
+        //return the value reshaped considering the altitude of the measure
         float pressure_val = pressure_sensor.getLast32AvgPressure();
         printf("Pressure reading: %f \n", pressure_val);
         in_queue.put(pressure_val);

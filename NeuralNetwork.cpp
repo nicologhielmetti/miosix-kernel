@@ -1,4 +1,4 @@
-/* 
+    /* 
  * File:   NeuralNetwork_.cpp
  * Author: nicolo
  * 
@@ -54,7 +54,6 @@ void NeuralNetwork::run()
             enqueue(in_data, incrementalMean);
 
             printf("Mean: %f\n", incrementalMean);
-            //ai_float in_data_normalized[AI_NETWORK_IN_1_SIZE] = {0};
             runNN(network, normalizeInput(in_data));
             printf("Prediction result: %f\n", denormalizeOutput(nn_outdata[0]));
             acquiredValues = 0;
@@ -66,10 +65,13 @@ void NeuralNetwork::run()
 void NeuralNetwork::initNN()
 {
     ai_error err = ai_network_create(&network, (const ai_buffer*)AI_NETWORK_DATA_CONFIG);
-    if (err.type != AI_ERROR_NONE) {
+    if (err.type != AI_ERROR_NONE) 
+    {
         printf("E: AI error in NN creation - type=%lu code=%lu\r\n", err.type, err.code);
         // TODO: error handling
-    } else {
+    }
+    else 
+    {
         printf("NN successfully created.\n");
     }
 
@@ -78,11 +80,14 @@ void NeuralNetwork::initNN()
     AI_NETWORK_DATA_WEIGHTS(ai_network_data_weights_get()),
     AI_NETWORK_DATA_ACTIVATIONS(activations) };
 
-    if (!ai_network_init(network, &params)) {
+    if (!ai_network_init(network, &params)) 
+    {
         err = ai_network_get_error(network);
         printf("E: AI error in NN initialization - type=%lu code=%lu\r\n", err.type, err.code);
         // TODO: error handling
-    } else {
+    } 
+    else 
+    {
         printf("NN successfully initialized.\n");
     }
 }
@@ -98,7 +103,8 @@ int  NeuralNetwork::runNN(ai_handle network, void* input)
     nn_output[0].data = AI_HANDLE_PTR(nn_outdata);
 
     nbatch = ai_network_run(network, &nn_input[0], &nn_output[0]);
-    if (nbatch != 1) {
+    if (nbatch != 1) 
+    {
         err = ai_network_get_error(network);
         //TODO: handle error
     }
@@ -107,7 +113,8 @@ int  NeuralNetwork::runNN(ai_handle network, void* input)
 
 void NeuralNetwork::enqueue (ai_float* input, ai_float newValue)
 {
-    for (int i=0; i < AI_NETWORK_IN_1_SIZE-1; i++) {
+    for (int i=0; i < AI_NETWORK_IN_1_SIZE-1; i++) 
+    {
         input[i] = input[i+1];
     }
     input[AI_NETWORK_IN_1_SIZE - 1] = newValue; 
@@ -115,7 +122,8 @@ void NeuralNetwork::enqueue (ai_float* input, ai_float newValue)
 
 ai_float*  NeuralNetwork::normalizeInput(ai_float* input)
 {
-    for (int i=0; i < AI_NETWORK_IN_1_SIZE; i++) {
+    for (int i=0; i < AI_NETWORK_IN_1_SIZE; i++) 
+    {
         // if the value is between the pressure range of the sensor, it must be
         // normalized.
         if (input[i] > 260 && input[i] < 1260)
