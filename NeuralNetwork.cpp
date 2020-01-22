@@ -52,13 +52,10 @@ void NeuralNetwork::run()
         {
             //8h has passed, time to predict
             enqueue(in_data, incrementalMean);
-            for (int i=0; i < AI_NETWORK_IN_1_SIZE; i++) {
-                printf("element number %d of the queue: %f\n",i+1,in_data[i]);
-            }
+
             printf("Mean: %f\n", incrementalMean);
-            ai_float in_data_normalized[AI_NETWORK_IN_1_SIZE] = {0};
-            normalizeInput(in_data, in_data_normalized);
-            runNN(network, in_data_normalized);
+            //ai_float in_data_normalized[AI_NETWORK_IN_1_SIZE] = {0};
+            runNN(network, normalizeInput(in_data));
             printf("Prediction result: %f\n", denormalizeOutput(nn_outdata[0]));
             acquiredValues = 0;
             incrementalMean = 0;
@@ -116,11 +113,16 @@ void NeuralNetwork::enqueue (ai_float* input, ai_float newValue)
     input[AI_NETWORK_IN_1_SIZE - 1] = newValue; 
 }
 
-void  NeuralNetwork::normalizeInput(ai_float* input, ai_float* input_normalized)
+ai_float*  NeuralNetwork::normalizeInput(ai_float* input)
 {
     for (int i=0; i < AI_NETWORK_IN_1_SIZE; i++) {
-        input_normalized[i] = (input[i] - normMin) / (normMax - normMin);
+        // if the value is between the pressure range of the sensor, it must be
+        // normalized.
+        if (input[i] > 260 && input[i] < 1260)
+            input[i] = (input[i] - normMin) / (normMax - normMin);
+        printf("element number %d of the queue before prediction: %f\n",i+1,input[i]);
     }
+    return input;
 }
 
 float  NeuralNetwork::denormalizeOutput(float output)

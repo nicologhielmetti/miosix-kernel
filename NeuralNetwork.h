@@ -35,7 +35,7 @@ private:
     void run();
     int runNN(ai_handle network, void* input);
     void enqueue (ai_float* input, ai_float newValue);
-    void normalizeInput(ai_float* input, ai_float* input_normalized);
+    ai_float* normalizeInput(ai_float* input);
     float denormalizeOutput(float output);
     NeuralNetwork(const NeuralNetwork& orig) = delete;
     NeuralNetwork& operator=(const NeuralNetwork& orig) = delete;
