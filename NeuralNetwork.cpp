@@ -9,7 +9,7 @@
 #include <iostream>
 #include <cstdio>
 
-NeuralNetwork::NeuralNetwork(SyncQueue<float> &queue, float &normMin, float &normMax) 
+NeuralNetwork::NeuralNetwork(SyncQueue<float> &queue, const float &normMin, const float &normMax) 
             : queue(queue), normMin(normMin), normMax(normMax)  
 {
     initNN();
@@ -31,18 +31,8 @@ void NeuralNetwork::run()
         printf("dentro il while\n");
         float value = queue.get();
         printf("pressione");
-        if (acquiredValues == 0) 
-        {
-            incrementalMean = value;
-            acquiredValues++;
-        } 
-        else 
-        {
-            // incremental mean formula: avg(n) = avg(n-1) + (newValue - avg(n-1))/n
-            acquiredValues++;
-            incrementalMean = incrementalMean + (value - incrementalMean)/acquiredValues;
-        }
-        if (acquiredValues == 1) 
+        
+        if (acquiredValues+1 == 900) 
         {
             //8h has passed, time to predict
             enqueue(in_data, incrementalMean);
@@ -50,8 +40,11 @@ void NeuralNetwork::run()
             runNN(network, normalizeInput(in_data));
             printf("Prediction result: %f\n", denormalizeOutput(nn_outdata[0]));
             acquiredValues = 0;
+            continue;
         }
-
+        // incremental mean formula: avg(n) = avg(n-1) + (newValue - avg(n-1))/n
+        incrementalMean = incrementalMean + (value - incrementalMean)/(acquiredValues+1);
+        acquiredValues++;
     }
 }
 

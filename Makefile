@@ -25,9 +25,8 @@ NN/Src/network.c			\
 NN/Src/network_data.c			\
 NN/Src/aeabi_memclr.c			\
 NN/Src/aeabi_memcpy.c			\
-ActiveObject/ActiveObject.cpp	\
-NN/NeuralNetwork.cpp			\
-IKS01A2_classes/lps22hb.cpp      
+ActiveObject.cpp			\
+NeuralNetwork.cpp			
 #NN/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c \
 #NN/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c \
 #NN/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c \
@@ -43,7 +42,7 @@ IKS01A2_classes/lps22hb.cpp
 ##
 ## List here additional include directories (in the form -Iinclude_dir)
 ##
-INCLUDE_DIRS := -I./NN/Inc -I./NN/Middlewares/ST/AI/Inc -I./NN/Middlewares/ST/AI/Lib -I./NN -I./IKS01A2_classes
+INCLUDE_DIRS := -I./NN/Inc -I./NN/Middlewares/ST/AI/Inc -I./NN/Middlewares/ST/AI/Lib -I./NN
 	##-I./miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include -I./NN/Drivers/STM32F4xx_HAL_Driver/Inc
 	##-I./miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Include
 	##-I./NN/Drivers/CMSIS/Device/ST/STM32F4xx/Include  

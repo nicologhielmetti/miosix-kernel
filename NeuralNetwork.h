@@ -8,21 +8,21 @@
 #ifndef NEURALNETWORK_H
 #define	NEURALNETWORK_H
 
-#include "../SyncQueue/SyncQueue.h"
-#include "../ActiveObject/ActiveObject.h"
-#include "../NN/Inc/network.h"
-#include "../NN/Inc/network_data.h"
+#include "SyncQueue.h"
+#include "ActiveObject.h"
+#include "NN/Inc/network.h"
+#include "NN/Inc/network_data.h"
 
 class NeuralNetwork : public ActiveObject {
 public:
-    NeuralNetwork(SyncQueue<float> &queue, float &normMin, float &normMax);
+    NeuralNetwork(SyncQueue<float> &queue,const float &normMin,const float &normMax);
     ~NeuralNetwork();
     void run();
     
 private:
     SyncQueue<float>& queue;
-    int acquiredValues = 0;
-    ai_float incrementalMean;
+    unsigned int acquiredValues = 0;
+    ai_float incrementalMean = 0;
     const float normMin;
     const float normMax;
     ai_float in_data[AI_NETWORK_IN_1_SIZE] = {0, 0, 0};

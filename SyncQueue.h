@@ -8,7 +8,7 @@
 #ifndef SYNCQUEUE_H
 #define	SYNCQUEUE_H
 
-#include "../miosix/kernel/sync.h"
+#include "miosix/kernel/sync.h"
 #include <list>
 
 using namespace miosix;

@@ -1,17 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   lps22hb.h
  * Author: nicolo
  *
- * Created on December 4, 2019, 6:48 PM
+ * Created on January 22, 2020, 1:00 AM
  */
 
-#include "lps22hb.h"
+#ifndef LPS22HB_H
+#define	LPS22HB_H
+
+#include "interfaces/gpio.h"
+#include "util/software_i2c.h"
+#include <kernel/scheduler/scheduler.h>
+#include "miosix.h"
 
 #define DEBUG
 
@@ -43,34 +43,81 @@ void __attribute__((used))EXTI10HandlerImpl()
     waiting=nullptr;
 }
 
-    lps22hb::lps22hb(const unsigned char &addr): addr(addr) {/*init();*/};
 
-    
-    int lps22hb::hasDataToRead()
+typedef enum {
+  FIFO_BYPASS_MODE             	      = (unsigned char)0x00,	  /*!< The FIFO is disabled and empty. The pressure is read directly*/
+  FIFO_MODE                           = (unsigned char)0x20,    /*!< Stops collecting data when full */
+  STREAM_MODE                         = (unsigned char)0x40,    /*!< Keep the newest measurements in the FIFO*/
+  FIFO_TRIGGER_STREAMTOFIFO_MODE      = (unsigned char)0x60,    /*!< STREAM MODE until trigger deasserted, then change to FIFO MODE*/
+  FIFO_TRIGGER_BYPASSTOSTREAM_MODE    = (unsigned char)0x80,    /*!< BYPASS MODE until trigger deasserted, then STREAM MODE*/
+  FIFO_TRIGGER_BYPASSTOFIFO_MODE      = (unsigned char)0xE0     /*!< BYPASS mode until trigger deasserted, then FIFO MODE*/
+} FifoMode;
+
+typedef enum {
+  BDU_CONTINUOUS_UPDATE     =  (unsigned char)0x00,  /*!< Data updated continuously */
+  BDU_NO_UPDATE             =  (unsigned char)0x02   /*!< Data updated after a read operation */
+} BduMode;
+
+typedef enum {
+  ODR_ONE_SHOT   = (unsigned char)0x00,         /*!< Output Data Rate: one shot */
+  ODR_1HZ        = (unsigned char)0x10,         /*!< Output Data Rate: 1Hz */
+  ODR_10HZ       = (unsigned char)0x20,         /*!< Output Data Rate: 10Hz */
+  ODR_25HZ       = (unsigned char)0x30,         /*!< Output Data Rate: 25Hz */
+  ODR_50HZ       = (unsigned char)0x40,          /*!< Output Data Rate: 50Hz */
+  ODR_75HZ       = (unsigned char)0x50          /*!< Output Data Rate: 75Hz */
+} OdrMode;
+
+typedef enum {
+    CTRL_REG1        = (unsigned char)0x10,
+    CTRL_REG2        = (unsigned char)0x11,
+    CTRL_REG3        = (unsigned char)0x12,
+    CTRL_FIFO_REG    = (unsigned char)0x14,
+    ODR_MASK         = (unsigned char)0x70,
+    BDU_MASK         = (unsigned char)0x02,
+    FIFO_MODE_MASK   = (unsigned char)0xE0,
+    FIFO_EN_MASK     = (unsigned char)0x40,
+    FIFO_EN_BIT      = (unsigned char)6,
+    FIFO_FULL_MASK   = (unsigned char)0x20,
+    FIFO_FULL_BIT    = (unsigned char)5,
+    FIFO_OVR_MASK    = (unsigned char)0x08,
+    FIFO_OVR_BIT     = (unsigned char)3,
+    ADD_INC_MASK     = (unsigned char)0x10,
+    ADD_INC_BIT      = (unsigned char)4,
+    PRESS_OUT_XL_REG = (unsigned char)0x28,
+    BOOT_BIT         = (unsigned char)7
+    //ADDR_W           = (unsigned char)0xBA,
+    //ADDR_R           = (unsigned char)0xBB
+} UsefulAddresses;
+
+
+template <typename SDA, typename SCL, unsigned stretchTimeout=50, bool fast=false>
+class lps22hb {
+public:
+    int hasDataToRead()
     {
         return int_fifo::value();
     }
     
-    float lps22hb::getLast32AvgPressure() //44.5 hPa to sum for getting the pressure rescaled to sea level
+    float getLast32AvgPressure() //44.5 hPa to sum for getting the pressure rescaled to sea level
     {        
         float running_mean = 0, single_val_float = 0;
         unsigned int single_val = 0;
         unsigned char tmp[3];
-        
+
         /** With this function all the 32 slots of the fifo are read. Instead 
          *  of reading one byte at a time, the solution adopted is the
          *  multiple read. During the reading is also calculated the incremental 
          *  mean.
          */
-        
+
         i2c::sendStart();
         i2c::send(addr); //ADDR_W
         i2c::send(PRESS_OUT_XL_REG);
         i2c::sendRepeatedStart();
         i2c::send(addr | 0x01); //ADDR_R
-        
+
         led::high();
-        
+
         for(int i=0; i < 32; i++){
             for(int j=0; j < 5; j++){
                 if(j<3) //skip the temperature values
@@ -92,9 +139,9 @@ void __attribute__((used))EXTI10HandlerImpl()
             //printf("%f \n", single_val_float);
         }
         i2c::sendStop();
-        
+
         led::low();
-        
+
         return running_mean + 44.5;
     }
     
@@ -115,16 +162,16 @@ void __attribute__((used))EXTI10HandlerImpl()
         //set interrupt gpio pin to input mode
         int_fifo::mode(Mode::INPUT);
         led::mode(Mode::OUTPUT);
-        
+
         led::low();
-        
+
         //interrupt line mapping
         SYSCFG->EXTICR[2] |= SYSCFG_EXTICR3_EXTI10_PB;
-        
+
         //set interrupt for being triggered on raising edge
         EXTI->IMR |= EXTI_IMR_MR10;
         EXTI->RTSR |= EXTI_RTSR_TR10;
-        
+
         //init I2C
         i2c::init();   
         //rebootSensors();
@@ -146,7 +193,13 @@ void __attribute__((used))EXTI10HandlerImpl()
         enableInterruptOnFullFifo(1);
     }
     
-
+    lps22hb(const unsigned char &addr): addr(addr) {/*init();*/}
+    
+private:    
+    typedef SoftwareI2C<SDA, SCL, stretchTimeout, fast> i2c;
+    typedef Gpio<GPIOB_BASE,10> int_fifo;
+    typedef Gpio<GPIOA_BASE,5>  led;
+    unsigned char addr;
     
     unsigned char readByteOfReg(const unsigned char& reg)
     {
@@ -250,4 +303,7 @@ void __attribute__((used))EXTI10HandlerImpl()
         writeByteToReg(CTRL_REG3, ctrl_reg3);
         if(DEBUG_TEST)  printf("FIFO full int after -> 0x%x \n", readByteOfReg(CTRL_REG3));
     }
+};
+
+#endif	/* LPS22HB_H */
 
