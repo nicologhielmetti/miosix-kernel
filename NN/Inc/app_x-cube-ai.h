@@ -66,26 +66,8 @@
 
 void MX_X_CUBE_AI_Init(void);
 void MX_X_CUBE_AI_Process(void);
-int aiInit(const ai_u8* activations);
-int aiRun(const void *in_data, void *out_data);
-
-/* Helper macro */
-#define AI_MIN(x_, y_) \
-  ( ((x_)<(y_)) ? (x_) : (y_) )
-
-#define AI_MAX(x_, y_) \
-  ( ((x_)>(y_)) ? (x_) : (y_) )
-
-#define AI_CLAMP(x_, min_, max_, type_) \
-  (type_) (AI_MIN(AI_MAX(x_, min_), max_))
-
-#define AI_ROUND(v_, type_) \
-  (type_) ( ((v_)<0) ? ((v_)-0.5f) : ((v_)+0.5f) )
-  
 /* USER CODE BEGIN includes */
 /* USER CODE END includes */
-#define AI_MMETWORK_IN                AI_NETWORK_IN
-#define AI_MNETWORK_OUT               AI_NETWORK_OUT
 
 #define AI_MNETWORK_NUMBER  (1)
 //#define AI_MNETWORK_DATA_ACTIVATIONS_SIZE AI_NETWORK_DATA_ACTIVATIONS_SIZE

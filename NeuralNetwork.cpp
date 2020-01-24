@@ -40,7 +40,8 @@ void NeuralNetwork::run()
         incrementalMean = incrementalMean + (value - incrementalMean)/(acquiredValues+1);
         acquiredValues++;
         
-        // acquiredValues == 1 is used for testing purposes. 
+        // acquiredValues == 75 is used for testing purposes, this implementation 
+        // will compute a prediction every 40 minutes. 
         // During delivery this condition should be acquiredValues == 900.
         // This is because every 32 seconds the FIFO in the sensor is full 
         // and so measurements must be collected. Since the predictions must be 
@@ -48,7 +49,7 @@ void NeuralNetwork::run()
         // acquired by the sensor (also for robustness w.r.t. noise). 
         // in 8h hours, there are 8x60x60=28800 seconds, 28800/32 = 900.
         // So, every time the FIFO has been emptied 900 times, 8 hours are passed.
-        if (acquiredValues == 1) 
+        if (acquiredValues == 75) 
         {
             //8h has passed, time to predict
             enqueue(in_data, incrementalMean);
