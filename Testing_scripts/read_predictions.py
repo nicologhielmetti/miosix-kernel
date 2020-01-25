@@ -22,7 +22,7 @@ data_output = open("Predictions.csv", "w+")
 data_output.write('datetime,prediction\n')
 
 # enter here the number of prediction to record
-pr_n = 20
+pr_n = 3
 
 print('Predictions recording started...')
 # this is the string that is needed to wipe out in order to obtain the prediction
@@ -32,7 +32,7 @@ while i < pr_n:
     reading = ser.readline().decode('utf-8')
     if reading.startswith(startString):
         now = datetime.now()
-        string_to_write = str(now) + ',' + str(re.sub(startString, '', reading))
+        string_to_write = str(now) + ',' + str(re.sub(startString + '|\n', '', reading))
         data_output.write(string_to_write)
         print('Recorded: ' + string_to_write)
         i += 1
