@@ -24,20 +24,15 @@
 #include <iostream>
 #include <kernel/kernel.h>
 #include "miosix.h"
-#include "lps22hb.h"
+#include "Lps22hb.h"
 #include "SyncQueue.h"
 #include "NeuralNetwork.h"
 
 using namespace std;
 using namespace miosix;
 
-// hard-coded normalization parameters obtained at training time
-const float normMin = 978.52708333;
-const float normMax = 1040.8893617;
-
 //pressure sensor address
 const unsigned char lps22hb_addr = 0xBA;
-
 
 void initRCC(){
     //enable RCC pheripherals
@@ -49,14 +44,14 @@ void initRCC(){
 
 typedef Gpio<GPIOB_BASE,9>  sda;
 typedef Gpio<GPIOB_BASE,8>  scl;
-lps22hb<sda,scl> pressure_sensor(lps22hb_addr); 
+Lps22hb<sda,scl,lps22hb_addr> pressure_sensor; 
 SyncQueue<float> in_queue;
 
 int main()
 {    
     initRCC();
     //it starts the neural network which is an active object
-    NeuralNetwork nn(in_queue, normMin, normMax);
+    NeuralNetwork nn(in_queue);
     //initialize the sensor via I2C
     pressure_sensor.init();
     //if PB10.value() == 1 => fifo is full, so before starting to read pressure 

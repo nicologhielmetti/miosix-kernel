@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="100">
+<configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root=".." name="0">
       <df name="ActiveObject">
@@ -390,10 +390,28 @@
         <in>SyncQueue.h</in>
       </df>
       <in>ActiveObject.cpp</in>
+      <in>Lps22hb.h</in>
       <in>NeuralNetwork.cpp</in>
-      <in>lps22hb.h</in>
       <in>main.cpp</in>
     </df>
+    <df root=".." name="1">
+    </df>
+    <df root=".." name="2">
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   root="..">
+      <itemPath>../makefile</itemPath>
+      <itemPath>miosix_np_2-Makefile.mk</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   root="..">
+      <itemPath>../makefile</itemPath>
+      <itemPath>miosix_np_2-Makefile.mk</itemPath>
+    </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false"
@@ -404,6 +422,8 @@
   </logicalFolder>
   <sourceFolderFilter>^(nbproject|build|_doc|_examples|_tools)$</sourceFolderFilter>
   <sourceRootList>
+    <Elem>..</Elem>
+    <Elem>..</Elem>
     <Elem>..</Elem>
   </sourceRootList>
   <projectmakefile>miosix_np_2-Makefile.mk</projectmakefile>
@@ -426,10 +446,6 @@
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
           <executablePath>../main.elf</executablePath>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
@@ -2060,18 +2076,14 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -2620,18 +2632,14 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -3255,18 +3263,14 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -3892,18 +3896,14 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -4379,18 +4379,14 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -5017,18 +5013,14 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -5643,14 +5635,12 @@
             <standard>8</standard>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../NN/Src/aeabi_memclr.c" ex="false" tool="0" flavor2="2">
         <cTool flags="1">
@@ -5683,8 +5673,6 @@
         </cTool>
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
@@ -6929,18 +6917,14 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -7577,18 +7561,14 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -8225,18 +8205,14 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -8712,18 +8688,14 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -9214,18 +9186,14 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -9863,18 +9831,14 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -10371,18 +10335,14 @@
             </undefinedList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -11055,18 +11015,14 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="9">
         <ccTool>
@@ -11562,18 +11518,14 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="9">
         <ccTool>
@@ -12074,18 +12026,14 @@
             </undefinedList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="9">
         <ccTool>
@@ -12797,18 +12745,14 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -13446,18 +13390,14 @@
             </undefinedList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -14277,18 +14217,14 @@
             </undefinedList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">

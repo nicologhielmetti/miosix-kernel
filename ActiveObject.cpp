@@ -18,14 +18,16 @@ void ActiveObject::threadLauncher(void* argv)
     reinterpret_cast<ActiveObject*>(argv)->run();
 }
 
-void ActiveObject::run(){
+void ActiveObject::run()
+{
     while(!quit.load())
     {
         
     }
 }
 
-ActiveObject::~ActiveObject() {
+ActiveObject::~ActiveObject()
+{
     if(quit.load()) return;
     quit.store(true);
     t->join();

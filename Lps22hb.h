@@ -90,8 +90,8 @@ typedef enum {
 } UsefulAddresses;
 
 
-template <typename SDA, typename SCL, unsigned stretchTimeout=50, bool fast=false>
-class lps22hb {
+template <typename SDA, typename SCL, unsigned char addr, unsigned stretchTimeout=50, bool fast=false>
+class Lps22hb {
 public:
     int hasDataToRead()
     {
@@ -118,11 +118,13 @@ public:
 
         led::high();
 
-        for(int i=0; i < 32; i++){
-            for(int j=0; j < 5; j++){
-                if(j<3) //skip the temperature values
+        for(int i=0; i < 32; i++)
+        {
+            for(int j=0; j < 5; j++)
+            {
+                if(j<3) 
                     tmp[j] = i2c::recvWithAck();
-                else 
+                else //skip the temperature values
                     if(i*j == 124) //32 slots read
                         i2c::recvWithNack();
                     else
@@ -192,14 +194,11 @@ public:
         //enable interrupt on full fifo
         enableInterruptOnFullFifo(1);
     }
-    
-    lps22hb(const unsigned char &addr): addr(addr) {/*init();*/}
-    
+        
 private:    
     typedef SoftwareI2C<SDA, SCL, stretchTimeout, fast> i2c;
     typedef Gpio<GPIOB_BASE,10> int_fifo;
     typedef Gpio<GPIOA_BASE,5>  led;
-    unsigned char addr;
     
     unsigned char readByteOfReg(const unsigned char& reg)
     {

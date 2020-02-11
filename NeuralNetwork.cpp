@@ -11,8 +11,7 @@
 #include <algorithm>
 #include <array>
 
-NeuralNetwork::NeuralNetwork(SyncQueue<float> &queue, const float &normMin, const float &normMax) 
-            : queue(queue), normMin(normMin), normMax(normMax)  
+NeuralNetwork::NeuralNetwork(SyncQueue<float> &queue): queue(queue)
 {
     initNN();
 };
@@ -107,7 +106,6 @@ int  NeuralNetwork::runNN(ai_handle network, void* input)
     if (nbatch != 1) 
     {
         err = ai_network_get_error(network);
-        //TODO: handle error
     }
     return 1;    
 }

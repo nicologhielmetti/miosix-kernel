@@ -10,7 +10,7 @@ import re
 from datetime import datetime
 
 # Modify these variables according to the serial port in use and to the baudrate needed
-serial_port = 'COM6'
+serial_port = '/dev/ttyACM1'
 baudrate = 19200
 
 ser = serial.Serial(port=serial_port, baudrate=baudrate)  # open serial port
@@ -24,7 +24,7 @@ data_output_pred.write('datetime,prediction\n')
 data_output_mean.write('datetime,mean\n')
 
 # enter here the number of prediction to record
-pr_n = 3
+pr_n = 20
 
 print('Predictions recording started...')
 # this is the string that is needed to wipe out in order to obtain the prediction
