@@ -12,6 +12,7 @@
 #include "util/software_i2c.h"
 #include <kernel/scheduler/scheduler.h>
 #include "miosix.h"
+#include <math.h>
 
 #define DEBUG
 
@@ -90,8 +91,8 @@ typedef enum {
 } UsefulAddresses;
 
 
-template <typename SDA, typename SCL, unsigned stretchTimeout=50, bool fast=false>
-class lps22hb {
+template <typename SDA, typename SCL, unsigned char addr, unsigned stretchTimeout=50, bool fast=false>
+class Lps22hb {
 public:
     int hasDataToRead()
     {
@@ -100,9 +101,11 @@ public:
     
     float getLast32AvgPressure() //44.5 hPa to sum for getting the pressure rescaled to sea level
     {        
-        float running_mean = 0, single_val_float = 0;
-        unsigned int single_val = 0;
-        unsigned char tmp[3];
+        float p_running_mean = 0, t_running_mean = 0, p_single_val_float = 0, t_single_val_float = 0;
+        unsigned int p_single_val = 0;
+        unsigned int t_single_val = 0;
+        unsigned char pTmp[3];
+        unsigned char tTmp[2];
 
         /** With this function all the 32 slots of the fifo are read. Instead 
          *  of reading one byte at a time, the solution adopted is the
@@ -118,31 +121,54 @@ public:
 
         led::high();
 
-        for(int i=0; i < 32; i++){
-            for(int j=0; j < 5; j++){
-                if(j<3) //skip the temperature values
-                    tmp[j] = i2c::recvWithAck();
-                else 
+        for(int i=0; i < 32; i++)
+        {
+            for(int j=0; j < 5; j++)
+            {
+                if(j<3) 
+                    pTmp[j] = i2c::recvWithAck();
+                else //skip the temperature values
                     if(i*j == 124) //32 slots read
                         i2c::recvWithNack();
                     else
-                        i2c::recvWithAck();
+                        tTmp[j-3] = i2c::recvWithAck();
             }
-            for(int k=0; k<3; k++) //compose the value
-                single_val |= (((uint32_t)tmp[k]) << (8*k));
-            if(single_val & 0x00800000)
-                single_val |= 0xFF000000;
+            for(int k=0; k<3; k++) //compose the pressure value
+                p_single_val |= (((uint32_t)pTmp[k]) << (8*k));
+            if(p_single_val & 0x00800000)
+                p_single_val |= 0xFF000000;
+            
+            //compose the temperature value
+            t_single_val |= (((uint16_t)tTmp[1]) << 8) + (uint16_t)tTmp[0];
+
+            
             //get the value in hPa
-            single_val_float = single_val/4096.0f;
+            p_single_val_float = p_single_val/4096.0f;
+            
+            //get the value in °C
+            t_single_val_float = t_single_val/100.0f;
+            
             //m = m_ + (a_n-m_)/n -> incremental mean formula
-            running_mean = running_mean + (single_val_float - running_mean)/(i+1);
+            p_running_mean = p_running_mean + (p_single_val_float - p_running_mean)/(i+1);
+            
+            t_running_mean = t_running_mean + (t_single_val_float - t_running_mean)/(i+1);
+
             //printf("%f \n", single_val_float);
         }
         i2c::sendStop();
 
         led::low();
 
-        return running_mean + 44.5;
+        //return running_mean + 44.5;
+        printf("Temperature reading: %f\n", t_running_mean);
+        return computeSeaLevelPressure(p_running_mean, t_running_mean);
+    }
+    
+    // temperature must be provided in celsius
+    float computeSeaLevelPressure(float rPressure, float temperature) {
+        float tmp = 1 - (0.0065*sensorAltitude)/(temperature + 0.0065*sensorAltitude + 273.15);
+        
+        return rPressure*(pow(tmp, -5.257));
     }
     
     void waitForFullFifo()
@@ -193,13 +219,12 @@ public:
         enableInterruptOnFullFifo(1);
     }
     
-    lps22hb(const unsigned char &addr): addr(addr) {/*init();*/}
-    
+    Lps22hb(const unsigned int sensorAltitude): sensorAltitude(sensorAltitude) {}
 private:    
     typedef SoftwareI2C<SDA, SCL, stretchTimeout, fast> i2c;
     typedef Gpio<GPIOB_BASE,10> int_fifo;
     typedef Gpio<GPIOA_BASE,5>  led;
-    unsigned char addr;
+    const unsigned int sensorAltitude;
     
     unsigned char readByteOfReg(const unsigned char& reg)
     {

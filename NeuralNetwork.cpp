@@ -11,8 +11,8 @@
 #include <algorithm>
 #include <array>
 
-NeuralNetwork::NeuralNetwork(SyncQueue<float> &queue, const float &normMin, const float &normMax) 
-            : queue(queue), normMin(normMin), normMax(normMax)  
+NeuralNetwork::NeuralNetwork(SyncQueue<float> &queue) 
+            : queue(queue)  
 {
     initNN();
 };

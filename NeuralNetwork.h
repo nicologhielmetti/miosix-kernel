@@ -15,21 +15,23 @@
 
 class NeuralNetwork : public ActiveObject {
 public:
-    NeuralNetwork(SyncQueue<float> &queue,const float &normMin,const float &normMax);
+    NeuralNetwork(SyncQueue<float> &queue);
     ~NeuralNetwork();
     
 private:
     SyncQueue<float>& queue;
     unsigned int acquiredValues = 0;
     ai_float incrementalMean = 0;
-    const float normMin;
-    const float normMax;
     ai_float in_data[AI_NETWORK_IN_1_SIZE] = {0, 0, 0};
     ai_handle network = AI_HANDLE_NULL;
     ai_u8 activations[AI_NETWORK_DATA_ACTIVATIONS_SIZE];
     ai_buffer nn_input[AI_NETWORK_IN_NUM] =  AI_NETWORK_IN;
     ai_buffer nn_output[AI_NETWORK_OUT_NUM] =  AI_NETWORK_OUT;
     ai_float nn_outdata[AI_NETWORK_OUT_1_SIZE];
+    
+    // hard-coded normalization parameters obtained at training time
+    const float normMin = 978.52708333;
+    const float normMax = 1040.8893617;
     
     void initNN();
     void run();
