@@ -48,7 +48,7 @@ void NeuralNetwork::run()
         // acquired by the sensor (also for robustness w.r.t. noise). 
         // in 8h hours, there are 8x60x60=28800 seconds, 28800/32 = 900.
         // So, every time the FIFO has been emptied 900 times, 8 hours are passed.
-        if (acquiredValues == 75) 
+        if (acquiredValues == 1) 
         {
             //8h has passed, time to predict
             enqueue(in_data, incrementalMean);

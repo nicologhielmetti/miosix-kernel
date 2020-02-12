@@ -103,7 +103,7 @@ public:
     {        
         float p_running_mean = 0, t_running_mean = 0, p_single_val_float = 0, t_single_val_float = 0;
         unsigned int p_single_val = 0;
-        unsigned int t_single_val = 0;
+        int16_t t_single_val = 0;
         unsigned char pTmp[3];
         unsigned char tTmp[2];
 
@@ -139,8 +139,8 @@ public:
                 p_single_val |= 0xFF000000;
             
             //compose the temperature value
-            t_single_val |= (((uint16_t)tTmp[1]) << 8) + (uint16_t)tTmp[0];
-
+            t_single_val = (((uint16_t)tTmp[1]) << 8) + (uint16_t)tTmp[0];
+            
             
             //get the value in hPa
             p_single_val_float = p_single_val/4096.0f;
