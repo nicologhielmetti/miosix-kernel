@@ -34,6 +34,10 @@ using namespace miosix;
 //pressure sensor address
 const unsigned char lps22hb_addr = 0xBA;
 
+// TO BE CHECKED BEFORE EACH COMPILATION
+// altitude of the sensor (in meters), used to compute the sea-level atm pressure
+const unsigned int sensor_altitude = 127;
+
 void initRCC(){
     //enable RCC pheripherals
     FastInterruptDisableLock a;
@@ -44,7 +48,7 @@ void initRCC(){
 
 typedef Gpio<GPIOB_BASE,9>  sda;
 typedef Gpio<GPIOB_BASE,8>  scl;
-Lps22hb<sda,scl,lps22hb_addr> pressure_sensor; 
+Lps22hb<sda,scl,lps22hb_addr> pressure_sensor(sensor_altitude); 
 SyncQueue<float> in_queue;
 
 int main()
