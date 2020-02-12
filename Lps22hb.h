@@ -143,10 +143,10 @@ public:
 
             
             //get the value in hPa
-            p_single_val_float = p_single_val/4096.0f;
+            p_single_val_float = (float)(p_single_val*100/4096)/100.0f;
             
             //get the value in °C
-            t_single_val_float = t_single_val/100.0f;
+            t_single_val_float = (float)(t_single_val*10/100)/10.0f;
             
             //m = m_ + (a_n-m_)/n -> incremental mean formula
             p_running_mean = p_running_mean + (p_single_val_float - p_running_mean)/(i+1);
