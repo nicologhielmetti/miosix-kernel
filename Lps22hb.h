@@ -101,9 +101,11 @@ public:
     
     float getLast32AvgPressure() //44.5 hPa to sum for getting the pressure rescaled to sea level
     {        
-        float p_running_mean = 0, t_running_mean = 0, p_single_val_float = 0, t_single_val_float = 0;
-        unsigned int p_single_val = 0;
-        int16_t t_single_val = 0;
+        float p_running_mean = 0, t_running_mean = 0, p_float_val = 0, t_float_val = 0;
+        uint32_t p_unsigned_val = 0;
+        uint16_t t_unsigned_val = 0;
+        int32_t p_signed_val = 0;
+        int16_t t_signed_val = 0;
         unsigned char pTmp[3];
         unsigned char tTmp[2];
 
@@ -134,24 +136,27 @@ public:
                         tTmp[j-3] = i2c::recvWithAck();
             }
             for(int k=0; k<3; k++) //compose the pressure value
-                p_single_val |= (((uint32_t)pTmp[k]) << (8*k));
-            if(p_single_val & 0x00800000)
-                p_single_val |= 0xFF000000;
+                p_unsigned_val |= (((uint32_t)pTmp[k]) << (8*k));
+            if(p_unsigned_val & 0x00800000)
+                p_unsigned_val |= 0xFF000000;
+            
+            p_signed_val = (int32_t) p_unsigned_val;
             
             //compose the temperature value
-            t_single_val = (((uint16_t)tTmp[1]) << 8) + (uint16_t)tTmp[0];
+            t_unsigned_val = (((uint16_t)tTmp[1]) << 8) + (uint16_t)tTmp[0];
             
+            t_signed_val = (int16_t) t_unsigned_val;
             
             //get the value in hPa
-            p_single_val_float = p_single_val/4096.0f;
+            p_float_val = (float)(p_signed_val*100/4096)/100.0f;
             
             //get the value in °C
-            t_single_val_float = t_single_val/100.0f;
+            t_float_val = (float)(t_signed_val*10/100)/10.0f;
             
             //m = m_ + (a_n-m_)/n -> incremental mean formula
-            p_running_mean = p_running_mean + (p_single_val_float - p_running_mean)/(i+1);
+            p_running_mean = p_running_mean + (p_float_val - p_running_mean)/(i+1);
             
-            t_running_mean = t_running_mean + (t_single_val_float - t_running_mean)/(i+1);
+            t_running_mean = t_running_mean + (t_float_val - t_running_mean)/(i+1);
 
             //printf("%f \n", single_val_float);
         }
@@ -161,14 +166,9 @@ public:
 
         //return running_mean + 44.5;
         printf("Temperature reading: %f\n", t_running_mean);
+        printf("Pressure reading: %f\n", p_running_mean);
+
         return computeSeaLevelPressure(p_running_mean, t_running_mean);
-    }
-    
-    // temperature must be provided in celsius
-    float computeSeaLevelPressure(float rPressure, float temperature) {
-        float tmp = 1 - (0.0065*sensorAltitude)/(temperature + 0.0065*sensorAltitude + 273.15);
-        
-        return rPressure*(pow(tmp, -5.257));
     }
     
     void waitForFullFifo()
@@ -219,12 +219,20 @@ public:
         enableInterruptOnFullFifo(1);
     }
     
-    Lps22hb(const unsigned int sensorAltitude): sensorAltitude(sensorAltitude) {}
+    Lps22hb(const unsigned int &sensorAltitude): sensorAltitude(sensorAltitude) {}
 private:    
     typedef SoftwareI2C<SDA, SCL, stretchTimeout, fast> i2c;
     typedef Gpio<GPIOB_BASE,10> int_fifo;
     typedef Gpio<GPIOA_BASE,5>  led;
     const unsigned int sensorAltitude;
+    
+    // temperature must be provided in celsius
+    float computeSeaLevelPressure(float rPressure, float temperature)
+    {
+        float tmp = 1 - (0.0065*sensorAltitude)/(temperature + 0.0065*sensorAltitude + 273.15);
+        
+        return rPressure*(pow(tmp, -5.257));
+    }
     
     unsigned char readByteOfReg(const unsigned char& reg)
     {
@@ -328,6 +336,7 @@ private:
         writeByteToReg(CTRL_REG3, ctrl_reg3);
         if(DEBUG_TEST)  printf("FIFO full int after -> 0x%x \n", readByteOfReg(CTRL_REG3));
     }
+    
 };
 
 #endif	/* LPS22HB_H */
