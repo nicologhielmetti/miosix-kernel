@@ -36,7 +36,7 @@ const unsigned char lps22hb_addr = 0xBA;
 
 // TO BE CHECKED BEFORE EACH COMPILATION
 // altitude of the sensor (in meters), used to compute the sea-level atm pressure
-const unsigned int sensor_altitude = 127;
+const unsigned int sensor_altitude = 405;
 
 void initRCC(){
     //enable RCC pheripherals
@@ -69,7 +69,7 @@ int main()
         //This function read the 32 slots of the fifo, calculate the avg and 
         //return the value reshaped considering the altitude of the measure
         float pressure_val = pressure_sensor.getLast32AvgPressure();
-        printf("Pressure reading: %f \n", pressure_val);
+        //printf("Pressure reading: %f \n", pressure_val);
         in_queue.put(pressure_val);
     }
  }
