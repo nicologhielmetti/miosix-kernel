@@ -103,7 +103,7 @@ public:
     {        
         float p_running_mean = 0, t_running_mean = 0, p_single_val_float = 0, t_single_val_float = 0;
         unsigned int p_single_val = 0;
-        unsigned int t_single_val = 0;
+        int16_t t_single_val = 0;
         unsigned char pTmp[3];
         unsigned char tTmp[2];
 
