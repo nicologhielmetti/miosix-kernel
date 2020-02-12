@@ -15,3 +15,6 @@ miosix_np_2/nbproject/private/private.xml
 # Exclude Mac OS X temporary
 ._*
 .DS_Store
+
+#Exclude project related files
+*.idea

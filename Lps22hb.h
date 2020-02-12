@@ -164,11 +164,12 @@ public:
 
         led::low();
 
-        //return running_mean + 44.5;
+        
+        float sea_level_p = computeSeaLevelPressure(p_running_mean, t_running_mean);
         printf("Temperature reading: %f\n", t_running_mean);
-        printf("Pressure reading: %f\n", p_running_mean);
+        printf("Pressure reading: %f\n", sea_level_p);
 
-        return computeSeaLevelPressure(p_running_mean, t_running_mean);
+        return sea_level_p;
     }
     
     void waitForFullFifo()
