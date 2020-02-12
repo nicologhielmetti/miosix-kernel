@@ -1009,6 +1009,8 @@
       </df>
       <df name="pdf_references">
       </df>
+      <df name="python_script">
+      </df>
       <df name="SyncQueue">
         <in>SyncQueue.h</in>
       </df>
@@ -1489,6 +1491,8 @@
       </df>
       <df name="pdf_references">
       </df>
+      <df name="python_script">
+      </df>
       <df name="Testing_scripts">
       </df>
     </df>
@@ -1958,6 +1962,8 @@
         </df>
       </df>
       <df name="pdf_references">
+      </df>
+      <df name="python_script">
       </df>
       <df name="Testing_scripts">
       </df>

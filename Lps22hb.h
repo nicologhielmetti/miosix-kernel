@@ -166,8 +166,6 @@ public:
 
         //return running_mean + 44.5;
         printf("Temperature reading: %f\n", t_running_mean);
-        printf("Pressure reading: %f\n", p_running_mean);
-
         return computeSeaLevelPressure(p_running_mean, t_running_mean);
     }
     
