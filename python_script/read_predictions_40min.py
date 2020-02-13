@@ -17,7 +17,7 @@ from secret import Secret
 client = InfluxDBClient(url="https://eu-central-1-1.aws.cloud2.influxdata.com", token=Secret.token, debug=True)
 
 # Modify these variables according to the serial port in use and to the baudrate needed
-serial_port = 'COM6'
+serial_port = '/dev/ttyACM0'
 baudrate = 19200
 
 ser = serial.Serial(port=serial_port, baudrate=baudrate)  # open serial port
@@ -29,7 +29,7 @@ startStringMean = 'Mean: '
 startStringTemp = 'Temperature reading: '
 startStringPres = 'Pressure reading: '
 temperature = ''
-measurement = 'es-milano'
+measurement = 'es-valmorea'
 
 print('Predictions recording started...')
 
@@ -41,24 +41,24 @@ while 1:
         now = datetime.now().timestamp()
         # first, the board print the temperature, then it prints the pressure.
         pressure = str('%.2f' % (float(re.sub(startStringPres + '|\n', '', reading))))
-        str_to_send = measurement + ' ' + 'temp=' + temperature + ' pres=' + pressure + ' ' + str(int(now*1000000000))
+        str_to_send = measurement + ' ' + 'temp=' + temperature + ' pres=' + pressure + ' ' + str(int(now*1_000_000_000))
         print(str_to_send)
-        point = Point(measurement).field("temp", float(temperature)).field("pres", float(pressure)).time(int(now*1000000000), WritePrecision.S)
+        point = Point(measurement).field("temp", float(temperature)).field("pres", float(pressure)).time(int(now*1_000_000_000), WritePrecision.NS)
         client.write_api(write_options=SYNCHRONOUS).write("es-presentation", "10528091@polimi.it", record=point)
 
     if reading.startswith(startStringMean):
         now = datetime.now()
         pressureMean = str('%.2f' % (float(re.sub(startStringMean + '|\n', '', reading))))
-        str_to_send = measurement + ' ' + 'pres-mean=' + pressureMean + ' ' + str(int(now.timestamp()*1000000000))
+        str_to_send = measurement + ' ' + 'pres-mean=' + pressureMean + ' ' + str(int(now.timestamp()*1_000_000_000))
         print(str_to_send)
-        point = Point(measurement).field("pres-mean", float(pressureMean)).time(int(now.timestamp()*1000000000), WritePrecision.S)
-        client.write_api().write("es-presentation", "10528091@polimi.it", record=point)
+        point = Point(measurement).field("pres-mean", float(pressureMean)).time(int(now.timestamp()*1_000_000_000), WritePrecision.NS)
+        client.write_api(write_options=SYNCHRONOUS).write("es-presentation", "10528091@polimi.it", record=point)
 
     if reading.startswith(startStringPrediction):
         now = datetime.now()
         pred_time = now + timedelta(minutes=40)
         pressurePred = str('%.2f' % (float(re.sub(startStringPrediction + '|\n', '', reading))))
-        str_to_send = measurement + ' ' + 'pres-pred=' + pressurePred + ' ' + str(int(pred_time.timestamp()*1000000000))
+        str_to_send = measurement + ' ' + 'pres-pred=' + pressurePred + ' ' + str(int(pred_time.timestamp()*1_000_000_000))
         print(str_to_send)
-        point = Point(measurement).field("pres-mean", float(pressurePred)).time(int(pred_time.timestamp()*1000000000), WritePrecision.S)
-        client.write_api().write("es-presentation", "10528091@polimi.it", record=point)
+        point = Point(measurement).field("pres-pred", float(pressurePred)).time(int(pred_time.timestamp()*1_000_000_000), WritePrecision.NS)
+        client.write_api(write_options=SYNCHRONOUS).write("es-presentation", "10528091@polimi.it", record=point)

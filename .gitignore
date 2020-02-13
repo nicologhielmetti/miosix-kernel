@@ -1,6 +1,7 @@
 # Exclude files for pycharm
 python_script/.idea/
 python_script/secret.py
+python_script/__pycache__/
 
 # Exclude doxygen
 miosix/_doc/doxygen/html/*
