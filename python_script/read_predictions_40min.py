@@ -8,7 +8,13 @@ ONLY FOR TESTING PURPOSES
 
 import serial
 import re
+from influxdb_client import InfluxDBClient
 from datetime import datetime, timedelta
+
+from secret import Secret
+
+client = InfluxDBClient(url="https://eu-central-1-1.aws.cloud2.influxdata.com",
+                        token=Secret.token)
 
 # Modify these variables according to the serial port in use and to the baudrate needed
 serial_port = 'COM6'
@@ -37,16 +43,18 @@ while 1:
         pressure = str('%.2f' % (float(re.sub(startStringPres + '|\n', '', reading))))
         str_to_send = measurement + ' ' + 'temp=' + temperature + ' pres=' + pressure + ' ' + now
         print(str_to_send)
+        client.write_api().write("es-presentation", "nicolo.ghielmetti@gmail.com", str_to_send)
 
     if reading.startswith(startStringMean):
         now = datetime.now()
         pressureMean = str('%.2f' % (float(re.sub(startStringMean + '|\n', '', reading))))
         str_to_send = measurement + ' ' + 'pres-mean=' + pressureMean + ' ' + str(int(now.timestamp()))
         print(str_to_send)
+        client.write_api().write("es-presentation", "nicolo.ghielmetti@gmail.com", str_to_send)
 
     if reading.startswith(startStringPrediction):
-        pred_time = now + timedelta(hours=8)
+        pred_time = now + timedelta(minutes=40)
         pressurePred = str('%.2f' % (float(re.sub(startStringPrediction + '|\n', '', reading))))
         str_to_send = measurement + ' ' + 'pres-pred=' + pressurePred + ' ' + str(int(pred_time.timestamp()))
         print(str_to_send)
-
+        client.write_api().write("es-presentation", "nicolo.ghielmetti@gmail.com", str_to_send)

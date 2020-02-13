@@ -8,7 +8,13 @@ ONLY FOR TESTING PURPOSES
 
 import serial
 import re
+from influxdb_client import InfluxDBClient
 from datetime import datetime, timedelta
+
+from secret import Secret
+
+client = InfluxDBClient(url="https://eu-central-1-1.aws.cloud2.influxdata.com",
+                        token=Secret.token)
 
 # Modify these variables according to the serial port in use and to the baudrate needed
 serial_port = 'COM6'
@@ -25,41 +31,30 @@ startStringPres = 'Pressure reading: '
 temperature = ''
 measurement = 'es-valmorea'
 
-data_output_pred = open("Predictions.csv", "w+")
-data_output_mean = open("Ground_truth.csv", "w+")
-
-#write the header
-data_output_pred.write('datetime,prediction\n')
-data_output_mean.write('datetime,mean\n')
-
-# enter here the number of prediction to record
-pr_n = 3
-
 print('Predictions recording started...')
 
 while 1:
     reading = ser.readline().decode('utf-8')
     now = str(int(datetime.now().timestamp()))
     if reading.startswith(startStringTemp):
-        temperature = str('%.2f'%(float(re.sub(startStringTemp + '|\n', '', reading))))
+        temperature = str('%.2f' % (float(re.sub(startStringTemp + '|\n', '', reading))))
     if reading.startswith(startStringPres):
         # first, the board print the temperature, then it prints the pressure.
-        pressure = str('%.2f'%(float(re.sub(startStringPres + '|\n', '', reading))))
+        pressure = str('%.2f' % (float(re.sub(startStringPres + '|\n', '', reading))))
         str_to_send = measurement + ' ' + 'temp=' + temperature + ' pres=' + pressure + ' ' + now
         print(str_to_send)
+        client.write_api().write("es-presentation", "nicolo.ghielmetti@gmail.com", str_to_send)
 
     if reading.startswith(startStringMean):
         now = datetime.now()
-        pressureMean = str('%.2f'%(float(re.sub(startStringMean + '|\n', '', reading))))
+        pressureMean = str('%.2f' % (float(re.sub(startStringMean + '|\n', '', reading))))
         str_to_send = measurement + ' ' + 'pres-mean=' + pressureMean + ' ' + str(int(now.timestamp()))
         print(str_to_send)
+        client.write_api().write("es-presentation", "nicolo.ghielmetti@gmail.com", str_to_send)
 
     if reading.startswith(startStringPrediction):
         pred_time = now + timedelta(hours=8)
-        pressurePred = str('%.2f'%(float(re.sub(startStringPrediction + '|\n', '', reading))))
+        pressurePred = str('%.2f' % (float(re.sub(startStringPrediction + '|\n', '', reading))))
         str_to_send = measurement + ' ' + 'pres-pred=' + pressurePred + ' ' + str(int(pred_time.timestamp()))
         print(str_to_send)
-
-print('Predictions recording ended.')
-data_output_pred.close()
-data_output_mean.close()
+        client.write_api().write("es-presentation", "nicolo.ghielmetti@gmail.com", str_to_send)
