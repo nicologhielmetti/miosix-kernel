@@ -1,6 +1,6 @@
 | ![miosixlogo](https://user-images.githubusercontent.com/16907319/74107162-a0d42e80-4b6d-11ea-979e-c17000bc936c.png)  | 
-![1024px-STMicroelectronics svg](https://user-images.githubusercontent.com/16907319/74107182-d24cfa00-4b6d-11ea-91e6-96fa5fa9dcee.png) | ![keras](https://user-images.githubusercontent.com/16907319/74107160-9e71d480-4b6d-11ea-94a7-b82f26f1dc05.png) | ![Tensorflow_logo svg](https://user-images.githubusercontent.com/16907319/74107157-9a45b700-4b6d-11ea-9743-648a312c5d97.png) |
-| ------------- | ------------- | ------------- | ------------- |
+![1024px-STMicroelectronics svg](https://user-images.githubusercontent.com/16907319/74107182-d24cfa00-4b6d-11ea-91e6-96fa5fa9dcee.png) | ![keras](https://user-images.githubusercontent.com/16907319/74107160-9e71d480-4b6d-11ea-94a7-b82f26f1dc05.png) | ![Tensorflow_logo svg](https://user-images.githubusercontent.com/16907319/74107157-9a45b700-4b6d-11ea-9743-648a312c5d97.png) | ![Influxdb_logo svg](https://user-images.githubusercontent.com/16907319/74490550-27b83c80-4ec9-11ea-8f50-662fc363a603.png)|
+| ------------- | ------------- | ------------- | ------------- | ------------- |
 
 # Predicting Atmospheric Pressure using LSTM Neural Network on STM32-NucleoF401RE and Miosix RTOS
 
@@ -17,6 +17,8 @@ The goal of this project is to embed an LSTM Neural Network produced by MXCubeAI
 
 ## System test performance
 ![es_performance](https://user-images.githubusercontent.com/16907319/74106850-864c8600-4b6a-11ea-88d8-310afa679bd6.png)
+![valmo](https://user-images.githubusercontent.com/16907319/74490598-4fa7a000-4ec9-11ea-8f94-7998ae710db3.png)
+![es-influxdb](https://user-images.githubusercontent.com/16907319/74490626-71a12280-4ec9-11ea-8bdd-1b00e1f2b883.png)
 
 ### For debugging using NetBeansIDE
 * install gdbserver plugin for NetBeansIDE
