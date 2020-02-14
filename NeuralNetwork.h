@@ -12,16 +12,18 @@
 #include "ActiveObject.h"
 #include "NN/Inc/network.h"
 #include "NN/Inc/network_data.h"
+#include "UsefulTypedefs.h"
 
 class NeuralNetwork : public ActiveObject {
 public:
-    NeuralNetwork(SyncQueue<float> &queue);
+    NeuralNetwork(SyncQueue<float> &queue, const OdrMode& odr);
     ~NeuralNetwork();
     
 private:
     SyncQueue<float>& queue;
     unsigned int acquiredValues = 0;
     ai_float incrementalMean = 0;
+    OdrMode odr;
     ai_float in_data[AI_NETWORK_IN_1_SIZE] = {0, 0, 0};
     ai_handle network = AI_HANDLE_NULL;
     ai_u8 activations[AI_NETWORK_DATA_ACTIVATIONS_SIZE];
