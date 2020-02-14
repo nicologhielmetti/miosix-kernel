@@ -54,13 +54,10 @@ SyncQueue<float> in_queue;
 int main()
 {    
     initRCC();
-    //it starts the neural network which is an active object
-    NeuralNetwork nn(in_queue);
     //initialize the sensor via I2C
     pressure_sensor.init();
-    //if PB10.value() == 1 => fifo is full, so before starting to read pressure 
-    //data the fifo is flushed
-    if(pressure_sensor.hasDataToRead()) pressure_sensor.getLast32AvgPressure();
+    //it starts the neural network which is an active object
+    NeuralNetwork nn(in_queue, pressure_sensor.getODR());
     for(;;)
     {
         //This call block the main thread until PB10 pass from 0 to 1.

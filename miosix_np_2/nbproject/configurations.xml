@@ -392,6 +392,7 @@
       <in>ActiveObject.cpp</in>
       <in>Lps22hb.h</in>
       <in>NeuralNetwork.cpp</in>
+      <in>UsefulTypedefs.h</in>
       <in>main.cpp</in>
     </df>
     <df root=".." name="1">
@@ -576,6 +577,8 @@
             <pElem>..</pElem>
           </incDir>
         </ccTool>
+      </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
@@ -2085,6 +2088,8 @@
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -2640,6 +2645,8 @@
       <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -3271,6 +3278,8 @@
       <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -3905,6 +3914,8 @@
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -4387,6 +4398,8 @@
       <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -5021,6 +5034,8 @@
       <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -5673,6 +5688,8 @@
         </cTool>
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
@@ -6926,6 +6943,8 @@
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -7569,6 +7588,8 @@
       <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -8214,6 +8235,8 @@
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -8696,6 +8719,8 @@
       <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -9194,6 +9219,8 @@
       <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -9840,6 +9867,8 @@
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -10343,6 +10372,8 @@
       <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -11024,6 +11055,8 @@
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="9">
         <ccTool>
           <incDir>
@@ -11526,6 +11559,8 @@
       <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="9">
         <ccTool>
@@ -12034,6 +12069,8 @@
       <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="9">
         <ccTool>
@@ -12754,6 +12791,8 @@
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
           <incDir>
@@ -13398,6 +13437,8 @@
       <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -14225,6 +14266,8 @@
       <item path="../Lps22hb.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">

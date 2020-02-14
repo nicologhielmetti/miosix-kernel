@@ -1010,6 +1010,8 @@
       <df name="pdf_references">
       </df>
       <df name="python_script">
+        <df name="__pycache__">
+        </df>
       </df>
       <df name="SyncQueue">
         <in>SyncQueue.h</in>
@@ -1022,6 +1024,7 @@
       <in>NeuralNetwork.cpp</in>
       <in>NeuralNetwork.h</in>
       <in>SyncQueue.h</in>
+      <in>UsefulTypedefs.h</in>
       <in>main.cpp</in>
     </df>
     <df root=".." name="1">
@@ -1492,6 +1495,8 @@
       <df name="pdf_references">
       </df>
       <df name="python_script">
+        <df name="__pycache__">
+        </df>
       </df>
       <df name="Testing_scripts">
       </df>
@@ -1964,6 +1969,8 @@
       <df name="pdf_references">
       </df>
       <df name="python_script">
+        <df name="__pycache__">
+        </df>
       </df>
       <df name="Testing_scripts">
       </df>
