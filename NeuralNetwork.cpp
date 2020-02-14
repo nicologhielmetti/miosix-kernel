@@ -27,7 +27,7 @@ NeuralNetwork::~NeuralNetwork()
 void NeuralNetwork::run() 
 {
     unsigned int acquiredValues = 0;
-    unsigned int valuesToAcquire = 8*60*60/(((unsigned int)odr - 15)*32);
+    unsigned int valuesToAcquire = 40*60/(((unsigned int)odr - 15)*32);
     printf("values to acquire : %i \n", valuesToAcquire);
     while(!quit.load()) 
     {
