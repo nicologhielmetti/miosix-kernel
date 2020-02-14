@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="95">
+<configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root=".." name="0">
       <df name="ActiveObject">
         <in>ActiveObject.cpp</in>
         <in>ActiveObject.h</in>
+      </df>
+      <df name="Auxiliary_scripts">
+        <df name=".idea">
+          <df name="inspectionProfiles">
+          </df>
+        </df>
       </df>
       <df name="miosix">
         <df name="arch">
@@ -1010,6 +1016,13 @@
       <df name="pdf_references">
       </df>
       <df name="python_script">
+<<<<<<< HEAD
+=======
+        <df name=".idea">
+          <df name="inspectionProfiles">
+          </df>
+        </df>
+>>>>>>> d7ab283b489f79695f181606d1dc204a93eff9f0
         <df name="__pycache__">
         </df>
       </df>
@@ -1028,6 +1041,14 @@
       <in>main.cpp</in>
     </df>
     <df root=".." name="1">
+      <df name="ActiveObject">
+      </df>
+      <df name="Auxiliary_scripts">
+        <df name=".idea">
+          <df name="inspectionProfiles">
+          </df>
+        </df>
+      </df>
       <df name="miosix">
         <df name="arch">
           <df name="arm7_lpc2000">
@@ -1495,6 +1516,13 @@
       <df name="pdf_references">
       </df>
       <df name="python_script">
+<<<<<<< HEAD
+=======
+        <df name=".idea">
+          <df name="inspectionProfiles">
+          </df>
+        </df>
+>>>>>>> d7ab283b489f79695f181606d1dc204a93eff9f0
         <df name="__pycache__">
         </df>
       </df>
@@ -1502,6 +1530,14 @@
       </df>
     </df>
     <df root=".." name="2">
+      <df name="ActiveObject">
+      </df>
+      <df name="Auxiliary_scripts">
+        <df name=".idea">
+          <df name="inspectionProfiles">
+          </df>
+        </df>
+      </df>
       <df name="miosix">
         <df name="arch">
           <df name="arm7_lpc2000">
@@ -1969,6 +2005,13 @@
       <df name="pdf_references">
       </df>
       <df name="python_script">
+<<<<<<< HEAD
+=======
+        <df name=".idea">
+          <df name="inspectionProfiles">
+          </df>
+        </df>
+>>>>>>> d7ab283b489f79695f181606d1dc204a93eff9f0
         <df name="__pycache__">
         </df>
       </df>

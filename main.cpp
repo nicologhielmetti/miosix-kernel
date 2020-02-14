@@ -36,7 +36,7 @@ const unsigned char lps22hb_addr = 0xBA;
 
 // TO BE CHECKED BEFORE EACH COMPILATION
 // altitude of the sensor (in meters), used to compute the sea-level atm pressure
-const unsigned int sensor_altitude = 415;
+const unsigned int sensor_altitude = 130;
 
 void initRCC(){
     //enable RCC pheripherals
