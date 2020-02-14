@@ -1,3 +1,11 @@
+# Exclude files for pycharm
+python_script/.idea/*
+python_script/secret.py
+python_script/__pycache__/*
+miosix_np_2/nbproject/configurations.xml
+miosix_np_2/nbproject/private/configurations.xml
+
+
 # Exclude doxygen
 miosix/_doc/doxygen/html/*
 

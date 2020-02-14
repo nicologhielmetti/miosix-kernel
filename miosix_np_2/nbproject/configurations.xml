@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="100">
+<configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root=".." name="0">
       <df name="ActiveObject">
@@ -426,10 +426,6 @@
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
           <executablePath>../main.elf</executablePath>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
@@ -2060,10 +2056,6 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -2620,10 +2612,6 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -3255,10 +3243,6 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -3892,10 +3876,6 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -4379,10 +4359,6 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -5017,10 +4993,6 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -5643,10 +5615,6 @@
             <standard>8</standard>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -6929,10 +6897,6 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -7577,10 +7541,6 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -8225,10 +8185,6 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -8712,10 +8668,6 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -9214,10 +9166,6 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -9863,10 +9811,6 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -10371,10 +10315,6 @@
             </undefinedList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -11055,10 +10995,6 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -11562,10 +11498,6 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -12074,10 +12006,6 @@
             </undefinedList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -12797,10 +12725,6 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -13446,10 +13370,6 @@
             </undefinedList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -14277,10 +14197,6 @@
             </undefinedList>
           </ccTool>
         </makeTool>
-        <preBuild>
-          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
-          <preBuildCommand></preBuildCommand>
-        </preBuild>
       </makefileType>
       <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
