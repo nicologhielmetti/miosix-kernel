@@ -36,7 +36,7 @@ const unsigned char lps22hb_addr = 0xBA;
 
 // TO BE CHECKED BEFORE EACH COMPILATION
 // altitude of the sensor (in meters), used to compute the sea-level atm pressure
-const unsigned int sensor_altitude = 127;
+const unsigned int sensor_altitude = 130;
 
 void initRCC(){
     //enable RCC pheripherals
@@ -54,13 +54,10 @@ SyncQueue<float> in_queue;
 int main()
 {    
     initRCC();
-    //it starts the neural network which is an active object
-    NeuralNetwork nn(in_queue);
     //initialize the sensor via I2C
     pressure_sensor.init();
-    //if PB10.value() == 1 => fifo is full, so before starting to read pressure 
-    //data the fifo is flushed
-    if(pressure_sensor.hasDataToRead()) pressure_sensor.getLast32AvgPressure();
+    //it starts the neural network which is an active object
+    NeuralNetwork nn(in_queue, pressure_sensor.getODR());
     for(;;)
     {
         //This call block the main thread until PB10 pass from 0 to 1.
@@ -69,7 +66,7 @@ int main()
         //This function read the 32 slots of the fifo, calculate the avg and 
         //return the value reshaped considering the altitude of the measure
         float pressure_val = pressure_sensor.getLast32AvgPressure();
-        //printf("Pressure reading: %f \n", pressure_val);
+        printf("Pressure reading: %f \n", pressure_val);
         in_queue.put(pressure_val);
     }
  }

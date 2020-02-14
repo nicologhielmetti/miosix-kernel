@@ -2,12 +2,6 @@
 <configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root=".." name="0">
-      <df name="ActiveObject">
-        <in>ActiveObject.cpp</in>
-        <in>ActiveObject.h</in>
-      </df>
-      <df name="Auxiliary_scripts">
-      </df>
       <df name="miosix">
         <df name="arch">
           <df name="arm7_lpc2000">
@@ -930,9 +924,6 @@
           <in>version.cpp</in>
           <in>version.h</in>
         </df>
-        <in>NeuralNetwork.cpp</in>
-        <in>NeuralNetwork.h</in>
-        <in>lps22hb.cpp</in>
         <in>miosix.h</in>
       </df>
       <df name="miosix_np_2">
@@ -1014,16 +1005,13 @@
       </df>
       <df name="python_script">
       </df>
-      <df name="SyncQueue">
-        <in>SyncQueue.h</in>
-      </df>
       <in>ActiveObject.cpp</in>
       <in>ActiveObject.h</in>
       <in>Lps22hb.h</in>
       <in>NeuralNetwork.cpp</in>
       <in>NeuralNetwork.h</in>
       <in>SyncQueue.h</in>
-      <in>lps22hb.h</in>
+      <in>UsefulTypedefs.h</in>
       <in>main.cpp</in>
     </df>
   </logicalFolder>

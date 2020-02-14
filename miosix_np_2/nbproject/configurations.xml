@@ -2,10 +2,6 @@
 <configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root=".." name="0">
-      <df name="ActiveObject">
-        <in>ActiveObject.cpp</in>
-        <in>ActiveObject.h</in>
-      </df>
       <df name="miosix">
         <df name="arch">
           <df name="arm7_lpc2000">
@@ -360,9 +356,6 @@
           <in>util.cpp</in>
           <in>version.cpp</in>
         </df>
-        <in>NeuralNetwork.cpp</in>
-        <in>NeuralNetwork.h</in>
-        <in>lps22hb.cpp</in>
       </df>
       <df name="NN">
         <df name="Drivers">
@@ -386,12 +379,9 @@
           <in>network_data.c</in>
         </df>
       </df>
-      <df name="SyncQueue">
-        <in>SyncQueue.h</in>
-      </df>
       <in>ActiveObject.cpp</in>
       <in>NeuralNetwork.cpp</in>
-      <in>lps22hb.h</in>
+      <in>UsefulTypedefs.h</in>
       <in>main.cpp</in>
     </df>
     <logicalFolder name="ExternalFiles"
@@ -445,8 +435,6 @@
             <pElem>..</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="4">
       </item>
       <item path="../NN/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c"
             ex="false"
@@ -557,6 +545,8 @@
           </incDir>
         </ccTool>
       </item>
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="4">
         <ccTool>
           <incDir>
@@ -578,13 +568,6 @@
             <pElem>..</pElem>
             <pElem>../miosix</pElem>
             <pElem>../miosix/arch/common</pElem>
-          </incDir>
-        </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-          <incDir>
-            <pElem>../miosix</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -1377,13 +1360,6 @@
           </incDir>
         </ccTool>
       </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-          <incDir>
-            <pElem>../miosix</pElem>
-          </incDir>
-        </ccTool>
-      </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
             tool="1"
@@ -1489,13 +1465,6 @@
           </incDir>
         </ccTool>
       </item>
-      <folder path="0/ActiveObject">
-        <ccTool>
-          <incDir>
-            <pElem>../ActiveObject</pElem>
-          </incDir>
-        </ccTool>
-      </folder>
       <folder path="0/NN">
         <cTool>
           <incDir>
@@ -2057,13 +2026,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -2076,10 +2039,6 @@
             <pElem>..</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/lpc2138_miosix_board/interfaces-impl/bsp.cpp"
             ex="false"
@@ -2393,8 +2352,6 @@
           </incDir>
         </ccTool>
       </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
             tool="1"
@@ -2613,13 +2570,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -2634,10 +2585,6 @@
             <pElem>..</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/ST/STM32F10x/Source/Templates/system_stm32f10x.c"
             ex="false"
@@ -2984,8 +2931,6 @@
           </incDir>
         </ccTool>
       </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
             tool="1"
@@ -3244,13 +3189,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -3265,10 +3204,6 @@
             <pElem>..</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/ST/STM32F10x/Source/Templates/system_stm32f10x.c"
             ex="false"
@@ -3618,8 +3553,6 @@
           </incDir>
         </ccTool>
       </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
             tool="1"
@@ -3877,13 +3810,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -3898,10 +3825,6 @@
             <pElem>..</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/ST/STM32F10x/Source/Templates/system_stm32f10x.c"
             ex="false"
@@ -4107,8 +4030,6 @@
             <pElem>../miosix</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
@@ -4360,13 +4281,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -4381,10 +4296,6 @@
             <pElem>..</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/ST/STM32F10x/Source/Templates/system_stm32f10x.c"
             ex="false"
@@ -4734,8 +4645,6 @@
           </incDir>
         </ccTool>
       </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
             tool="1"
@@ -4994,13 +4903,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -5015,10 +4918,6 @@
             <pElem>..</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/ST/STM32F10x/Source/Templates/system_stm32f10x.c"
             ex="false"
@@ -5368,8 +5267,6 @@
           </incDir>
         </ccTool>
       </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
             tool="1"
@@ -5616,10 +5513,6 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="../NN/Src/aeabi_memclr.c" ex="false" tool="0" flavor2="2">
         <cTool flags="1">
           <incDir>
@@ -5650,9 +5543,7 @@
           </incDir>
         </cTool>
       </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
@@ -5678,10 +5569,6 @@
             <Elem>__SOFTFP__</Elem>
           </undefinedList>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c"
             ex="false"
@@ -6381,8 +6268,6 @@
           </incDir>
         </ccTool>
       </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
             tool="1"
@@ -6898,13 +6783,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -6919,10 +6798,6 @@
             <pElem>..</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/ST/STM32F2xx/Source/Templates/system_stm32f2xx.c"
             ex="false"
@@ -7306,8 +7181,6 @@
           </incDir>
         </ccTool>
       </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
             tool="1"
@@ -7542,13 +7415,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -7563,10 +7430,6 @@
             <pElem>..</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/ST/STM32F2xx/Source/Templates/system_stm32f2xx.c"
             ex="false"
@@ -7950,8 +7813,6 @@
           </incDir>
         </ccTool>
       </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
             tool="1"
@@ -8186,13 +8047,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -8207,10 +8062,6 @@
             <pElem>..</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/ST/STM32F2xx/Source/Templates/system_stm32f2xx.c"
             ex="false"
@@ -8418,8 +8269,6 @@
             <pElem>../miosix</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
@@ -8669,13 +8518,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -8690,10 +8533,6 @@
             <pElem>..</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/ST/STM32L1xx/Source/Templates/system_stm32l1xx.c"
             ex="false"
@@ -8912,8 +8751,6 @@
             <pElem>../miosix</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
@@ -9167,13 +9004,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -9188,10 +9019,6 @@
             <pElem>..</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c"
             ex="false"
@@ -9554,8 +9381,6 @@
           </incDir>
         </ccTool>
       </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
             tool="1"
@@ -9812,13 +9637,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -9833,10 +9652,6 @@
             <pElem>..</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/ST/STM32F2xx/Source/Templates/system_stm32f2xx.c"
             ex="false"
@@ -10078,8 +9893,6 @@
           </incDir>
         </ccTool>
       </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
             tool="1"
@@ -10316,13 +10129,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -10337,10 +10144,6 @@
             <pElem>..</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c"
             ex="false"
@@ -10703,8 +10506,6 @@
           </incDir>
         </ccTool>
       </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
             tool="1"
@@ -10996,13 +10797,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="9">
         <ccTool>
@@ -11017,10 +10812,6 @@
             <pElem>..</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/ST/STM32F10x/Source/Templates/system_stm32f10x.c"
             ex="false"
@@ -11246,8 +11037,6 @@
             <pElem>../miosix</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
@@ -11499,13 +11288,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="9">
         <ccTool>
@@ -11520,10 +11303,6 @@
             <pElem>..</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/ST/STM32F10x/Source/Templates/system_stm32f10x.c"
             ex="false"
@@ -11744,8 +11523,6 @@
             <pElem>../miosix</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
@@ -12007,13 +11784,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="9">
         <ccTool>
@@ -12028,10 +11799,6 @@
             <pElem>..</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c"
             ex="false"
@@ -12424,8 +12191,6 @@
           </incDir>
         </ccTool>
       </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
             tool="1"
@@ -12726,13 +12491,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -12752,10 +12511,6 @@
             <pElem>../miosix</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/SiliconLabs/EFM32GG/Source/system_efm32gg.c"
             ex="false"
@@ -12981,8 +12736,6 @@
             <pElem>../miosix</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
@@ -13371,13 +13124,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
         <ccTool>
@@ -13397,10 +13144,6 @@
             <pElem>../miosix</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c"
             ex="false"
@@ -13782,8 +13525,6 @@
             <pElem>../miosix</pElem>
           </incDir>
         </ccTool>
-      </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
@@ -14198,13 +13939,7 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../ActiveObject/ActiveObject.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../ActiveObject/ActiveObject.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SyncQueue/SyncQueue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../lps22hb.h" ex="false" tool="3" flavor2="0">
+      <item path="../UsefulTypedefs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
@@ -14222,10 +13957,6 @@
             <Elem>_MIOSIX_BOARDNAME="stm32f429zi_skyward_anakin"</Elem>
           </preprocessorList>
         </ccTool>
-      </item>
-      <item path="../miosix/NeuralNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../miosix/NeuralNetwork.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/common/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c"
             ex="false"
@@ -14380,8 +14111,6 @@
             ex="false"
             tool="1"
             flavor2="8">
-      </item>
-      <item path="../miosix/lps22hb.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/stdlib_integration/libc_integration.cpp"
             ex="false"
