@@ -15,7 +15,7 @@
 #include <math.h>
 #include "UsefulTypedefs.h"
 
-#define DEBUG
+//#define DEBUG
 
 #ifdef DEBUG
 #define DEBUG_TEST 1

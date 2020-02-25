@@ -27,6 +27,7 @@
 #include "Lps22hb.h"
 #include "SyncQueue.h"
 #include "NeuralNetwork.h"
+#include "util/util.h"
 
 using namespace std;
 using namespace miosix;
@@ -52,7 +53,8 @@ Lps22hb<sda,scl,lps22hb_addr> pressure_sensor(sensor_altitude);
 SyncQueue<float> in_queue;
 
 int main()
-{    
+{   
+    MemoryProfiling::print();
     initRCC();
     //initialize the sensor via I2C
     pressure_sensor.init();
@@ -68,5 +70,6 @@ int main()
         float pressure_val = pressure_sensor.getLast32AvgPressure();
         printf("Pressure reading: %f \n", pressure_val);
         in_queue.put(pressure_val);
+        MemoryProfiling::print();
     }
  }
