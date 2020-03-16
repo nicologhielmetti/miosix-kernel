@@ -29,7 +29,6 @@
 * util.h Part of the Miosix Embedded OS.
 * A collection of "utilities".
 ************************************************************************/
-#include <string>
 
 #ifndef UTIL_H
 #define UTIL_H
@@ -48,8 +47,6 @@ namespace miosix {
 class MemoryProfiling
 {
 public:
-    
-    static void print(const std::string& marker);
 
     /**
      * Prints a summary of the information that can be gathered from this class.

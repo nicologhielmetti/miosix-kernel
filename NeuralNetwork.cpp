@@ -8,11 +8,8 @@
 #include "NeuralNetwork.h"
 #include <cstdio>
 
-
-
 NeuralNetwork::NeuralNetwork(SyncQueue<float> &queue, const OdrMode& odr): queue(queue), odr(odr)
 {
-    MemoryProfiling::print("THREAD_0,initNN()");
     initNN();
 };
 
@@ -36,7 +33,6 @@ void NeuralNetwork::run()
         // if the queue is empty the thread keep waiting for a value to
         // to be inserted into the queue. As soon as the value is inserted, that 
         // value is returned by this method.
-        MemoryProfiling::print("THREAD_0,in_queue.get()");
         float value = queue.get();
         
         // incremental mean formula: avg(n) = avg(n-1) + (newValue - avg(n-1))/n
@@ -59,7 +55,6 @@ void NeuralNetwork::run()
             enqueue(in_data, incrementalMean);
 
             printf("Mean: %f\n", incrementalMean);
-            MemoryProfiling::print("THREAD_0,runNN()");
             runNN(network, normalizeInput(in_data));
             printf("Prediction result: %f\n", denormalizeOutput(nn_outdata[0]));
             acquiredValues = 0;
