@@ -33,7 +33,7 @@ void NeuralNetwork::run()
 {
     unsigned int acquiredValues = 0;
     unsigned int valuesToAcquire = 8*60*60/(((unsigned int)odr - 15)*32);
-    if(THREAD) printf("values to acquire : %i \n", valuesToAcquire);
+    //printf("values to acquire : %i \n", valuesToAcquire);
     while(!quit.load()) 
     {
         // queue is the shared object between the producer (lps22hb) and the 
@@ -63,10 +63,10 @@ void NeuralNetwork::run()
             //8h has passed, time to predict
             enqueue(in_data, incrementalMean);
 
-            printf("Mean: %f\n", incrementalMean);
+            //printf("Mean: %f\n", incrementalMean);
             if(THREAD) MemoryProfiling::print("THREAD_0,runNN()");
             runNN(network, normalizeInput(in_data));
-            if(THREAD) printf("Prediction result: %f\n", denormalizeOutput(nn_outdata[0]));
+            //printf("Prediction result: %f\n", denormalizeOutput(nn_outdata[0]));
             acquiredValues = 0;
             incrementalMean = 0;
             if(THREAD) MemoryProfiling::print("\0");

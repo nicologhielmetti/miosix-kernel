@@ -74,7 +74,7 @@ int main()
         //return the value reshaped considering the altitude of the measure
         if(MAIN) MemoryProfiling::print("THREAD_MAIN,ps.getLast32AvgPressure()");
         float pressure_val = pressure_sensor.getLast32AvgPressure();
-        if(MAIN) printf("Pressure reading: %f \n", pressure_val);
+        //printf("Pressure reading: %f \n", pressure_val);
         if(MAIN) MemoryProfiling::print("THREAD_MAIN,ps.in_queue.put()");
         in_queue.put(pressure_val);
         if(MAIN) MemoryProfiling::print("\0");
