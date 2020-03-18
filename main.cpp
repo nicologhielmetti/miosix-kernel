@@ -29,7 +29,6 @@
 using namespace std;
 using namespace miosix;
 
-#define MAIN_PROFILING
 #ifdef MAIN_PROFILING
 #define MAIN 1
 #else
@@ -75,7 +74,7 @@ int main()
         //return the value reshaped considering the altitude of the measure
         if(MAIN) MemoryProfiling::print("THREAD_MAIN,ps.getLast32AvgPressure()");
         float pressure_val = pressure_sensor.getLast32AvgPressure();
-        printf("Pressure reading: %f \n", pressure_val);
+        if(MAIN) printf("Pressure reading: %f \n", pressure_val);
         if(MAIN) MemoryProfiling::print("THREAD_MAIN,ps.in_queue.put()");
         in_queue.put(pressure_val);
         if(MAIN) MemoryProfiling::print("\0");

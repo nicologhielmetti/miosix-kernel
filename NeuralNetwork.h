@@ -8,6 +8,9 @@
 #ifndef NEURALNETWORK_H
 #define	NEURALNETWORK_H
 
+#define MAIN_PROFILING
+
+
 #include "SyncQueue.h"
 #include "ActiveObject.h"
 #include "NN/Inc/network.h"
