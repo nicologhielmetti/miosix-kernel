@@ -49,8 +49,6 @@ class MemoryProfiling
 {
 public:
     
-    static void print(const std::string& marker);
-
     /**
      * Prints a summary of the information that can be gathered from this class.
      */

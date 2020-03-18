@@ -11,6 +11,8 @@
 #include "util/software_i2c.h"
 #include <kernel/scheduler/scheduler.h>
 #include "UsefulTypedefs.h"
+#include "profile_defines.h"
+#include "miosix/util/util.h"
 
 //#define DEBUG
 
@@ -117,6 +119,10 @@ public:
 
         led::low();
 
+#ifdef MAIN_PROFILING
+        printf("END -> THREAD_MAIN,ps.getLast32AvgPressure()\n");
+        MemoryProfiling::print();
+#endif
         //printf("Temperature reading: %f\n", t_running_mean);
         return computeSeaLevelPressure(p_running_mean, t_running_mean);
     }
@@ -134,6 +140,10 @@ public:
                 Thread::yield();
             }
         }
+        #ifdef MAIN_PROFILING
+            printf("END -> THREAD_MAIN,ps.waitForFullFifo()\n");
+            MemoryProfiling::print();
+        #endif
     }
     
     void init()
@@ -172,8 +182,10 @@ public:
         NVIC_SetPriority(EXTI15_10_IRQn, 15);
         NVIC_ClearPendingIRQ(EXTI15_10_IRQn);
         NVIC_EnableIRQ(EXTI15_10_IRQn);
-        
-        
+#ifdef MAIN_PROFILING 
+        printf("END -> THREAD_MAIN,ps.init()\n");
+        MemoryProfiling::print();
+#endif
     }
     
     Lps22hb(const unsigned int &sensorAltitude): sensorAltitude(sensorAltitude) {}

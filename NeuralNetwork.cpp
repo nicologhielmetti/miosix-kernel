@@ -7,18 +7,16 @@
 
 #include "NeuralNetwork.h"
 #include <cstdio>
-
-#ifdef MAIN_PROFILING
-#define THREAD 0
-#else
-#define THREAD 1
-#endif
+#include "profile_defines.h"
 
 static short i = 0;
 
 NeuralNetwork::NeuralNetwork(SyncQueue<float> &queue, const OdrMode& odr): queue(queue), odr(odr)
 {
-    if(MAIN) MemoryProfiling::print("THREAD_MAIN,initNN()");
+#ifdef MAIN_PROFILING
+    printf("BEFORE -> THREAD_MAIN,initNN()\n");
+    MemoryProfiling::print();
+#endif
     initNN();
 };
 
@@ -35,14 +33,17 @@ void NeuralNetwork::run()
     unsigned int acquiredValues = 0;
     unsigned int valuesToAcquire = 1;//8*60*60/(((unsigned int)odr - 15)*32);
     //printf("values to acquire : %i \n", valuesToAcquire);
-    while(!quit.load() || i < 3) 
+    while(!quit.load() && i < 3) 
     {
         // queue is the shared object between the producer (lps22hb) and the 
         // consumer (this class). The queue.get() method is a blocking method, 
         // if the queue is empty the thread keep waiting for a value to
         // to be inserted into the queue. As soon as the value is inserted, that 
         // value is returned by this method.
-        if(THREAD) MemoryProfiling::print("THREAD_0,in_queue.get()");
+#ifndef MAIN_PROFILING 
+        printf("BEFORE -> THREAD_0,in_queue.get()\n");
+        MemoryProfiling::print();
+#endif
         float value = queue.get();
         
         // incremental mean formula: avg(n) = avg(n-1) + (newValue - avg(n-1))/n
@@ -65,15 +66,20 @@ void NeuralNetwork::run()
             enqueue(in_data, incrementalMean);
 
             //printf("Mean: %f\n", incrementalMean);
-            if(THREAD) MemoryProfiling::print("THREAD_0,runNN()");
+#ifndef MAIN_PROFILING
+            printf("BEFORE -> THREAD_0,runNN()\n");
+            MemoryProfiling::print();
+#endif
             runNN(network, normalizeInput(in_data));
             //printf("Prediction result: %f\n", denormalizeOutput(nn_outdata[0]));
             acquiredValues = 0;
             incrementalMean = 0;
         }
+        i++;
     }
-    if(THREAD) MemoryProfiling::print("\0");
-    printf("FINISH!");
+#ifndef MAIN_PROFILING 
+    printf("\nFINISH!\n");
+#endif
 }
 
 void NeuralNetwork::initNN()
@@ -104,6 +110,10 @@ void NeuralNetwork::initNN()
     {
         //printf("NN successfully initialized.\n");
     }
+#ifdef MAIN_PROFILING  
+            printf("END -> THREAD_MAIN,initNN()\n");
+            MemoryProfiling::print();
+#endif
 }
 
 int  NeuralNetwork::runNN(ai_handle network, void* input)
@@ -121,6 +131,10 @@ int  NeuralNetwork::runNN(ai_handle network, void* input)
     {
         err = ai_network_get_error(network);
     }
+#ifndef MAIN_PROFILING
+            printf("END -> THREAD_0,runNN()\n");
+            MemoryProfiling::print();
+#endif
     return 1;    
 }
 

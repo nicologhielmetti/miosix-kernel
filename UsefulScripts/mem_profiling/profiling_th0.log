@@ -1,0 +1,113 @@
+Starting Kernel... Ok
+Miosix v2.11 (stm32f401re_nucleo, Mar 18 2020 22:27:18, gcc 4.7.3-mp1)
+Available heap 88176 out of 94128 Bytes
+BEFORE -> THREAD_0,in_queue.get()
+Stack memory statistics.
+Size: 2048
+Used (current/max): 148/452
+Free (current/min): 1900/1596
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+END -> THREAD_0,in_queue.get()
+Stack memory statistics.
+Size: 2048
+Used (current/max): 148/756
+Free (current/min): 1900/1292
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+BEFORE -> THREAD_0,runNN()
+Stack memory statistics.
+Size: 2048
+Used (current/max): 148/756
+Free (current/min): 1900/1292
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+END -> THREAD_0,runNN()
+Stack memory statistics.
+Size: 2048
+Used (current/max): 164/756
+Free (current/min): 1884/1292
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+BEFORE -> THREAD_0,in_queue.get()
+Stack memory statistics.
+Size: 2048
+Used (current/max): 148/772
+Free (current/min): 1900/1276
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+END -> THREAD_0,in_queue.get()
+Stack memory statistics.
+Size: 2048
+Used (current/max): 148/772
+Free (current/min): 1900/1276
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+BEFORE -> THREAD_0,runNN()
+Stack memory statistics.
+Size: 2048
+Used (current/max): 148/772
+Free (current/min): 1900/1276
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+END -> THREAD_0,runNN()
+Stack memory statistics.
+Size: 2048
+Used (current/max): 164/772
+Free (current/min): 1884/1276
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+BEFORE -> THREAD_0,in_queue.get()
+Stack memory statistics.
+Size: 2048
+Used (current/max): 148/772
+Free (current/min): 1900/1276
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+END -> THREAD_0,in_queue.get()
+Stack memory statistics.
+Size: 2048
+Used (current/max): 148/772
+Free (current/min): 1900/1276
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+BEFORE -> THREAD_0,runNN()
+Stack memory statistics.
+Size: 2048
+Used (current/max): 148/772
+Free (current/min): 1900/1276
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+END -> THREAD_0,runNN()
+Stack memory statistics.
+Size: 2048
+Used (current/max): 164/772
+Free (current/min): 1884/1276
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+
+FINISH!

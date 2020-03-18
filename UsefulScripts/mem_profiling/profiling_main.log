@@ -1,102 +1,140 @@
 Starting Kernel... Ok
-Miosix v2.11 (stm32f401re_nucleo, Mar 18 2020 21:11:12, gcc 4.7.3-mp1)
-Available heap 88168 out of 94120 Bytes
-BEFORE -> THREAD_MAIN,ps.init() 
-
+Miosix v2.11 (stm32f401re_nucleo, Mar 18 2020 22:27:18, gcc 4.7.3-mp1)
+Available heap 88176 out of 94128 Bytes
+BEFORE -> THREAD_MAIN,ps.init()
 Stack memory statistics.
 Size: 4096
-Used (current/max): 780/1324
-Free (current/min): 3316/2772
+Used (current/max): 764/1068
+Free (current/min): 3332/3028
 Heap memory statistics.
-Size: 94120
-Used (current/max): 5992/6056
-Free (current/min): 88128/88064
-
-AFTER -> THREAD_MAIN,ps.init() 
-BEFORE -> THREAD_MAIN,nn() 
-
+Size: 94128
+Used (current/max): 5952/6064
+Free (current/min): 88176/88064
+END -> THREAD_MAIN,ps.init()
 Stack memory statistics.
 Size: 4096
-Used (current/max): 780/1388
-Free (current/min): 3316/2708
+Used (current/max): 764/1372
+Free (current/min): 3332/2724
 Heap memory statistics.
-Size: 94120
-Used (current/max): 6032/7080
-Free (current/min): 88088/87040
-
-AFTER -> THREAD_MAIN,nn() 
-BEFORE -> THREAD_MAIN,ps.waitForFullFifo() 
-
+Size: 94128
+Used (current/max): 5952/6064
+Free (current/min): 88176/88064
+THREAD_MAIN,initNN()
 Stack memory statistics.
 Size: 4096
-Used (current/max): 780/1388
-Free (current/min): 3316/2708
+Used (current/max): 796/1372
+Free (current/min): 3300/2724
 Heap memory statistics.
-Size: 94120
-Used (current/max): 8464/10152
-Free (current/min): 85656/83968
-
-AFTER -> THREAD_MAIN,ps.waitForFullFifo() 
-BEFORE -> THREAD_MAIN,ps.getLast32AvgPressure() 
-
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+END -> THREAD_MAIN,initNN()
 Stack memory statistics.
 Size: 4096
-Used (current/max): 780/1388
-Free (current/min): 3316/2708
+Used (current/max): 852/1404
+Free (current/min): 3244/2692
 Heap memory statistics.
-Size: 94120
-Used (current/max): 8480/10152
-Free (current/min): 85640/83968
-
-AFTER -> THREAD_MAIN,ps.getLast32AvgPressure() 
-BEFORE -> THREAD_MAIN,ps.in_queue.put() 
-
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+BEFORE -> THREAD_MAIN,ps.waitForFullFifo()
 Stack memory statistics.
 Size: 4096
-Used (current/max): 780/1388
-Free (current/min): 3316/2708
+Used (current/max): 764/1460
+Free (current/min): 3332/2636
 Heap memory statistics.
-Size: 94120
-Used (current/max): 8472/10152
-Free (current/min): 85648/83968
-
-AFTER -> THREAD_MAIN,ps.in_queue.put() 
-BEFORE -> THREAD_MAIN,ps.waitForFullFifo() 
-
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+BEFORE -> THREAD_MAIN,ps.getLast32AvgPressure()
 Stack memory statistics.
 Size: 4096
-Used (current/max): 780/1388
-Free (current/min): 3316/2708
+Used (current/max): 764/1460
+Free (current/min): 3332/2636
 Heap memory statistics.
-Size: 94120
-Used (current/max): 8472/10152
-Free (current/min): 85648/83968
-
-AFTER -> THREAD_MAIN,ps.waitForFullFifo() 
-BEFORE -> THREAD_MAIN,ps.getLast32AvgPressure() 
-
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+END -> THREAD_MAIN,ps.getLast32AvgPressure()
 Stack memory statistics.
 Size: 4096
-Used (current/max): 780/1388
-Free (current/min): 3316/2708
+Used (current/max): 764/1460
+Free (current/min): 3332/2636
 Heap memory statistics.
-Size: 94120
-Used (current/max): 8480/10152
-Free (current/min): 85640/83968
-
-AFTER -> THREAD_MAIN,ps.getLast32AvgPressure() 
-BEFORE -> THREAD_MAIN,ps.in_queue.put() 
-
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+BEFORE -> THREAD_MAIN,ps.in_queue.put()
 Stack memory statistics.
 Size: 4096
-Used (current/max): 780/1388
-Free (current/min): 3316/2708
+Used (current/max): 764/1460
+Free (current/min): 3332/2636
 Heap memory statistics.
-Size: 94120
-Used (current/max): 8472/10152
-Free (current/min): 85648/83968
-
-AFTER -> THREAD_MAIN,ps.in_queue.put() 
-
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+END -> THREAD_MAIN,in_queue.put()
+Stack memory statistics.
+Size: 4096
+Used (current/max): 764/1460
+Free (current/min): 3332/2636
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8400/9136
+Free (current/min): 85728/84992
+BEFORE -> THREAD_MAIN,ps.waitForFullFifo()
+Stack memory statistics.
+Size: 4096
+Used (current/max): 764/1460
+Free (current/min): 3332/2636
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+END -> THREAD_MAIN,ps.waitForFullFifo()
+Stack memory statistics.
+Size: 4096
+Used (current/max): 764/1460
+Free (current/min): 3332/2636
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+BEFORE -> THREAD_MAIN,ps.getLast32AvgPressure()
+Stack memory statistics.
+Size: 4096
+Used (current/max): 764/1460
+Free (current/min): 3332/2636
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+END -> THREAD_MAIN,ps.getLast32AvgPressure()
+Stack memory statistics.
+Size: 4096
+Used (current/max): 764/1460
+Free (current/min): 3332/2636
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+BEFORE -> THREAD_MAIN,ps.in_queue.put()
+Stack memory statistics.
+Size: 4096
+Used (current/max): 764/1460
+Free (current/min): 3332/2636
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8368/9136
+Free (current/min): 85760/84992
+END -> THREAD_MAIN,in_queue.put()
+Stack memory statistics.
+Size: 4096
+Used (current/max): 764/1460
+Free (current/min): 3332/2636
+Heap memory statistics.
+Size: 94128
+Used (current/max): 8400/9136
+Free (current/min): 85728/84992
 
 FINISH!
