@@ -61,13 +61,13 @@ public:
         int16_t t_signed_val = 0;
         unsigned char pTmp[3];
         unsigned char tTmp[2];
-        
+
         /** With this function all the 32 slots of the fifo are read. Instead 
          *  of reading one byte at a time, the solution adopted is the
          *  multiple read. During the reading is also calculated the incremental 
          *  mean.
          */
-        
+
         i2c::sendStart();
         i2c::send(addr); //ADDR_W
         i2c::send(PRESS_OUT_XL_REG);
@@ -139,10 +139,9 @@ public:
     void init()
     {
         //set interrupt gpio pin to input mode
-        //int_fifo::mode(Mode::INPUT);
         int_fifo::mode(Mode::INPUT);
         led::mode(Mode::OUTPUT);
-        
+
         led::low();
 
         //interrupt line mapping
@@ -166,14 +165,11 @@ public:
         //set ODR to 1Hz
         setOdrFreq(OdrMode::ODR_1HZ);
         //enable interrupt and set priority
-        
-        //enable interrupt on full fifo
-        enableInterruptOnFullFifo(1);
         NVIC_SetPriority(EXTI15_10_IRQn, 15);
         NVIC_ClearPendingIRQ(EXTI15_10_IRQn);
         NVIC_EnableIRQ(EXTI15_10_IRQn);
-        
-        
+        //enable interrupt on full fifo
+        enableInterruptOnFullFifo(1);
     }
     
     Lps22hb(const unsigned int &sensorAltitude): sensorAltitude(sensorAltitude) {}

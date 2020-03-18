@@ -31,13 +31,11 @@
  */
 #include <cstdio>
 #include <malloc.h>
-#include <vector>
 #include "util.h"
 #include "kernel/kernel.h"
 #include "stdlib_integration/libc_integration.h"
 #include "config/miosix_settings.h"
-#include "arch_settings.h"
-#include "filesystem/stringpart.h" //For WATERMARK_FILL and STACK_FILL
+#include "arch_settings.h" //For WATERMARK_FILL and STACK_FILL
 
 using namespace std;
 
@@ -46,17 +44,6 @@ namespace miosix {
 //
 // MemoryStatists class
 //
-static std::string last_marker = "\0";
-
-void MemoryProfiling::print(const std::string& marker)
-{
-    if(last_marker != "\0")
-        iprintf("\n\nAFTER -> %s\n",last_marker.data());
-    if(marker != "\0")
-        iprintf("BEFORE -> %s \n\n", marker.data());
-    last_marker = marker;
-    MemoryProfiling::print();
-}
 
 void MemoryProfiling::print()
 {
