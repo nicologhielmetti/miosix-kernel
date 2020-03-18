@@ -117,7 +117,7 @@ public:
 
         led::low();
 
-        printf("Temperature reading: %f\n", t_running_mean);
+        //printf("Temperature reading: %f\n", t_running_mean);
         return computeSeaLevelPressure(p_running_mean, t_running_mean);
     }
     

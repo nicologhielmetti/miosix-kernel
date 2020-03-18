@@ -29,12 +29,6 @@
 using namespace std;
 using namespace miosix;
 
-#ifdef MAIN_PROFILING
-#define MAIN 1
-#else
-#define MAIN 0
-#endif
-
 //pressure sensor address
 const unsigned char lps22hb_addr = 0xBA;
 
@@ -59,24 +53,42 @@ int main()
 {   
     initRCC();
     //initialize the sensor via I2C
-    if(MAIN) MemoryProfiling::print("THREAD_MAIN,ps.init()");
+#ifdef MAIN_PROFILING 
+    MemoryProfiling::print("THREAD_MAIN,ps.init()");
+#endif
     pressure_sensor.init();
     //it starts the neural network which is an active object
-    if(MAIN) MemoryProfiling::print("THREAD_MAIN,nn()");
+#ifdef MAIN_PROFILING
+    MemoryProfiling::print("THREAD_MAIN,nn()");
+#endif
     NeuralNetwork nn(in_queue, pressure_sensor.getODR());
-    for(;;)
+#ifdef MAIN_PROFILING
+        for(short i = 0; i < 2; i++)
+#else
+        for(;;)
+#endif
     {
         //This call block the main thread until PB10 pass from 0 to 1.
         //When it happens it means that the fifo is full and it can be read 
-        if(MAIN) MemoryProfiling::print("THREAD_MAIN,ps.waitForFullFifo()");
+#ifdef MAIN_PROFILING
+        MemoryProfiling::print("THREAD_MAIN,ps.waitForFullFifo()");
+#endif
         pressure_sensor.waitForFullFifo();
         //This function read the 32 slots of the fifo, calculate the avg and 
         //return the value reshaped considering the altitude of the measure
-        if(MAIN) MemoryProfiling::print("THREAD_MAIN,ps.getLast32AvgPressure()");
+#ifdef MAIN_PROFILING
+        MemoryProfiling::print("THREAD_MAIN,ps.getLast32AvgPressure()");
+#endif
         float pressure_val = pressure_sensor.getLast32AvgPressure();
         //printf("Pressure reading: %f \n", pressure_val);
-        if(MAIN) MemoryProfiling::print("THREAD_MAIN,ps.in_queue.put()");
+#ifdef MAIN_PROFILING
+        MemoryProfiling::print("THREAD_MAIN,ps.in_queue.put()");
+#endif
         in_queue.put(pressure_val);
-        if(MAIN) MemoryProfiling::print("\0");
     }
- }
+#ifdef MAIN_PROFILING
+    MemoryProfiling::print("\0");
+    printf("\nFINISH!\n");
+
+#endif
+}

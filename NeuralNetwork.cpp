@@ -14,10 +14,11 @@
 #define THREAD 1
 #endif
 
+static short i = 0;
 
 NeuralNetwork::NeuralNetwork(SyncQueue<float> &queue, const OdrMode& odr): queue(queue), odr(odr)
 {
-    MemoryProfiling::print("THREAD_0,initNN()");
+    if(MAIN) MemoryProfiling::print("THREAD_MAIN,initNN()");
     initNN();
 };
 
@@ -32,9 +33,9 @@ NeuralNetwork::~NeuralNetwork()
 void NeuralNetwork::run() 
 {
     unsigned int acquiredValues = 0;
-    unsigned int valuesToAcquire = 8*60*60/(((unsigned int)odr - 15)*32);
+    unsigned int valuesToAcquire = 1;//8*60*60/(((unsigned int)odr - 15)*32);
     //printf("values to acquire : %i \n", valuesToAcquire);
-    while(!quit.load()) 
+    while(!quit.load() || i < 3) 
     {
         // queue is the shared object between the producer (lps22hb) and the 
         // consumer (this class). The queue.get() method is a blocking method, 
@@ -69,9 +70,10 @@ void NeuralNetwork::run()
             //printf("Prediction result: %f\n", denormalizeOutput(nn_outdata[0]));
             acquiredValues = 0;
             incrementalMean = 0;
-            if(THREAD) MemoryProfiling::print("\0");
         }
     }
+    if(THREAD) MemoryProfiling::print("\0");
+    printf("FINISH!");
 }
 
 void NeuralNetwork::initNN()
@@ -84,7 +86,7 @@ void NeuralNetwork::initNN()
     }
     else 
     {
-        printf("NN successfully created.\n");
+        //printf("NN successfully created.\n");
     }
 
     // network initialization
@@ -100,7 +102,7 @@ void NeuralNetwork::initNN()
     } 
     else 
     {
-        printf("NN successfully initialized.\n");
+        //printf("NN successfully initialized.\n");
     }
 }
 
@@ -139,7 +141,7 @@ ai_float*  NeuralNetwork::normalizeInput(ai_float* input)
         // normalized.
         if (input[i] > 260 && input[i] < 1260)
             input[i] = (input[i] - normMin) / (normMax - normMin);
-        printf("element number %d of the queue before prediction: %f\n",i+1,input[i]);
+        //printf("element number %d of the queue before prediction: %f\n",i+1,input[i]);
     }
     return input;
 }

@@ -50,12 +50,23 @@ static std::string last_marker = "\0";
 
 void MemoryProfiling::print(const std::string& marker)
 {
-    if(last_marker != "\0")
-        iprintf("\n\nAFTER -> %s\n",last_marker.data());
-    if(marker != "\0")
+    if(last_marker == "\0")
+    {
         iprintf("BEFORE -> %s \n\n", marker.data());
-    last_marker = marker;
+        MemoryProfiling::print();
+        last_marker = marker;
+        return;
+    }
+    if(marker == "\0")
+    {
+        iprintf("\nAFTER -> %s \n\n", last_marker.data());
+        last_marker = marker;
+        return;
+    }
+    iprintf("\nAFTER -> %s \n", last_marker.data());
+    iprintf("BEFORE -> %s \n\n", marker.data());
     MemoryProfiling::print();
+    last_marker = marker;
 }
 
 void MemoryProfiling::print()
