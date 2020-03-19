@@ -54,13 +54,11 @@ int main()
     initRCC();
     //initialize the sensor via I2C
 #ifdef MAIN_PROFILING 
-    MemoryProfiling::print("THREAD_MAIN,ps.init()");
+    printf("BEFORE -> THREAD_MAIN,ps.init()\n");
+    MemoryProfiling::print();
 #endif
     pressure_sensor.init();
     //it starts the neural network which is an active object
-#ifdef MAIN_PROFILING
-    MemoryProfiling::print("THREAD_MAIN,nn()");
-#endif
     NeuralNetwork nn(in_queue, pressure_sensor.getODR());
 #ifdef MAIN_PROFILING
         for(short i = 0; i < 2; i++)
@@ -71,24 +69,25 @@ int main()
         //This call block the main thread until PB10 pass from 0 to 1.
         //When it happens it means that the fifo is full and it can be read 
 #ifdef MAIN_PROFILING
-        MemoryProfiling::print("THREAD_MAIN,ps.waitForFullFifo()");
+        printf("BEFORE -> THREAD_MAIN,ps.waitForFullFifo()\n");
+        MemoryProfiling::print();
 #endif
         pressure_sensor.waitForFullFifo();
         //This function read the 32 slots of the fifo, calculate the avg and 
         //return the value reshaped considering the altitude of the measure
 #ifdef MAIN_PROFILING
-        MemoryProfiling::print("THREAD_MAIN,ps.getLast32AvgPressure()");
+        printf("BEFORE -> THREAD_MAIN,ps.getLast32AvgPressure()\n");
+        MemoryProfiling::print();
 #endif
         float pressure_val = pressure_sensor.getLast32AvgPressure();
         //printf("Pressure reading: %f \n", pressure_val);
 #ifdef MAIN_PROFILING
-        MemoryProfiling::print("THREAD_MAIN,ps.in_queue.put()");
+        printf("BEFORE -> THREAD_MAIN,ps.in_queue.put()\n");
+        MemoryProfiling::print();
 #endif
         in_queue.put(pressure_val);
     }
 #ifdef MAIN_PROFILING
-    MemoryProfiling::print("\0");
     printf("\nFINISH!\n");
-
 #endif
 }

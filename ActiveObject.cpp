@@ -5,6 +5,7 @@
  */
 
 #include "ActiveObject.h"
+#include <functional>
 
 
 using namespace miosix;

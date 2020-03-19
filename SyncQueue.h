@@ -9,7 +9,11 @@
 #define	SYNCQUEUE_H
 
 #include "miosix/kernel/sync.h"
+#include "miosix/util/util.h"
+#include <cstdio>
 #include <list>
+#include "profile_defines.h"
+
 
 using namespace miosix;
 
@@ -24,6 +28,10 @@ public:
         Lock<Mutex> lck(myMutex);
         queue.push_back(data);
         myCv.signal();
+        #ifdef MAIN_PROFILING  
+            printf("END -> THREAD_MAIN,in_queue.put()\n");
+            MemoryProfiling::print();
+        #endif
     }
     
     T get() 
@@ -33,6 +41,10 @@ public:
             myCv.wait(lck);
         T result=queue.front();
         queue.pop_front();
+        #ifndef MAIN_PROFILING  
+            printf("END -> THREAD_0,in_queue.get()\n");
+            MemoryProfiling::print();
+        #endif
         return result;
     }
     
