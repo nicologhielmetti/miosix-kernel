@@ -47,7 +47,7 @@ namespace miosix {
 class MemoryProfiling
 {
 public:
-
+    
     /**
      * Prints a summary of the information that can be gathered from this class.
      */
