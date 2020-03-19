@@ -1,0 +1,9 @@
+methodCalled,stackUsedCurrentDelta,stackUsedMaxDelta,stackFreeCurrentDelta,stackFreeMinDelta,heapUsedCurrentDelta,heapUsedMaxDelta,heapFreeCurrentDelta,heapFreeMinDelta
+ps.init(),0,304,0,-304,0,0,0,0
+initNN(),56,32,-56,-32,0,0,0,0
+ps.waitForFullFifo(),0,0,0,0,0,0,0,0
+ps.getLast32AvgPressure(),0,0,0,0,0,0,0,0
+ps.in_queue.put(),0,0,0,0,32,0,-32,0
+ps.waitForFullFifo()0,0,0,0,0,0,0,0,0
+ps.getLast32AvgPressure()1,0,0,0,0,0,0,0,0
+ps.in_queue.put()2,0,0,0,0,32,0,-32,0

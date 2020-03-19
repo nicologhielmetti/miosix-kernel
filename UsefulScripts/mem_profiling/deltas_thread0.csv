@@ -1,0 +1,7 @@
+methodCalled,stackUsedCurrentDelta,stackUsedMaxDelta,stackFreeCurrentDelta,stackFreeMinDelta,heapUsedCurrentDelta,heapUsedMaxDelta,heapFreeCurrentDelta,heapFreeMinDelta
+in_queue.get(),0,304,0,-304,0,0,0,0
+runNN(),16,0,-16,0,0,0,0,0
+in_queue.get()0,0,0,0,0,0,0,0,0
+runNN()1,16,0,-16,0,0,0,0,0
+in_queue.get()2,0,0,0,0,0,0,0,0
+runNN()3,16,0,-16,0,0,0,0,0
