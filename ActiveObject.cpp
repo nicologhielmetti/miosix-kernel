@@ -5,9 +5,8 @@
  */
 
 #include "ActiveObject.h"
-
-#include<functional>
-
+#include <functional>
+#include "profiling_defines.h"
 
 using namespace miosix;
 
@@ -15,7 +14,9 @@ ActiveObject::ActiveObject(): t(Thread::create(threadLauncher, 2048, Priority(),
 
 void ActiveObject::threadLauncher(void* argv)
 {
+#ifndef MAIN_PROFILING_TIMING
     reinterpret_cast<ActiveObject*>(argv)->run();
+#endif
 }
 
 void ActiveObject::run(){

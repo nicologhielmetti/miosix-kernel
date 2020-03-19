@@ -61,8 +61,8 @@ OPT_BOARD := stm32f401re_nucleo
 ## -O2 is recomended otherwise, as it provides a good balance between code
 ## size and speed
 ##
-OPT_OPTIMIZATION := -O0
-#OPT_OPTIMIZATION := -O2
+#OPT_OPTIMIZATION := -O0
+OPT_OPTIMIZATION := -O2
 #OPT_OPTIMIZATION := -O3
 #OPT_OPTIMIZATION := -Os
 

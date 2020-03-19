@@ -28,6 +28,7 @@
 #include "SyncQueue.h"
 #include "NeuralNetwork.h"
 #include "util/util.h"
+#include "profiling_defines.h"
 
 using namespace std;
 using namespace miosix;
@@ -54,22 +55,45 @@ SyncQueue<float> in_queue;
 
 int main()
 {   
-    MemoryProfiling::print();
     initRCC();
     //initialize the sensor via I2C
+#ifdef MAIN_PROFILING_TIMING
+    tBefore = getTick();
     pressure_sensor.init();
+    printf("ps.init() timing : %lld \n", (getTick() - tBefore));
+#else
+    pressure_sensor.init();
+#endif
+
     //it starts the neural network which is an active object
     NeuralNetwork nn(in_queue, pressure_sensor.getODR());
     for(;;)
     {
         //This call block the main thread until PB10 pass from 0 to 1.
-        //When it happens it means that the fifo is full and it can be read 
+        //When it happens it means that the fifo is full and it can be read
+#ifdef MAIN_PROFILING_TIMING
+        tBefore = getTick();
         pressure_sensor.waitForFullFifo();
+        printf("ps.waitForFullFifo() timing : %lld \n", (getTick() - tBefore));
+#else
+        pressure_sensor.waitForFullFifo();
+#endif
         //This function read the 32 slots of the fifo, calculate the avg and 
         //return the value reshaped considering the altitude of the measure
+#ifdef MAIN_PROFILING_TIMING
+        tBefore = getTick();
         float pressure_val = pressure_sensor.getLast32AvgPressure();
-        printf("Pressure reading: %f \n", pressure_val);
+        printf("ps.getLast32AvgPressure() timing : %lld \n", (getTick() - tBefore));
+#else
+        float pressure_val = pressure_sensor.getLast32AvgPressure();
+#endif
+        //printf("Pressure reading: %f \n", pressure_val);
+#ifdef MAIN_PROFILING_TIMING
+        tBefore = getTick();
         in_queue.put(pressure_val);
-        MemoryProfiling::print();
+        printf("in_queue.put() timing : %lld \n", (getTick() - tBefore));
+#else
+        in_queue.put(pressure_val);
+#endif
     }
  }

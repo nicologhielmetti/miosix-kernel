@@ -10,10 +10,17 @@
 #include <cstdio>
 #include <algorithm>
 #include <array>
+#include "profiling_defines.h"
 
 NeuralNetwork::NeuralNetwork(SyncQueue<float> &queue, const OdrMode& odr): queue(queue), odr(odr)
 {
+#ifdef MAIN_PROFILING_TIMING
+    tBefore = getTick();
     initNN();
+    printf("initNN() timing : %lld \n", (getTick() - tBefore));
+#else
+    initNN();
+#endif
 };
 
 NeuralNetwork::~NeuralNetwork() 
@@ -27,8 +34,8 @@ NeuralNetwork::~NeuralNetwork()
 void NeuralNetwork::run() 
 {
     unsigned int acquiredValues = 0;
-    unsigned int valuesToAcquire = 8*60*60/(((unsigned int)odr - 15)*32);
-    printf("values to acquire : %i \n", valuesToAcquire);
+    unsigned int valuesToAcquire = 1;//8*60*60/(((unsigned int)odr - 15)*32);
+    //printf("values to acquire : %i \n", valuesToAcquire);
     while(!quit.load()) 
     {
         // queue is the shared object between the producer (lps22hb) and the 
@@ -36,7 +43,13 @@ void NeuralNetwork::run()
         // if the queue is empty the thread keep waiting for a value to
         // to be inserted into the queue. As soon as the value is inserted, that 
         // value is returned by this method.
+#ifndef MAIN_PROFILING_TIMING
+        tBefore = getTick();
         float value = queue.get();
+        printf("queue.get() timing : %lld \n", (getTick() - tBefore));
+#else
+        float value = queue.get();
+#endif
         
         // incremental mean formula: avg(n) = avg(n-1) + (newValue - avg(n-1))/n
         incrementalMean = incrementalMean + (value - incrementalMean)/(acquiredValues+1);
@@ -57,9 +70,15 @@ void NeuralNetwork::run()
             //8h has passed, time to predict
             enqueue(in_data, incrementalMean);
 
-            printf("Mean: %f\n", incrementalMean);
+            //printf("Mean: %f\n", incrementalMean);
+#ifndef MAIN_PROFILING_TIMING
+            tBefore = getTick();
             runNN(network, normalizeInput(in_data));
-            printf("Prediction result: %f\n", denormalizeOutput(nn_outdata[0]));
+            printf("runNN() timing : %lli \n", (getTick() - tBefore));
+#else
+            runNN(network, normalizeInput(in_data));
+#endif
+            //printf("Prediction result: %f\n", denormalizeOutput(nn_outdata[0]));
             acquiredValues = 0;
             incrementalMean = 0;
         }
@@ -76,7 +95,7 @@ void NeuralNetwork::initNN()
     }
     else 
     {
-        printf("NN successfully created.\n");
+        //printf("NN successfully created.\n");
     }
 
     // network initialization
@@ -92,7 +111,7 @@ void NeuralNetwork::initNN()
     } 
     else 
     {
-        printf("NN successfully initialized.\n");
+        //printf("NN successfully initialized.\n");
     }
 }
 
@@ -131,7 +150,7 @@ ai_float*  NeuralNetwork::normalizeInput(ai_float* input)
         // normalized.
         if (input[i] > 260 && input[i] < 1260)
             input[i] = (input[i] - normMin) / (normMax - normMin);
-        printf("element number %d of the queue before prediction: %f\n",i+1,input[i]);
+        //printf("element number %d of the queue before prediction: %f\n",i+1,input[i]);
     }
     return input;
 }

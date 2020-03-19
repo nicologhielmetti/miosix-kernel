@@ -1005,6 +1005,14 @@
       </df>
       <df name="python_script">
       </df>
+      <df name="UsefulScripts">
+        <df name=".idea">
+          <df name="inspectionProfiles">
+          </df>
+        </df>
+        <df name="data_switcher">
+        </df>
+      </df>
       <in>ActiveObject.cpp</in>
       <in>ActiveObject.h</in>
       <in>Lps22hb.h</in>
@@ -1013,6 +1021,7 @@
       <in>SyncQueue.h</in>
       <in>UsefulTypedefs.h</in>
       <in>main.cpp</in>
+      <in>profiling_defines.h</in>
     </df>
   </logicalFolder>
   <projectmakefile>miosix_np_2-Makefile.mk</projectmakefile>
