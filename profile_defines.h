@@ -18,7 +18,7 @@
 extern "C" {
 #endif
 
-//#define MAIN_PROFILING
+#define MAIN_PROFILING
 
 
 #ifdef __cplusplus

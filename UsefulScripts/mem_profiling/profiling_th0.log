@@ -76,8 +76,8 @@ Free (current/min): 85760/84992
 BEFORE -> THREAD_0,in_queue.get()
 Stack memory statistics.
 Size: 2048
-Used (current/max): 148/772
-Free (current/min): 1900/1276
+Used (current/max): 148/780
+Free (current/min): 1900/1268
 Heap memory statistics.
 Size: 94128
 Used (current/max): 8368/9136
@@ -85,8 +85,8 @@ Free (current/min): 85760/84992
 END -> THREAD_0,in_queue.get()
 Stack memory statistics.
 Size: 2048
-Used (current/max): 148/772
-Free (current/min): 1900/1276
+Used (current/max): 148/780
+Free (current/min): 1900/1268
 Heap memory statistics.
 Size: 94128
 Used (current/max): 8368/9136
@@ -94,8 +94,8 @@ Free (current/min): 85760/84992
 BEFORE -> THREAD_0,runNN()
 Stack memory statistics.
 Size: 2048
-Used (current/max): 148/772
-Free (current/min): 1900/1276
+Used (current/max): 148/780
+Free (current/min): 1900/1268
 Heap memory statistics.
 Size: 94128
 Used (current/max): 8368/9136
@@ -103,8 +103,8 @@ Free (current/min): 85760/84992
 END -> THREAD_0,runNN()
 Stack memory statistics.
 Size: 2048
-Used (current/max): 164/772
-Free (current/min): 1884/1276
+Used (current/max): 164/780
+Free (current/min): 1884/1268
 Heap memory statistics.
 Size: 94128
 Used (current/max): 8368/9136

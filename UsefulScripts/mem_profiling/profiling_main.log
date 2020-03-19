@@ -19,7 +19,7 @@ Heap memory statistics.
 Size: 94128
 Used (current/max): 5952/6064
 Free (current/min): 88176/88064
-THREAD_MAIN,initNN()
+BEFORE -> THREAD_MAIN,initNN()
 Stack memory statistics.
 Size: 4096
 Used (current/max): 796/1372
