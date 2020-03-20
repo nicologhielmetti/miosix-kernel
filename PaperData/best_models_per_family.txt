@@ -1,0 +1,4 @@
+2-lstm-70-units - RMSE: 0.0254853 - MAE:0.0193 - macc=179,410 - rom=234.89 KBytes - ram=1.09 KiB
+2-gru-50-units - RMSE: 0.0253434 - MAE:0.01933 - macc=68,600 - rom=91.02 KBytes - ram=800 B
+32F-CNN+2-LSTM-30-units - RMSE:0.0324423 - MAE:0.02549 - macc=15,354 - rom=59.32 KBytes - ram=384 B
+8F-CNN+2-GRU-30-units - RMSE 0.0320609 - MAE:0.02403 - macc=9,066 - rom=36.07 KBytes - ram=240 B
