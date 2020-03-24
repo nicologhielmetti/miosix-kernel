@@ -1,7 +1,7 @@
 # import serial
 # import re
 from datetime import datetime, timedelta
-import mem_profiling.MemoryUsage as mu
+import MemoryUsage as mu
 
 # Modify these variables according to the serial port in use and to the baudrate needed
 # serial_port = 'COM3'
@@ -15,7 +15,7 @@ methods = {}
 populate = False
 method = ''
 cnt = 0
-with open("profiling_main.log", "r") as file:
+with open("profiling_main_init.log", "r") as file:
     for line in file:
         try:
             if 'FINISH!' in line:
@@ -83,7 +83,7 @@ with open("profiling_main.log", "r") as file:
             continue
 
 
-out = open("deltas_main.csv", "w")
+out = open("deltas_main_init.csv", "w")
 out.write("methodCalled,stackUsedCurrentDelta,stackUsedMaxDelta,stackFreeCurrentDelta,stackFreeMinDelta," +
           "heapUsedCurrentDelta,heapUsedMaxDelta,heapFreeCurrentDelta,heapFreeMinDelta\n")
 for method in methods:

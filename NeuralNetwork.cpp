@@ -30,6 +30,7 @@ NeuralNetwork::~NeuralNetwork()
 
 void NeuralNetwork::run() 
 {
+    //m.lock();
     unsigned int acquiredValues = 0;
     unsigned int valuesToAcquire = 1;//8*60*60/(((unsigned int)odr - 15)*32);
     //printf("values to acquire : %i \n", valuesToAcquire);
@@ -80,6 +81,7 @@ void NeuralNetwork::run()
 #ifndef MAIN_PROFILING 
     printf("\nFINISH!\n");
 #endif
+    //m.unlock();
 }
 
 void NeuralNetwork::initNN()

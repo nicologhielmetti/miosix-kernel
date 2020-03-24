@@ -46,13 +46,21 @@ void initRCC(){
 
 typedef Gpio<GPIOB_BASE,9>  sda;
 typedef Gpio<GPIOB_BASE,8>  scl;
-Lps22hb<sda,scl,lps22hb_addr> pressure_sensor(sensor_altitude); 
-SyncQueue<float> in_queue;
-
 int main()
 {   
+    //m.lock();
     initRCC();
+#ifdef MAIN_PROFILING 
+    printf("BEFORE -> THREAD_MAIN,pressure sensor constructor \n");
+    MemoryProfiling::print();
+#endif
     //initialize the sensor via I2C
+    Lps22hb<sda,scl,lps22hb_addr> pressure_sensor(sensor_altitude); 
+#ifdef MAIN_PROFILING 
+    printf("BEFORE -> THREAD_MAIN,queue constructor \n");
+    MemoryProfiling::print();
+#endif
+    SyncQueue<float> in_queue;
 #ifdef MAIN_PROFILING 
     printf("BEFORE -> THREAD_MAIN,ps.init()\n");
     MemoryProfiling::print();
@@ -87,6 +95,7 @@ int main()
 #endif
         in_queue.put(pressure_val);
     }
+    //m.unlock();
 #ifdef MAIN_PROFILING
     printf("\nFINISH!\n");
 #endif

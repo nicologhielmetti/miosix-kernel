@@ -21,7 +21,13 @@ template<typename T>
 class SyncQueue {
 public:
     
-    SyncQueue(){}
+    SyncQueue()
+    {
+#ifdef MAIN_PROFILING 
+    printf("END -> THREAD_MAIN,queue constructor \n");
+    MemoryProfiling::print();
+#endif
+    }
     
     void put(const T& data) 
     {

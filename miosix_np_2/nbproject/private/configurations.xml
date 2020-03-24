@@ -1013,6 +1013,8 @@
           </df>
         </df>
         <df name="mem_profiling">
+          <df name="__pycache__">
+          </df>
         </df>
       </df>
       <in>ActiveObject.cpp</in>

@@ -129,7 +129,13 @@ public:
     
     void waitForFullFifo()
     {
-        if(int_fifo::value()) return;
+        if(int_fifo::value()){
+#ifdef MAIN_PROFILING
+            printf("END -> THREAD_MAIN,ps.waitForFullFifo()\n");
+            MemoryProfiling::print();
+#endif
+            return;
+        }
         {
             FastInterruptDisableLock dLock;
             waiting=Thread::IRQgetCurrentThread();
@@ -186,7 +192,13 @@ public:
 #endif
     }
     
-    Lps22hb(const unsigned int &sensorAltitude): sensorAltitude(sensorAltitude) {}
+    Lps22hb(const unsigned int &sensorAltitude): sensorAltitude(sensorAltitude) 
+    {
+#ifdef MAIN_PROFILING 
+    printf("END -> THREAD_MAIN,pressure sensor constructor \n");
+    MemoryProfiling::print();
+#endif
+    }
     
 private:    
     typedef SoftwareI2C<SDA, SCL, stretchTimeout, fast> i2c;

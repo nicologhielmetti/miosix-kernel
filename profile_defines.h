@@ -14,9 +14,13 @@
 #ifndef PROFILE_DEFINES_H
 #define PROFILE_DEFINES_H
 
+#include "miosix/kernel/sync.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
+    
+//static miosix::Mutex m;
 
 #define MAIN_PROFILING
 
