@@ -21,6 +21,7 @@ class ActiveObject {
 public:
     ActiveObject();
     virtual ~ActiveObject();
+    void start();
 private:
     static void threadLauncher(void* argv);
     virtual void run();

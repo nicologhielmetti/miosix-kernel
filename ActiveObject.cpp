@@ -5,16 +5,23 @@
  */
 
 #include "ActiveObject.h"
+#include <cstdio>
 #include <functional>
 
 
 using namespace miosix;
 
-ActiveObject::ActiveObject(): t(Thread::create(threadLauncher, 2048, Priority(), this, Thread::JOINABLE)), quit(false) {}
+ActiveObject::ActiveObject(): quit(false) {}
 
 void ActiveObject::threadLauncher(void* argv)
 {
+    printf("AO threadLauncher\n");
     reinterpret_cast<ActiveObject*>(argv)->run();
+}
+
+void ActiveObject::start()
+{
+    //t = Thread::create(threadLauncher, 2048, Priority(), this, Thread::JOINABLE);
 }
 
 void ActiveObject::run(){
@@ -25,6 +32,7 @@ void ActiveObject::run(){
 }
 
 ActiveObject::~ActiveObject() {
+    printf("AO destr\n");
     if(quit.load()) return;
     quit.store(true);
     t->join();

@@ -10,22 +10,19 @@
 
 #include "miosix/kernel/sync.h"
 #include "miosix/util/util.h"
+#include "profile_defines.h"
 #include <cstdio>
 #include <list>
-#include "profile_defines.h"
-
 
 using namespace miosix;
 
 template<typename T>
 class SyncQueue {
-public:
-    
+public:    
     SyncQueue()
     {
 #ifdef MAIN_PROFILING 
-    printf("END -> THREAD_MAIN,queue constructor \n");
-    MemoryProfiling::print();
+        usedStackEnd = MemoryProfiling::getCurrentUsedStack();
 #endif
     }
     
@@ -35,8 +32,7 @@ public:
         queue.push_back(data);
         myCv.signal();
         #ifdef MAIN_PROFILING  
-            printf("END -> THREAD_MAIN,in_queue.put()\n");
-            MemoryProfiling::print();
+            usedStackEnd = MemoryProfiling::getCurrentUsedStack();
         #endif
     }
     
@@ -48,8 +44,8 @@ public:
         T result=queue.front();
         queue.pop_front();
         #ifndef MAIN_PROFILING  
-            printf("END -> THREAD_0,in_queue.get()\n");
-            MemoryProfiling::print();
+            //stack.put(MemoryProfiling::getCurrentUsedStack());
+        usedStackEnd = MemoryProfiling::getCurrentUsedStack();
         #endif
         return result;
     }

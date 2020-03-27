@@ -14,14 +14,15 @@
 #ifndef PROFILE_DEFINES_H
 #define PROFILE_DEFINES_H
 
-#include "miosix/kernel/sync.h"
+#include "ProfileSynchQueue.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
     
-//static miosix::Mutex m;
-
+//static ProfileSyncQueue<int> stack;    
+extern int usedStackBefore, usedStackEnd;
+    
 #define MAIN_PROFILING
 
 

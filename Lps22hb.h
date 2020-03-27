@@ -119,10 +119,6 @@ public:
 
         led::low();
 
-#ifdef MAIN_PROFILING
-        printf("END -> THREAD_MAIN,ps.getLast32AvgPressure()\n");
-        MemoryProfiling::print();
-#endif
         //printf("Temperature reading: %f\n", t_running_mean);
         return computeSeaLevelPressure(p_running_mean, t_running_mean);
     }
@@ -131,8 +127,7 @@ public:
     {
         if(int_fifo::value()){
 #ifdef MAIN_PROFILING
-            printf("END -> THREAD_MAIN,ps.waitForFullFifo()\n");
-            MemoryProfiling::print();
+            usedStackEnd = MemoryProfiling::getCurrentUsedStack();
 #endif
             return;
         }
@@ -147,8 +142,7 @@ public:
             }
         }
         #ifdef MAIN_PROFILING
-            printf("END -> THREAD_MAIN,ps.waitForFullFifo()\n");
-            MemoryProfiling::print();
+            usedStackEnd = MemoryProfiling::getCurrentUsedStack();
         #endif
     }
     
@@ -187,16 +181,14 @@ public:
         //enable interrupt on full fifo
         enableInterruptOnFullFifo(1);
 #ifdef MAIN_PROFILING 
-        printf("END -> THREAD_MAIN,ps.init()\n");
-        MemoryProfiling::print();
+            usedStackEnd = MemoryProfiling::getCurrentUsedStack();
 #endif
     }
     
     Lps22hb(const unsigned int &sensorAltitude): sensorAltitude(sensorAltitude) 
     {
 #ifdef MAIN_PROFILING 
-    printf("END -> THREAD_MAIN,pressure sensor constructor \n");
-    MemoryProfiling::print();
+            usedStackEnd = MemoryProfiling::getCurrentUsedStack();
 #endif
     }
     
@@ -211,7 +203,9 @@ private:
     float computeSeaLevelPressure(float rPressure, float temperature)
     {
         float tmp = 1 - (0.0065*sensorAltitude)/(temperature + 0.0065*sensorAltitude + 273.15);
-        
+#ifdef MAIN_PROFILING
+        usedStackEnd = MemoryProfiling::getCurrentUsedStack();
+#endif
         return rPressure*(pow(tmp, -5.257));
     }
     

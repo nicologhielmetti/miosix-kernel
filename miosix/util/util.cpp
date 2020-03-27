@@ -68,6 +68,11 @@ void MemoryProfiling::print()
             curFreeHeap,absFreeHeap);
 }
 
+int MemoryProfiling::getCurrentUsedStack()
+{
+    return getStackSize() - getCurrentFreeStack();
+}
+
 unsigned int MemoryProfiling::getStackSize()
 {
     return miosix::Thread::getStackSize();

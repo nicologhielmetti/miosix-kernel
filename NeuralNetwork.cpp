@@ -7,21 +7,14 @@
 
 #include "NeuralNetwork.h"
 #include <cstdio>
-#include "profile_defines.h"
-
-static short i = 0;
 
 NeuralNetwork::NeuralNetwork(SyncQueue<float> &queue, const OdrMode& odr): queue(queue), odr(odr)
 {
-#ifdef MAIN_PROFILING
-    printf("BEFORE -> THREAD_MAIN,initNN()\n");
-    MemoryProfiling::print();
-#endif
-    initNN();
+    usedStackEnd = MemoryProfiling::getCurrentUsedStack();
 };
 
-NeuralNetwork::~NeuralNetwork() 
-{
+NeuralNetwork::~NeuralNetwork() {
+    printf("NN destr\n");
     if(quit.load()) return;
     ai_network_destroy(network);
     quit.store(true);
@@ -30,23 +23,21 @@ NeuralNetwork::~NeuralNetwork()
 
 void NeuralNetwork::run() 
 {
-    //m.lock();
     unsigned int acquiredValues = 0;
     unsigned int valuesToAcquire = 1;//8*60*60/(((unsigned int)odr - 15)*32);
     //printf("values to acquire : %i \n", valuesToAcquire);
-    while(!quit.load() && i < 3) 
+    while(!quit.load()) 
     {
         // queue is the shared object between the producer (lps22hb) and the 
         // consumer (this class). The queue.get() method is a blocking method, 
         // if the queue is empty the thread keep waiting for a value to
         // to be inserted into the queue. As soon as the value is inserted, that 
         // value is returned by this method.
-#ifndef MAIN_PROFILING 
-        printf("BEFORE -> THREAD_0,in_queue.get()\n");
-        MemoryProfiling::print();
-#endif
+        //stack.put(MemoryProfiling::getCurrentUsedStack());
+        usedStackBefore = MemoryProfiling::getCurrentUsedStack();
         float value = queue.get();
-        
+        //std::vector<int> l = stack.get();
+        printf("--- DELTA queue.get(): %i ---\n", usedStackEnd - usedStackBefore);
         // incremental mean formula: avg(n) = avg(n-1) + (newValue - avg(n-1))/n
         incrementalMean = incrementalMean + (value - incrementalMean)/(acquiredValues+1);
         acquiredValues++;
@@ -67,21 +58,16 @@ void NeuralNetwork::run()
             enqueue(in_data, incrementalMean);
 
             //printf("Mean: %f\n", incrementalMean);
-#ifndef MAIN_PROFILING
-            printf("BEFORE -> THREAD_0,runNN()\n");
-            MemoryProfiling::print();
-#endif
+            usedStackBefore = MemoryProfiling::getCurrentUsedStack();
             runNN(network, normalizeInput(in_data));
+            //l = stack.get();
+            printf("--- DELTA runNN(): %i ---\n", usedStackEnd - usedStackBefore);
+
             //printf("Prediction result: %f\n", denormalizeOutput(nn_outdata[0]));
             acquiredValues = 0;
             incrementalMean = 0;
         }
-        i++;
     }
-#ifndef MAIN_PROFILING 
-    printf("\nFINISH!\n");
-#endif
-    //m.unlock();
 }
 
 void NeuralNetwork::initNN()
@@ -112,10 +98,8 @@ void NeuralNetwork::initNN()
     {
         //printf("NN successfully initialized.\n");
     }
-#ifdef MAIN_PROFILING  
-            printf("END -> THREAD_MAIN,initNN()\n");
-            MemoryProfiling::print();
-#endif
+    //stack.put(MemoryProfiling::getCurrentUsedStack());
+    usedStackEnd = MemoryProfiling::getCurrentUsedStack();
 }
 
 int  NeuralNetwork::runNN(ai_handle network, void* input)
@@ -133,10 +117,8 @@ int  NeuralNetwork::runNN(ai_handle network, void* input)
     {
         err = ai_network_get_error(network);
     }
-#ifndef MAIN_PROFILING
-            printf("END -> THREAD_0,runNN()\n");
-            MemoryProfiling::print();
-#endif
+    //stack.put(MemoryProfiling::getCurrentUsedStack());
+    usedStackEnd = MemoryProfiling::getCurrentUsedStack();
     return 1;    
 }
 
