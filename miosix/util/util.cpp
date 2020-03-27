@@ -73,6 +73,11 @@ int MemoryProfiling::getCurrentUsedStack()
     return getStackSize() - getCurrentFreeStack();
 }
 
+int MemoryProfiling::getCurrentUsedHeap() 
+{
+    return getHeapSize() - getCurrentFreeHeap();
+}
+
 unsigned int MemoryProfiling::getStackSize()
 {
     return miosix::Thread::getStackSize();

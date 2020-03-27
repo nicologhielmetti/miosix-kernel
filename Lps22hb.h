@@ -128,6 +128,7 @@ public:
         if(int_fifo::value()){
 #ifdef MAIN_PROFILING
             usedStackEnd = MemoryProfiling::getCurrentUsedStack();
+            usedHeapEnd = MemoryProfiling::getCurrentUsedHeap();
 #endif
             return;
         }
@@ -143,6 +144,7 @@ public:
         }
         #ifdef MAIN_PROFILING
             usedStackEnd = MemoryProfiling::getCurrentUsedStack();
+            usedHeapEnd = MemoryProfiling::getCurrentUsedHeap();
         #endif
     }
     
@@ -182,6 +184,7 @@ public:
         enableInterruptOnFullFifo(1);
 #ifdef MAIN_PROFILING 
             usedStackEnd = MemoryProfiling::getCurrentUsedStack();
+            usedHeapEnd = MemoryProfiling::getCurrentUsedHeap();
 #endif
     }
     
@@ -189,6 +192,7 @@ public:
     {
 #ifdef MAIN_PROFILING 
             usedStackEnd = MemoryProfiling::getCurrentUsedStack();
+            usedHeapEnd = MemoryProfiling::getCurrentUsedHeap();
 #endif
     }
     
@@ -205,6 +209,7 @@ private:
         float tmp = 1 - (0.0065*sensorAltitude)/(temperature + 0.0065*sensorAltitude + 273.15);
 #ifdef MAIN_PROFILING
         usedStackEnd = MemoryProfiling::getCurrentUsedStack();
+        usedHeapEnd = MemoryProfiling::getCurrentUsedHeap();
 #endif
         return rPressure*(pow(tmp, -5.257));
     }

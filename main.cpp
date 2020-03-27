@@ -31,7 +31,7 @@
 using namespace std;
 using namespace miosix;
 
-int usedStackBefore, usedStackEnd;
+int usedStackBefore, usedStackEnd, usedHeapBefore, usedHeapEnd;
 
 #ifndef MAIN_PROFILING
 static SyncQueue<float> queue;
@@ -71,31 +71,48 @@ void _main(void*)
     const unsigned int sensor_altitude = 130;
  
     usedStackBefore = MemoryProfiling::getCurrentUsedStack();
+    usedHeapBefore = MemoryProfiling::getCurrentUsedHeap();
     Lps22hb<sda,scl,lps22hb_addr> pressure_sensor(sensor_altitude); 
-    printf("--- DELTA ps constructor: %i ---\n", usedStackEnd-usedStackBefore);
+    printf("--- DELTA STACK ps constructor: %i ---\n", usedStackEnd-usedStackBefore);
+    printf("--- DELTA HEAP ps constructor: %i ---\n", usedHeapEnd-usedHeapBefore);
+    
     
     usedStackBefore = MemoryProfiling::getCurrentUsedStack();
+    usedHeapBefore = MemoryProfiling::getCurrentUsedHeap();
     SyncQueue<float> queue;
-    printf("--- DELTA queue constructor: %i ---\n", usedStackEnd-usedStackBefore);
+    printf("--- DELTA STACK queue: %i ---\n", usedStackEnd-usedStackBefore);
+    printf("--- DELTA HEAP queue: %i ---\n", usedHeapEnd-usedHeapBefore);    
     
-    usedStackBefore = MemoryProfiling::getCurrentUsedStack();          
+    
+    usedStackBefore = MemoryProfiling::getCurrentUsedStack();
+    usedHeapBefore = MemoryProfiling::getCurrentUsedHeap();
     pressure_sensor.init();
-    printf("--- DELTA ps.init(): %i ---\n", usedStackEnd-usedStackBefore);
+    printf("--- DELTA STACK ps.init(): %i ---\n", usedStackEnd-usedStackBefore);
+    printf("--- DELTA HEAP ps.init(): %i ---\n", usedHeapEnd-usedHeapBefore);
 
     for(;;)
     { 
 
         usedStackBefore = MemoryProfiling::getCurrentUsedStack();
+        usedHeapBefore = MemoryProfiling::getCurrentUsedHeap();
         pressure_sensor.waitForFullFifo();
-        printf("--- DELTA ps.waitForFullFifo(): %i ---\n", usedStackEnd-usedStackBefore);
+        printf("--- DELTA STACK ps.waitForFullFifo(): %i ---\n", usedStackEnd-usedStackBefore);
+        printf("--- DELTA HEAP ps.waitForFullFifo(): %i ---\n", usedHeapEnd-usedHeapBefore);
  
-        usedStackBefore = MemoryProfiling::getCurrentUsedStack();      
+        
+        usedStackBefore = MemoryProfiling::getCurrentUsedStack(); 
+        usedHeapBefore = MemoryProfiling::getCurrentUsedHeap();
         float pressure_val = pressure_sensor.getLast32AvgPressure();
-        printf("--- DELTA ps.getLast32AvgPressure(): %i ---\n", usedStackEnd-usedStackBefore);
+        printf("--- DELTA STACK ps.getLast32AvgPressure(): %i ---\n", usedStackEnd-usedStackBefore);
+        printf("--- DELTA HEAP ps.getLast32AvgPressure(): %i ---\n", usedHeapEnd-usedHeapBefore);
 
+        
         usedStackBefore = MemoryProfiling::getCurrentUsedStack();
+        usedHeapBefore = MemoryProfiling::getCurrentUsedHeap();
         queue.put(pressure_val);
         printf("--- DELTA queue.put(): %i ---\n", usedStackEnd-usedStackBefore);
+        printf("--- DELTA STACK queue.put(): %i ---\n", usedStackEnd-usedStackBefore);
+        printf("--- DELTA HEAP queue.put(): %i ---\n", usedHeapEnd-usedHeapBefore);
 
         //consume produced value
         Thread::sleep(1000);
@@ -136,6 +153,7 @@ void initNN()
     }
     //stack.put(MemoryProfiling::getCurrentUsedStack());
     usedStackEnd = MemoryProfiling::getCurrentUsedStack();
+    usedHeapEnd = MemoryProfiling::getCurrentUsedHeap();
 }
 #endif
 
@@ -157,6 +175,7 @@ int  runNN(ai_handle network, void* input)
     }
     //stack.put(MemoryProfiling::getCurrentUsedStack());
     usedStackEnd = MemoryProfiling::getCurrentUsedStack();
+    usedHeapEnd = MemoryProfiling::getCurrentUsedHeap();
     return 1;    
 }
 #endif
@@ -193,15 +212,20 @@ void nn(void*)
 {
     //stack.put(MemoryProfiling::getCurrentUsedStack());
     usedStackBefore = MemoryProfiling::getCurrentUsedStack();
+    usedHeapBefore = MemoryProfiling::getCurrentUsedHeap();
     NeuralNetwork nn(queue, OdrMode::ODR_1HZ);
     //std::vector<int> l = stack.get();
-    printf("--- DELTA nn constuctor: %i ---\n", usedStackEnd - usedStackBefore);
+    printf("--- DELTA STACK nn constuctor: %i ---\n", usedHeapEnd - usedHeapBefore);
+    printf("--- DELTA HEAP nn constuctor: %i ---\n", usedHeapEnd - usedHeapBefore);
+    
     
     //stack.put(MemoryProfiling::getCurrentUsedStack());
     usedStackBefore = MemoryProfiling::getCurrentUsedStack();
+    usedHeapBefore = MemoryProfiling::getCurrentUsedHeap();
     initNN();
     //l = stack.get();
-    printf("--- DELTA initNN(): %i ---\n", usedStackEnd - usedStackBefore);
+    printf("--- DELTA STACK initNN(): %i ---\n", usedHeapEnd - usedHeapBefore);
+    printf("--- DELTA HEAP initNN(): %i ---\n", usedHeapEnd - usedHeapBefore);
 
     unsigned int acquiredValues = 0;
     unsigned int valuesToAcquire = 1;//8*60*60/(((unsigned int)odr - 15)*32);
@@ -215,9 +239,12 @@ void nn(void*)
         // value is returned by this method.
         //stack.put(MemoryProfiling::getCurrentUsedStack());
         usedStackBefore = MemoryProfiling::getCurrentUsedStack();
+        usedHeapBefore = MemoryProfiling::getCurrentUsedHeap();
         float value = queue.get();
         //l = stack.get();
-        printf("--- DELTA queue.get(): %i ---\n", usedStackEnd - usedStackBefore);
+        printf("--- DELTA STACK queue.get(): %i ---\n", usedHeapEnd - usedHeapBefore);
+        printf("--- DELTA HEAP queue.get(): %i ---\n", usedHeapEnd - usedHeapBefore);
+        
         // incremental mean formula: avg(n) = avg(n-1) + (newValue - avg(n-1))/n
         incrementalMean = incrementalMean + (value - incrementalMean)/(acquiredValues+1);
         acquiredValues++;
@@ -239,10 +266,12 @@ void nn(void*)
 
             //printf("Mean: %f\n", incrementalMean);
             //stack.put(MemoryProfiling::getCurrentUsedStack());
-            usedStackBefore = MemoryProfiling::getCurrentUsedStack();    
+            usedStackBefore = MemoryProfiling::getCurrentUsedStack();  
+            usedHeapBefore = MemoryProfiling::getCurrentUsedHeap();
             runNN(network, normalizeInput(in_data));
             //l = stack.get();
-            printf("--- DELTA runNN(): %i ---\n", usedStackEnd - usedStackBefore);
+            printf("--- DELTA STACK runNN(): %i ---\n", usedHeapEnd - usedHeapBefore);
+            printf("--- DELTA HEAP runNN(): %i ---\n", usedHeapEnd - usedHeapBefore);
 
             //printf("Prediction result: %f\n", denormalizeOutput(nn_outdata[0]));
             acquiredValues = 0;

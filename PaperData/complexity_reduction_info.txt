@@ -1,0 +1,6 @@
+2-LSTM-50-units - macc=92150 rom=120.90 KBytes ram=800 B RMSE: 0.0257375  MAE: 0.01968 
+2-LSTM-30-units - macc=33690 rom=44.42 KBytes ram=480 B RMSE: 0.0254984  MAE: 0.01941 
+2-LSTM-10-units - macc=4030 rom=5.43 KBytes ram=160 B RMSE: 0.0261645  MAE: 0.01977 
+
+2-GRU-30-units - macc=24960 rom=33.52 KBytes ram=480 B RMSE: 0.0256334 MAE: 0.01964 
+2-GRU-10-units - macc=2920 rom=4.14 KBytes ram=160 B RMSE: 0.0264239 MAE: 0.02002

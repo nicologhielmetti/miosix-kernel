@@ -54,6 +54,8 @@ public:
     static void print();
 
     static int getCurrentUsedStack();
+    
+    static int getCurrentUsedHeap();
     /**
      * \return stack size of current thread.
      */

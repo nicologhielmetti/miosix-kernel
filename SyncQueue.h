@@ -23,6 +23,7 @@ public:
     {
 #ifdef MAIN_PROFILING 
         usedStackEnd = MemoryProfiling::getCurrentUsedStack();
+        usedHeapEnd = MemoryProfiling::getCurrentUsedHeap();
 #endif
     }
     
@@ -33,6 +34,7 @@ public:
         myCv.signal();
         #ifdef MAIN_PROFILING  
             usedStackEnd = MemoryProfiling::getCurrentUsedStack();
+            usedHeapEnd = MemoryProfiling::getCurrentUsedHeap();
         #endif
     }
     
@@ -44,8 +46,8 @@ public:
         T result=queue.front();
         queue.pop_front();
         #ifndef MAIN_PROFILING  
-            //stack.put(MemoryProfiling::getCurrentUsedStack());
         usedStackEnd = MemoryProfiling::getCurrentUsedStack();
+        usedHeapEnd = MemoryProfiling::getCurrentUsedHeap();
         #endif
         return result;
     }

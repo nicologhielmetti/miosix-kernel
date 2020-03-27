@@ -21,7 +21,7 @@ extern "C" {
 #endif
     
 //static ProfileSyncQueue<int> stack;    
-extern int usedStackBefore, usedStackEnd;
+extern int usedStackBefore, usedStackEnd, usedHeapBefore, usedHeapEnd;
     
 #define MAIN_PROFILING
 

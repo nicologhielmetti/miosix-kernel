@@ -1001,13 +1001,11 @@
           <in>system_stm32f4xx.c</in>
         </df>
       </df>
+      <df name="PaperData">
+      </df>
       <df name="pdf_references">
       </df>
       <df name="UsefulScripts">
-        <df name=".idea">
-          <df name="inspectionProfiles">
-          </df>
-        </df>
         <df name="data_switcher">
           <df name="__pycache__">
           </df>

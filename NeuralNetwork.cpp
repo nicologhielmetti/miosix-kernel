@@ -11,6 +11,7 @@
 NeuralNetwork::NeuralNetwork(SyncQueue<float> &queue, const OdrMode& odr): queue(queue), odr(odr)
 {
     usedStackEnd = MemoryProfiling::getCurrentUsedStack();
+    usedHeapEnd = MemoryProfiling::getCurrentUsedHeap();
 };
 
 NeuralNetwork::~NeuralNetwork() {
